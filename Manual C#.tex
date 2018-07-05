@@ -1,0 +1,235 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{color}
+
+\definecolor{miverde}{rgb}{0,0.6,0}
+\definecolor{migris}{rgb}{0.5,0.5,0.5}
+\definecolor{mimalva}{rgb}{0.58,0,0.82}
+\usepackage{listings}%Para insertar codigo de programacion
+\lstset{ %
+  backgroundcolor=\color{white},   % Indica el color de fondo; necesita que se añada \usepackage{color} o \usepackage{xcolor}
+  basicstyle=\footnotesize,        % Fija el tamaño del tipo de letra utilizado para el código
+  breakatwhitespace=false,         % Activarlo para que los saltos automáticos solo se apliquen en los espacios en blanco
+  breaklines=true,                 % Activa el salto de línea automático
+  captionpos=b,                    % Establece la posición de la leyenda del cuadro de código
+  %commentstyle=\color{miverde},    % Estilo de los comentarios
+  deletekeywords={...},            % Si se quiere eliminar palabras clave del lenguaje
+  escapeinside={\%*}{*)},          % Si quieres incorporar LaTeX dentro del propio código
+  extendedchars=true,              % Permite utilizar caracteres extendidos no-ASCII; solo funciona para codificaciones de 8-bits; para UTF-8 no funciona. En xelatex necesita estar a true para que funcione.
+  frame=single,	                   % Añade un marco al código
+  keepspaces=true,                 % Mantiene los espacios en el texto. Es útil para mantener la indentación del código(puede necesitar columns=flexible).
+  keywordstyle=\color{blue},       % estilo de las palabras clave
+  language=csh,                 % El lenguaje del código
+  otherkeywords={*,...},           % Si se quieren añadir otras palabras clave al lenguaje
+  numbers=left,                    % Posición de los números de línea (none, left, right).
+  numbersep=5pt,                   % Distancia de los números de línea al código
+  numberstyle=\small\color{migris}, % Estilo para los números de línea
+  rulecolor=\color{black},         % Si no se activa, el color del marco puede cambiar en los saltos de línea entre textos que sea de otro color, por ejemplo, los comentarios, que están en verde en este ejemplo
+  showspaces=false,                % Si se activa, muestra los espacios con guiones bajos; sustituye a 'showstringspaces'
+  showstringspaces=false,          % subraya solamente los espacios que estén en una cadena de esto
+  showtabs=false,                  % muestra las tabulaciones que existan en cadenas de texto con guión bajo
+  stepnumber=1,                    % Muestra solamente los números de línea que corresponden a cada salto. En este caso: 1,3,5,...
+  stringstyle=\color{mimalva},     % Estilo de las cadenas de texto
+  tabsize=2,	                   % Establece el salto de las tabulaciones a 2 espacios
+  title=\lstname                   % muestra el nombre de los ficheros incluidos al utilizar \lstinputlisting; también se puede utilizar en el parámetro caption
+}
+\author{Elaborado por:\\\\Rivera Negrete Manuel Armando}
+\date{28 de Junio del 2018}
+\title{Universidad Nacional Autónoma de México\\Programa de Tenología en Cómputo\\Lo que siempre quisiste saber de C\# y nunca te atreviste a preguntar}
+\begin{document}
+\maketitle
+\tableofcontents
+\cleardoublepage
+\part*{¿Por qué aprender C\#?}
+
+\part{C\# Básico}
+
+\chapter{La arquitectura .NET}
+\section{C\# y su lugar dentro de .NET}
+C\# (leído <<C sharp>>) es un lenguaje de programación orientado a objetos desarrollado y estandarizado por Microsoft como partes de su plataforma .NET. Aunque esta plataforma permite desarrollar aplicaciones en otros lenguajes de programación, C\# ha sido creado específicamente para .NET, adecuando todas sus estructuras a las características y capacidades de dicha plataforma.\\.NET es un framework de Microsoft que hace un énfasis en el desarrollo sencillo de aplicaciones, independencia de hardware y transparencia de redes. Es una implementación de Common Language Infraestructure (Estandar CLI). Un Framework es un esquema (un esqueleto, un patrón) para el desarrollo y/o la implementación de una aplicación.
+%Á á, É é, Í í,Ó ó,Ú ú,Ü ü,Ñ ñ, ¿, ¡ ``
+\section{Common Language Runtime}
+El Common Language Runtime o CLR es un entorno de ejecución que ejecuta el código y proporciona servicios que facilitan el proceso de desarrollo de los programas que corren sobre la plataforma Microsoft .NET.\\Los compiladores y las herramientas exponen la funcionalidad del tiempo de ejecución del idioma común y le permiten escribir código que se beneficia de este entorno de ejecución administrada. El código que desarrolla con un compilador de lenguaje que se dirige al tiempo de ejecución se denomina código administrado; se beneficia de características tales como la integración entre idiomas, manejo de excepciones entre idiomas, seguridad mejorada, soporte de versiones e implementación, un modelo simplificado para la interacción de componentes y servicios de depuración y creación de perfiles. Para enternder el proceso de compilación en C\# es necesario definir algunos conceptos:\\Compilación: La tarea de compilar se refiere al proceso de traducción del código fuente a código entendible por la computadora, entendiéndose por código fuente las líneas de código que se han escrito en un lenguaje de programación, en este caso un lenguaje de programación de alto nivel.\\Código Máquina: Es el sistema de códigos directamente interpretable por un circuito microprogramable, como el microprocesador de una computadora, es decir, es un lenguage que entiende la computadora.\\ByteCode: Es un código intermedio más abstracto que el código máquina. Habitualmente es tratado como un archivo binario que contiene un programa ejecutable similar a un módulo objeto, que es un archivo binario producido por el compilador cuyo contenido es el código objeto o código máquina.\\
+\section{Microsoft Intermediate Language}
+MSIL significa Microsoft Intermediate Language. Podemos llamarlo Lenguaje Intermedio (IL) o Lenguaje Intermedio Común (CIL). Durante el tiempo de compilación, el compilador convierte el código fuente en Microsoft Intermediate Language (MSIL). Microsoft Intermediate Language (MSIL) es un conjunto de instrucciones independiente de la CPU que se puede convertir de manera eficiente al código nativo. Durante el tiempo de ejecución, el compilador Just In Time (JIT) de Common Language Runtime (CLR) convierte el código de Microsoft Intermediate Language (MSIL) en código nativo al sistema operativo.\\El código fuente escrito en C\# se compila en un lenguaje intermedio (IL) que guarda conformidad con la especificación de CLI. El código y los recursos IL, como mapas de bits y cadenas, se almacenan en disco en un archivo ejecutable denominado ensamblado, normalmente con la extensión .exe o .dll. Un ensamblado contiene un manifiesto que proporciona información sobre los tipos, la versión, la referencia cultural y los requisitos de seguridad del ensamblado.\\Cuando se ejecuta el programa de C\#, el ensamblado se carga en el CLR, el cual podría realizar diversas acciones en función de la información en el manifiesto. Luego, si se cumplen los requisitos de seguridad, el CLR realiza la compilación Just in time (JIT) para convertir el código IL en instrucciones máquina nativas. El CLR también proporciona otros servicios relacionados con la recolección de elementos no utilizados, el control de excepciones y la administración de recursos. El código que se ejecuta en el CLR se conoce a veces como "código administrado", a diferencia del "código no administrado" que se compila en lenguaje de máquina nativo destinado a un sistema específico. En el siguiente diagrama se ilustran las relaciones de tiempo de compilación y tiempo de ejecución de archivos de código fuente de C\#, las bibliotecas de clases de .NET Framework, los ensamblados y el CLR.\\Ninguno de los compiladores que generan código para la plataforma .NET produce código máquina para CPUs x86 ni para ningún otro tipo de CPU concreta, sino que generan código escrito en el lenguaje intermedio conocido como Microsoft Intermediate Lenguage (MSIL) El CLR da a las aplicaciones la sensación de que se están ejecutando sobre una máquina virtual, y precisamente MSIL es el código máquina de esa máquina virtual. Es decir, MSIL es el único código que es capaz de interpretar el CLR, y por tanto cuando se dice que un compilador genera código para la plataforma .NET lo que se está diciendo es que genera MSIL.\\MSIL ha sido creado por Microsoft tras consultar a numerosos especialistas en la escritura de compiladores y lenguajes tanto del mundo académico como empresarial. Es un lenguaje de un nivel de abstracción mucho más alto que el de la mayoría de los códigos máquina de las CPUs existentes, e incluye instrucciones que permiten trabajar directamente con objetos (crearlos, destruirlos, inicializarlos, llamar a métodos virtuales, etc.), tablas y excepciones (lanzarlas, capturarlas y tratarlas).
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=15cm]{Csh_Imagenes/Compilacion.png}
+\caption{Compilación en C\#}
+\end{figure}
+\section{Assemblies}
+Los assemblies son los bloques de construcción de las aplicaciones del framework .NET. Un assembly es una colección de tipos y recursos que están construidos para trabajar en conjunto y formar la unidad lógica de la funcionalidad del programa.\\Todos los tipos en .NET Framework deben existir en assemblies; el tiempo de ejecución de idioma común no admite tipos fuera de ensamblados. Cada vez que crea una aplicación de Microsoft Windows, un servicio de Windows, una biblioteca de clases u otra aplicación con Visual Basic .NET, está creando un solo assembly. Cada assembly se almacena como un archivo .exe o .dll.\\Aunque es técnicamente posible crear assemblies que abarquen múltiples archivos, no es probable que use esta tecnología en la mayoría de las situaciones.\\.NET Framework usa assemblies como la unidad fundamental para varios propósitos:\\•Seguridad\\•Tipo de identidad\\•Versiones\\•Desarrollo
+
+\chapter{Introducción a Visual Studio 2017 y C\# }
+\section{Características de C\#}
+C\# es un lenguaje de programación orientado a objetos, al ser posterior a C++ y Java. los lenguajes de programación orientados a objetos más conocidos hasta entonces, C\# combina y mejora gran parte de las características más interesantes de ambos lenguajes. Por tanto, un programador que conozca C\# a fondo no tendrá problemas para programar tanto en C++ como en Java, sus anteccesores.\\El nombre fue inspirado por la notación musical '\#' (llamada sostenido, en inglés Sharp) que indica que la nota es de un tono más alto. Se puede utilizar C\# para crear aplicaciones cliente de Windows, servicios Web XML, componentes distribuidos, aplicaciones cliente-servidor, aplicaciones de base de datos, y mucho, mucho más.\\Para poder crear programas en C\# y ejecutarlos posteriormente, es necesario tener instalado en el PC los siguientes paquetes:\\\\\textbf{.NET Framework SDK:} Es el kit de desarrollo e incluye un compilador de línea de C\# y bibliotecas que contienen una amplia colección de clases previamente definidas que podemos utilizar en nuestras aplicaciones; es decir, contiene todo lo necesario para poder crear y compilar nuestros programas.\\\textbf{.NET Framework Redistributable Package: } Permite la ejecución de programas creados en C\#. Esto es necesario porque la compilación de C\# no genera, como habitualmente para otros lenguajes, código máquina, sino un código escrito en un lenguaje propio de Microsoft: MSIL (Microsoft Intermediate Language). El CLR (Common Language Runtime) es el núcleo de la plataforma .NET y se encarga de gestionar la ejecución de los programas escritos en MSIL, ambos se pueden descargar gratuitamente desde la página web de la Red de Desarrolladores para Microsoft (Microsoft Developers Network) :\\ \textbf{https://www.microsoft.com/es-mx/download}\\\\También pueden crearse programas mediante la herramienta Visual Studio(Incluye en su instalación dichos paquetes), que ofrece un interfaz gráfico muy amigable y cómodo de utilizar, esta herramienta cuenta con una versión de paga y una gratuita (Community) y se puede descargar directamente desde la página oficial.\\\textbf{https://visualstudio.microsoft.com/es/}\\\\En la figura 2.2 se muestra un menú de paquetes complementarios que podemos descargar, si sólo queremos desarrollar en C\# basta con seleccionar los primeros dos paquetes.
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=16cm]{Csh_Imagenes/Descarga1.png}
+\caption{Página oficial para descargar Visual Studio}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=16cm]{Csh_Imagenes/Instalacion.png}
+\caption{}
+\end{figure}
+\section{Estructura de un programa}
+C\# es un lenguaje orientado a objetos. En cualquier programa en C\# debe existir al menos una clase que contenga un método llamado \textbf{Main}. Este método constituye lo que se denomina punto de entrada, y define por dónde ha de comenzar a ejecutarse la aplicación: la primera instrucción ejecutada será la primera instrucción del método \textbf{Main}.\\El siguiente ejemplo muestra el programa más simple que puede crearse en C\#.
+\begin{lstlisting}
+using System;
+//Usamos el espacio de nombres System
+class Ejemplo1 {
+	static void Main() {
+	
+	}
+}
+\end{lstlisting}
+Para crear una clase hay que escribir la palabra reservada \textbf{class} seguida del nombre que queremos darle. A continuacion entre llaves, aparecerán los métodos y atributos de dicha clase. En este ejemplo hemos creado la clase \textit{Ejemplo1}, que no incluye ningún atributo y contiene un solo método, de nombre \textbf{Main}. Como hemos dicho, todo programa en C\# debe contener al menos una clase con un método llamado \textbf{Main}.\\\\Es importante aclarar que C\# se distinguen las mayúsculas de las minúsculas, algo que no curre en todos los lenguajes de programación. Así, el punto de entrada ha de llamarse \textit{Main} y no \textit{main} o \textit{MAIN} o ninguna otra variante.\\\\Como para cualquier otro método existen varias alternativas válidas oara crear la declaración del método \textbf{Main}. Algunas son: \\\\\textit{public static int Main()\\public static void Main(string[] args)\\static int Main(string[] args)}\\\\La palabra \textbf{public} indica que el método es público, es decir, puede ser utilizado por otra clase (si no se pone nada, se considerará privado por defecto). La palabra \textbf{static} indica que que el método está asociado a la clase a la que pertebece y no a los objetos que se creen de dicha clase. En tercer lugar, aparece el tipo de la información que devuelve el método: \textbf{int} indoca que devuelve un dato de tipo entero; \textbf{void}  indica que no se devuelve nungún valor. A continuación del nombre del método, que para el punto de netrada siempre es \textbf{Main}, aparecen entre paréntesis los argumentos o datos de entrada de este método, es decir, la información de la partida que requiere. Esta sección puede estra vacía.\\\\Por el momento dado los escasos conocimientos que aún tenemos, será suficiente con que el punto de entrada sea estático, no tenga argumentos y no devuelva ningún valor, tal y como se declaró en el ejemplo.
+\section{Compilación y ejecución}
+La compilación y ejecución usando Visual Studio resulta ser muy sencilla sin embrago se explicará el proceso con dicha herramienta y sin ella.\\Para compilar nos vamos al menú que se encuentra en la parte superior de la ventana de C\# y damos click en la pestaña donde dice Compilar, posteriormente se nos abrirá un menú en el cual seleccionaremos la opción de compilar solución. Al hacer dicho paso en la parte inferior aparecerá otra ventana conocida como la ventana de salida o de output donde se nos informará de todos los errores en nuestro programa antes de ejecutarlo. Una vez compilado nuestro programa nos vamos a la ventana superior y damos click en la pestaña donde dice depurar, al abrirse el menú seleccionamos la opción de iniciar sin depurar y se nos abrirá la ventana de comandos con nuestro programa en ejecución.
+
+%Á á, É é, Í í,Ó ó,Ú ú,Ü ü,Ñ ñ, ¿, ¡ ``
+\chapter{Tipos predefinidos y control de flujo}
+\section{Tipos predefinidos de C\#}
+\section{Tipos de referencia}
+\section{Sentencias condicionales}
+\section{Ciclos de repetición}
+
+\chapter{Clases y Objetos}
+\section{Conceptos básicos de POO}
+\section{Creación de clases}
+\section{Constructores}
+\section{Propiedades}
+\section{Atributos y métodos de instancia}
+\section{Miembros estáticos}
+\section{Estructuras}
+\section{Tipos de referencia vs Tipos de valor}
+\section{Clases estáticas y métodos de acceso}
+
+\chapter{Control de Acceso}
+\section{Namespaces}
+\section{Encapsulamiento y modificadores de acceso}
+\section{Métodos accesores vs propiedades}
+
+\chapter{Arreglos}
+\section{Sintaxis y uso de arreglos}
+\section{Arreglos multidimensionales}
+\section{Clase Array}
+
+\chapter{Objetos y métodos}
+\section{Sobrecarga de métodos}
+\section{Comparación de objetos}
+\section{Tipos anónimos}
+\section{Lista de parámetros variables}
+\section{Modificadores de parámetros out y ref}
+\section{Llamada de parámetros con nombre}
+
+\chapter{Polimorfismo}
+\section{Concepto de polimorfismo}
+\section{Interfaces y su implementación}
+\section{Relación de subtipos y supertipos}
+
+\chapter{Herencia}
+\section{Herencia (is-a relationship)}
+\section{Métodos virtuales}
+\section{Palabras reservadas virtual y override}
+\section{Clases abstractas y clases selladas}
+\section{Clase Object}
+
+\part{C\# Intermedio}
+
+\chapter{Excepciones}
+\section{Clase Exception}
+\section{Bloque try-catch-finally}
+\section{Definición de una excepción}
+\section{Relanzar Excepciones}
+
+\chapter{Strings}
+\section{String vs StringBuilder}
+\section{Formato de una cadena}
+	
+\chapter{Manejo de archivos}
+\section{Archivos y flujos}
+\section{Manejo de sistema de archivos}
+\section{Clases File, FileInfo, Directory, DirectoryInfo}
+\section{Lectura y escritura de archivos}
+
+\chapter{Genéricos}
+\section{Necesidad de tipos genéricos}
+\section{Métodos genéricos}
+\section{Clases genéricas}
+
+\chapter{Colecciones}
+\section{Listas y Diccionarios}
+
+\chapter{Concurrencia}
+\section{Clases Thread y Parallel}
+\section{Tasks}
+\section{Sincronización}
+
+\chapter{Lambdas, Delegados y Eventos}
+\section{Expresiones Lambda}
+\section{Introducción a delegados y eventos}
+\section{Creación y uso de delegados}
+\section{Multicast delegate}
+\section{Uso de eventos}
+\section{Clase EventArg}
+
+\chapter{LINQ (Checar Entity Framework)}
+\section{Introducción a LINQ}
+\section{Query syntax}
+\section{Métodos de extensión}
+\section{Operaciones estándar de consulta}
+
+\part{C\# Avanzado}
+\chapter{ Interfaces gráficas de usuario con Windows Forms}
+\section{Introducción a las GUIs}
+\section{Manejo básico de eventos}
+\section{Propiedades de los controles y Layouts}
+
+\chapter{Controles de Windows Forms}
+\section{Labels, TextBox y Buttons}
+\section{GroupBox y Panel}
+\section{CheckBox y RadioButton}
+\section{PictureBox}
+\section{ToolTips}
+\section{MouseEvents y KeyboardEvents}
+\section{ProgressBar}
+\section{Menu}
+\section{MonthCalendar}
+\section{DataTimePicker}
+\section{LinkLabel}
+\section{ListBox, CheckedListBox y ComboBox}
+\section{ListView}
+\section{TabControl}
+\section{Chart}
+
+\chapter{Introducción a Programación Asíncrona}
+\section{Métodos asíncronos}
+\section{Palabras async y await}
+
+\chapter{WPF (Windows Presentation Foundation)}
+\section{¿Qué es WPF?}
+\section{Diferencias entre WPF y Windows Forms}
+\section{Mi primera aplicación con WPF}
+
+\chapter{Bases de datos con LINQ}
+\section{Introducción a las bases de datos relacionales}
+\section{LINQ to Entities y ADO.NET}
+\section{Operaciones CRUD}
+
+\chapter{Control de versiones con Team Explorer y Git}
+\section{Configuración de Git y Team explorer}
+\section{Manejo de ramas}
+\section{Commit}
+
+
+\end{document}
+
+%Á á, É é, Í í,Ó ó,Ú ú,Ü ü,Ñ ñ, ¿, ¡ ``
