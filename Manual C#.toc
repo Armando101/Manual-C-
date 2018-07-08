@@ -1,0 +1,123 @@
+\select@language {spanish}
+\contentsline {part}{I\hspace {1em}C\# B\IeC {\'a}sico}{6}
+\contentsline {chapter}{\numberline {1}La arquitectura .NET}{7}
+\contentsline {section}{\numberline {1.1}C\# y su lugar dentro de .NET}{7}
+\contentsline {section}{\numberline {1.2}Common Language Runtime}{7}
+\contentsline {section}{\numberline {1.3}Microsoft Intermediate Language}{8}
+\contentsline {section}{\numberline {1.4}Assemblies}{10}
+\contentsline {chapter}{\numberline {2}Introducci\IeC {\'o}n a Visual Studio 2017 y C\# }{11}
+\contentsline {section}{\numberline {2.1}Caracter\IeC {\'\i }sticas de C\#}{11}
+\contentsline {section}{\numberline {2.2}Estructura de un programa}{14}
+\contentsline {section}{\numberline {2.3}Compilaci\IeC {\'o}n y ejecuci\IeC {\'o}n}{15}
+\contentsline {chapter}{\numberline {3}Tipos predefinidos y control de flujo}{16}
+\contentsline {section}{\numberline {3.1}Tipos predefinidos de C\#}{16}
+\contentsline {section}{\numberline {3.2}Tipos de referencia}{16}
+\contentsline {section}{\numberline {3.3}Sentencias condicionales}{16}
+\contentsline {section}{\numberline {3.4}Ciclos de repetici\IeC {\'o}n}{16}
+\contentsline {chapter}{\numberline {4}Clases y Objetos}{17}
+\contentsline {section}{\numberline {4.1}Conceptos b\IeC {\'a}sicos de POO}{17}
+\contentsline {section}{\numberline {4.2}Creaci\IeC {\'o}n de clases}{17}
+\contentsline {section}{\numberline {4.3}Constructores}{17}
+\contentsline {section}{\numberline {4.4}Propiedades}{17}
+\contentsline {section}{\numberline {4.5}Atributos y m\IeC {\'e}todos de instancia}{17}
+\contentsline {section}{\numberline {4.6}Miembros est\IeC {\'a}ticos}{17}
+\contentsline {section}{\numberline {4.7}Estructuras}{17}
+\contentsline {section}{\numberline {4.8}Tipos de referencia vs Tipos de valor}{17}
+\contentsline {section}{\numberline {4.9}Clases est\IeC {\'a}ticas y m\IeC {\'e}todos de acceso}{17}
+\contentsline {chapter}{\numberline {5}Control de Acceso}{18}
+\contentsline {section}{\numberline {5.1}Namespaces}{18}
+\contentsline {section}{\numberline {5.2}Encapsulamiento y modificadores de acceso}{18}
+\contentsline {section}{\numberline {5.3}M\IeC {\'e}todos accesores vs propiedades}{18}
+\contentsline {chapter}{\numberline {6}Arreglos}{19}
+\contentsline {section}{\numberline {6.1}Sintaxis y uso de arreglos}{19}
+\contentsline {section}{\numberline {6.2}Arreglos multidimensionales}{19}
+\contentsline {section}{\numberline {6.3}Clase Array}{19}
+\contentsline {chapter}{\numberline {7}Objetos y m\IeC {\'e}todos}{20}
+\contentsline {section}{\numberline {7.1}Sobrecarga de m\IeC {\'e}todos}{20}
+\contentsline {section}{\numberline {7.2}Comparaci\IeC {\'o}n de objetos}{20}
+\contentsline {section}{\numberline {7.3}Tipos an\IeC {\'o}nimos}{20}
+\contentsline {section}{\numberline {7.4}Lista de par\IeC {\'a}metros variables}{20}
+\contentsline {section}{\numberline {7.5}Modificadores de par\IeC {\'a}metros out y ref}{20}
+\contentsline {section}{\numberline {7.6}Llamada de par\IeC {\'a}metros con nombre}{20}
+\contentsline {chapter}{\numberline {8}Polimorfismo}{21}
+\contentsline {section}{\numberline {8.1}Concepto de polimorfismo}{21}
+\contentsline {section}{\numberline {8.2}Interfaces y su implementaci\IeC {\'o}n}{21}
+\contentsline {section}{\numberline {8.3}Relaci\IeC {\'o}n de subtipos y supertipos}{21}
+\contentsline {chapter}{\numberline {9}Herencia}{22}
+\contentsline {section}{\numberline {9.1}Herencia (is-a relationship)}{22}
+\contentsline {section}{\numberline {9.2}M\IeC {\'e}todos virtuales}{22}
+\contentsline {section}{\numberline {9.3}Palabras reservadas virtual y override}{22}
+\contentsline {section}{\numberline {9.4}Clases abstractas y clases selladas}{22}
+\contentsline {section}{\numberline {9.5}Clase Object}{22}
+\contentsline {part}{II\hspace {1em}C\# Intermedio}{23}
+\contentsline {chapter}{\numberline {10}Excepciones}{24}
+\contentsline {section}{\numberline {10.1}Clase Exception}{24}
+\contentsline {section}{\numberline {10.2}Bloque try-catch-finally}{24}
+\contentsline {section}{\numberline {10.3}Definici\IeC {\'o}n de una excepci\IeC {\'o}n}{24}
+\contentsline {section}{\numberline {10.4}Relanzar Excepciones}{24}
+\contentsline {chapter}{\numberline {11}Strings}{25}
+\contentsline {section}{\numberline {11.1}String vs StringBuilder}{25}
+\contentsline {section}{\numberline {11.2}Formato de una cadena}{25}
+\contentsline {chapter}{\numberline {12}Manejo de archivos}{26}
+\contentsline {section}{\numberline {12.1}Archivos y flujos}{26}
+\contentsline {section}{\numberline {12.2}Manejo de sistema de archivos}{26}
+\contentsline {section}{\numberline {12.3}Clases File, FileInfo, Directory, DirectoryInfo}{26}
+\contentsline {section}{\numberline {12.4}Lectura y escritura de archivos}{26}
+\contentsline {chapter}{\numberline {13}Gen\IeC {\'e}ricos}{27}
+\contentsline {section}{\numberline {13.1}Necesidad de tipos gen\IeC {\'e}ricos}{27}
+\contentsline {section}{\numberline {13.2}M\IeC {\'e}todos gen\IeC {\'e}ricos}{27}
+\contentsline {section}{\numberline {13.3}Clases gen\IeC {\'e}ricas}{27}
+\contentsline {chapter}{\numberline {14}Colecciones}{28}
+\contentsline {section}{\numberline {14.1}Listas y Diccionarios}{28}
+\contentsline {chapter}{\numberline {15}Concurrencia}{29}
+\contentsline {section}{\numberline {15.1}Clases Thread y Parallel}{29}
+\contentsline {section}{\numberline {15.2}Tasks}{29}
+\contentsline {section}{\numberline {15.3}Sincronizaci\IeC {\'o}n}{29}
+\contentsline {chapter}{\numberline {16}Lambdas, Delegados y Eventos}{30}
+\contentsline {section}{\numberline {16.1}Expresiones Lambda}{30}
+\contentsline {section}{\numberline {16.2}Introducci\IeC {\'o}n a delegados y eventos}{30}
+\contentsline {section}{\numberline {16.3}Creaci\IeC {\'o}n y uso de delegados}{30}
+\contentsline {section}{\numberline {16.4}Multicast delegate}{30}
+\contentsline {section}{\numberline {16.5}Uso de eventos}{30}
+\contentsline {section}{\numberline {16.6}Clase EventArg}{30}
+\contentsline {chapter}{\numberline {17}LINQ (Checar Entity Framework)}{31}
+\contentsline {section}{\numberline {17.1}Introducci\IeC {\'o}n a LINQ}{31}
+\contentsline {section}{\numberline {17.2}Query syntax}{31}
+\contentsline {section}{\numberline {17.3}M\IeC {\'e}todos de extensi\IeC {\'o}n}{31}
+\contentsline {section}{\numberline {17.4}Operaciones est\IeC {\'a}ndar de consulta}{31}
+\contentsline {part}{III\hspace {1em}C\# Avanzado}{32}
+\contentsline {chapter}{\numberline {18} Interfaces gr\IeC {\'a}ficas de usuario con Windows Forms}{33}
+\contentsline {section}{\numberline {18.1}Introducci\IeC {\'o}n a las GUIs}{33}
+\contentsline {section}{\numberline {18.2}Manejo b\IeC {\'a}sico de eventos}{33}
+\contentsline {section}{\numberline {18.3}Propiedades de los controles y Layouts}{33}
+\contentsline {chapter}{\numberline {19}Controles de Windows Forms}{34}
+\contentsline {section}{\numberline {19.1}Labels, TextBox y Buttons}{35}
+\contentsline {section}{\numberline {19.2}GroupBox y Panel}{35}
+\contentsline {section}{\numberline {19.3}CheckBox y RadioButton}{35}
+\contentsline {section}{\numberline {19.4}PictureBox}{35}
+\contentsline {section}{\numberline {19.5}ToolTips}{35}
+\contentsline {section}{\numberline {19.6}MouseEvents y KeyboardEvents}{35}
+\contentsline {section}{\numberline {19.7}ProgressBar}{35}
+\contentsline {section}{\numberline {19.8}Menu}{35}
+\contentsline {section}{\numberline {19.9}MonthCalendar}{35}
+\contentsline {section}{\numberline {19.10}DataTimePicker}{35}
+\contentsline {section}{\numberline {19.11}LinkLabel}{35}
+\contentsline {section}{\numberline {19.12}ListBox, CheckedListBox y ComboBox}{35}
+\contentsline {section}{\numberline {19.13}ListView}{35}
+\contentsline {section}{\numberline {19.14}TabControl}{35}
+\contentsline {section}{\numberline {19.15}Chart}{35}
+\contentsline {chapter}{\numberline {20}Introducci\IeC {\'o}n a Programaci\IeC {\'o}n As\IeC {\'\i }ncrona}{36}
+\contentsline {section}{\numberline {20.1}M\IeC {\'e}todos as\IeC {\'\i }ncronos}{36}
+\contentsline {section}{\numberline {20.2}Palabras async y await}{36}
+\contentsline {chapter}{\numberline {21}WPF (Windows Presentation Foundation)}{37}
+\contentsline {section}{\numberline {21.1}\IeC {\textquestiondown }Qu\IeC {\'e} es WPF?}{37}
+\contentsline {section}{\numberline {21.2}Diferencias entre WPF y Windows Forms}{37}
+\contentsline {section}{\numberline {21.3}Mi primera aplicaci\IeC {\'o}n con WPF}{37}
+\contentsline {chapter}{\numberline {22}Bases de datos con LINQ}{38}
+\contentsline {section}{\numberline {22.1}Introducci\IeC {\'o}n a las bases de datos relacionales}{38}
+\contentsline {section}{\numberline {22.2}LINQ to Entities y ADO.NET}{38}
+\contentsline {section}{\numberline {22.3}Operaciones CRUD}{38}
+\contentsline {chapter}{\numberline {23}Control de versiones con Team Explorer y Git}{39}
+\contentsline {section}{\numberline {23.1}Configuraci\IeC {\'o}n de Git y Team explorer}{39}
+\contentsline {section}{\numberline {23.2}Manejo de ramas}{39}
+\contentsline {section}{\numberline {23.3}Commit}{39}
