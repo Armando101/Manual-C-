@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.7.6)  6 JUL 2018 00:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.7.6)  7 JUL 2018 22:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -496,23 +496,26 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(./Manual C#.aux)
+(./Manual C#.aux
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+)
 \openout1 = `"Manual C#.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Info: Redefining \. on input line 45.
-LaTeX Info: Redefining \% on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Info: Redefining \. on input line 46.
+LaTeX Info: Redefining \% on input line 46.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -577,48 +580,51 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count117
-LaTeX Font Info:    Try loading font information for U+msa on input line 46.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 46.
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}] (./Manual C
-#.toc [1
+#.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [1
 
 ] [2]
 [3]
-Overfull \hbox (3.00272pt too wide) detected at line 102
+Overfull \hbox (3.00272pt too wide) detected at line 103
 \OT1/cmr/m/n/12 19.10. 
  []
 
 
-Overfull \hbox (3.00272pt too wide) detected at line 103
+Overfull \hbox (3.00272pt too wide) detected at line 104
 \OT1/cmr/m/n/12 19.11. 
  []
 
 
-Overfull \hbox (3.00272pt too wide) detected at line 104
+Overfull \hbox (3.00272pt too wide) detected at line 105
 \OT1/cmr/m/n/12 19.12. 
  []
 
 
-Overfull \hbox (3.00272pt too wide) detected at line 105
+Overfull \hbox (3.00272pt too wide) detected at line 106
 \OT1/cmr/m/n/12 19.13. 
  []
 
 
-Overfull \hbox (3.00272pt too wide) detected at line 106
+Overfull \hbox (3.00272pt too wide) detected at line 107
 \OT1/cmr/m/n/12 19.14. 
  []
 
 
-Overfull \hbox (3.00272pt too wide) detected at line 107
+Overfull \hbox (3.00272pt too wide) detected at line 108
 \OT1/cmr/m/n/12 19.15. 
  []
 
@@ -633,11 +639,11 @@ Overfull \hbox (3.00272pt too wide) detected at line 107
 
 ]
 Cap\'{\i }tulo 1.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 55.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 56.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
@@ -647,30 +653,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
 File: Csh_Imagenes/Compilacion.png Graphic file (type png)
 
 <use Csh_Imagenes/Compilacion.png>
-Package pdftex.def Info: Csh_Imagenes/Compilacion.png used on input line 63.
+Package pdftex.def Info: Csh_Imagenes/Compilacion.png used on input line 64.
 (pdftex.def)             Requested size: 426.79134pt x 227.90846pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 63--64
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 64--65
  [][] 
  []
 
 [8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 67.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
  [9 <./Csh_Imagenes/Compilacion.png>] [10]
 Cap\'{\i }tulo 2.
 <Csh_Imagenes/Descarga1.png, id=45, 1284.8pt x 803.0pt>
 File: Csh_Imagenes/Descarga1.png Graphic file (type png)
 
 <use Csh_Imagenes/Descarga1.png>
-Package pdftex.def Info: Csh_Imagenes/Descarga1.png used on input line 74.
+Package pdftex.def Info: Csh_Imagenes/Descarga1.png used on input line 75.
 (pdftex.def)             Requested size: 455.24408pt x 284.52174pt.
 
-Overfull \hbox (65.24408pt too wide) in paragraph at lines 74--75
+Overfull \hbox (65.24408pt too wide) in paragraph at lines 75--76
  [][] 
  []
 
@@ -678,183 +684,369 @@ Overfull \hbox (65.24408pt too wide) in paragraph at lines 74--75
 File: Csh_Imagenes/Instalacion.png Graphic file (type png)
 
 <use Csh_Imagenes/Instalacion.png>
-Package pdftex.def Info: Csh_Imagenes/Instalacion.png used on input line 79.
+Package pdftex.def Info: Csh_Imagenes/Instalacion.png used on input line 80.
 (pdftex.def)             Requested size: 455.24408pt x 284.52174pt.
 
-Overfull \hbox (65.24408pt too wide) in paragraph at lines 79--80
+Overfull \hbox (65.24408pt too wide) in paragraph at lines 80--81
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--82
+Underfull \hbox (badness 10000) in paragraph at lines 72--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--82
+Underfull \hbox (badness 10000) in paragraph at lines 72--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--82
+Underfull \hbox (badness 10000) in paragraph at lines 72--83
 
  []
 
 [11
 
-] [12 <./Csh_Imagenes/Descarga1.png>] [13 <./Csh_Imagenes/Instalacion.png>]
+] <Csh_Imagenes/Menu_sup.PNG, id=50, 493.845pt x 61.73062pt>
+File: Csh_Imagenes/Menu_sup.PNG Graphic file (type png)
+
+<use Csh_Imagenes/Menu_sup.PNG>
+Package pdftex.def Info: Csh_Imagenes/Menu_sup.PNG used on input line 87.
+(pdftex.def)             Requested size: 455.24408pt x 56.90492pt.
+
+Overfull \hbox (65.24408pt too wide) in paragraph at lines 87--88
+ [][] 
+ []
+
+<Csh_Imagenes/ConsoleApp.PNG, id=51, 709.14937pt x 451.6875pt>
+File: Csh_Imagenes/ConsoleApp.PNG Graphic file (type png)
+
+<use Csh_Imagenes/ConsoleApp.PNG>
+Package pdftex.def Info: Csh_Imagenes/ConsoleApp.PNG used on input line 92.
+(pdftex.def)             Requested size: 455.24408pt x 289.9681pt.
+
+Overfull \hbox (65.24408pt too wide) in paragraph at lines 92--93
+ [][] 
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 95.
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--96
+
+ []
+
+
+Overfull \hbox (43.30537pt too wide) in paragraph at lines 84--96
+\OT1/cmr/bx/n/12 path=$ $%path$ $%;C:\OMS/cmsy/b/n/12 n\OT1/cmr/bx/n/12 Windows
+\OMS/cmsy/b/n/12 n\OT1/cmr/bx/n/12 Microsoft.NET\OMS/cmsy/b/n/12 n\OT1/cmr/bx/n
+/12 Framework\OMS/cmsy/b/n/12 n\OT1/cmr/bx/n/12 vX.X.XXXXX\OT1/cmr/m/n/12 . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--96
+
+ []
+
+[12 <./Csh_Imagenes/Descarga1.png>] [13 <./Csh_Imagenes/Instalacion.png>]
+[14 <./Csh_Imagenes/Menu_sup.PNG> <./Csh_Imagenes/ConsoleApp.PNG>]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
-[14] [15]
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+[15] [16] [17]
 Cap\'{\i }tulo 3.
-[16
 
-]
-Cap\'{\i }tulo 4.
-[17
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
-]
-Cap\'{\i }tulo 5.
+ []
+
+<Csh_Imagenes/Tabla_Tipos.PNG, id=78, 307.90031pt x 521.69907pt>
+File: Csh_Imagenes/Tabla_Tipos.PNG Graphic file (type png)
+
+<use Csh_Imagenes/Tabla_Tipos.PNG>
+Package pdftex.def Info: Csh_Imagenes/Tabla_Tipos.PNG used on input line 118.
+(pdftex.def)             Requested size: 227.62204pt x 385.68507pt.
+
+<Csh_Imagenes/op_condicionales.PNG, id=79, 450.9347pt x 301.8778pt>
+File: Csh_Imagenes/op_condicionales.PNG Graphic file (type png)
+
+<use Csh_Imagenes/op_condicionales.PNG>
+Package pdftex.def Info: Csh_Imagenes/op_condicionales.PNG used on input line 1
+23.
+(pdftex.def)             Requested size: 455.24408pt x 304.779pt.
+
+Overfull \hbox (65.24408pt too wide) in paragraph at lines 123--124
+ [][] 
+ []
+
+<Csh_Imagenes/op_igualdad.PNG, id=80, 304.13625pt x 121.20282pt>
+File: Csh_Imagenes/op_igualdad.PNG Graphic file (type png)
+
+<use Csh_Imagenes/op_igualdad.PNG>
+Package pdftex.def Info: Csh_Imagenes/op_igualdad.PNG used on input line 128.
+(pdftex.def)             Requested size: 455.24408pt x 181.42648pt.
+
+Overfull \hbox (65.24408pt too wide) in paragraph at lines 128--129
+ [][] 
+ []
+
+<Csh_Imagenes/op_relacionales.PNG, id=81, 350.81062pt x 253.69781pt>
+File: Csh_Imagenes/op_relacionales.PNG Graphic file (type png)
+
+<use Csh_Imagenes/op_relacionales.PNG>
+Package pdftex.def Info: Csh_Imagenes/op_relacionales.PNG used on input line 13
+3.
+(pdftex.def)             Requested size: 455.24408pt x 329.2458pt.
+
+Overfull \hbox (65.24408pt too wide) in paragraph at lines 133--134
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
 [18
 
-]
-Cap\'{\i }tulo 6.
-[19
+] [19 <./Csh_Imagenes/Tabla_Tipos.PNG>] [20 <./Csh_Imagenes/op_condicionales.PN
+G> <./Csh_Imagenes/op_igualdad.PNG>] [21 <./Csh_Imagenes/op_relacionales.PNG>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 145.
 
-]
-Cap\'{\i }tulo 7.
-[20
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 145.
 
-]
-Cap\'{\i }tulo 8.
-[21
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
-]
-Cap\'{\i }tulo 9.
-[22
+ []
 
-] [23
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
-]
-Cap\'{\i }tulo 10.
-[24
+ []
 
-]
-Cap\'{\i }tulo 11.
-[25
 
-]
-Cap\'{\i }tulo 12.
-[26
+Underfull \hbox (badness 10000) in paragraph at lines 181--183
 
-]
-Cap\'{\i }tulo 13.
-[27
+ []
 
-]
-Cap\'{\i }tulo 14.
-[28
 
-]
-Cap\'{\i }tulo 15.
-[29
+Underfull \hbox (badness 10000) in paragraph at lines 181--183
 
-]
-Cap\'{\i }tulo 16.
+ []
+
+[23] [24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 284--287
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--287
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--300
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
+
+ []
+
+[28] [29]
+Cap\'{\i }tulo 4.
 [30
 
 ]
-Cap\'{\i }tulo 17.
+Cap\'{\i }tulo 5.
 [31
 
-] [32
+]
+Cap\'{\i }tulo 6.
+[32
+
+]
+Cap\'{\i }tulo 7.
+[33
+
+]
+Cap\'{\i }tulo 8.
+[34
+
+]
+Cap\'{\i }tulo 9.
+[35
+
+] [36
+
+]
+Cap\'{\i }tulo 10.
+[37
+
+]
+Cap\'{\i }tulo 11.
+[38
+
+]
+Cap\'{\i }tulo 12.
+[39
+
+]
+Cap\'{\i }tulo 13.
+[40
+
+]
+Cap\'{\i }tulo 14.
+[41
+
+]
+Cap\'{\i }tulo 15.
+[42
+
+]
+Cap\'{\i }tulo 16.
+[43
+
+]
+Cap\'{\i }tulo 17.
+[44
+
+] [45
 
 ]
 Cap\'{\i }tulo 18.
-[33
+[46
 
 ]
 Cap\'{\i }tulo 19.
 
-Overfull \hbox (3.8179pt too wide) in paragraph at lines 208--208
+Overfull \hbox (3.8179pt too wide) in paragraph at lines 443--443
 []\OT1/cmr/bx/n/17.28 ListBox, Chec-ked-List-Box y Com-bo-Box 
  []
 
-[34
+[47
 
 ]
 Overfull \vbox (98.2502pt too high) has occurred while \output is active []
 
 
-[35]
+[48]
 Cap\'{\i }tulo 20.
-[36
+[49
 
 ]
 Cap\'{\i }tulo 21.
 
-Overfull \hbox (14.31172pt too wide) in paragraph at lines 219--219
+Overfull \hbox (14.31172pt too wide) in paragraph at lines 454--454
 []\OT1/cmr/bx/n/17.28 Diferencias en-tre WPF y Win-dows Forms 
  []
 
-[37
+[50
 
 ]
 Cap\'{\i }tulo 22.
-[38
+[51
 
 ]
 Cap\'{\i }tulo 23.
-[39
+[52
 
 ] (./Manual C#.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 5332 strings out of 493034
- 68499 string characters out of 6136881
- 168407 words of memory out of 5000000
- 8791 multiletter control sequences out of 15000+600000
- 13762 words of font info for 53 fonts, out of 8000000 for 9000
+ 5475 strings out of 493034
+ 70946 string characters out of 6136881
+ 278407 words of memory out of 5000000
+ 8921 multiletter control sequences out of 15000+600000
+ 14662 words of font info for 57 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 37i,7n,36p,3159b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on "Manual C#.pdf" (40 pages, 862734 bytes).
+ 37i,7n,36p,3159b,1635s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/latxfont/lasy10.pfb>
+Output written on "Manual C#.pdf" (53 pages, 995086 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 235 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
