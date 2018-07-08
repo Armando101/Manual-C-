@@ -80,6 +80,7 @@ C\# es un lenguaje de programación orientado a objetos, al ser posterior a C++ 
 \caption{}
 \end{figure}
 \section{Estructura de un programa}
+<<<<<<< HEAD
 Al abrir Visual Studio en la parte superior podemos observar un menú, para empezar un nuevo proyecto hacemos click en la pestaña de Archivo, posteriormente seleccionamos la opción de nuevo y después proyecto, también podemos presionar la combinación de teclas Ctrl+Mayus+N. Se nos abrirá una ventana en la cual seleccionaremos la opción << Aplicacion de Consola >> y procedemos a darle un nombre a nuestro proyecto y damos click en aceptar. Ver las figuras....................................
 \begin{figure}[hbtp]
 \centering
@@ -96,6 +97,9 @@ Al abrir Visual Studio en la parte superior podemos observar un menú, para empe
 C\# es un lenguaje orientado a objetos. En cualquier programa en C\# debe existir al menos una clase que contenga un método llamado \textbf{Main}. Este método constituye lo que se denomina punto de entrada, y define por dónde ha de comenzar a ejecutarse la aplicación: la primera instrucción ejecutada será la primera instrucción del método \textbf{Main}.\\El siguiente ejemplo muestra el programa más simple que puede crearse en C\#\\\\.
 
 \textfb{Ejemplo 1}
+=======
+C\# es un lenguaje orientado a objetos. En cualquier programa en C\# debe existir al menos una clase que contenga un método llamado \textbf{Main}. Este método constituye lo que se denomina punto de entrada, y define por dónde ha de comenzar a ejecutarse la aplicación: la primera instrucción ejecutada será la primera instrucción del método \textbf{Main}.\\El siguiente ejemplo muestra el programa más simple que puede crearse en C\#.
+>>>>>>> 8eae1ec775ca7c69208c159263e38d00a2f6cdfe
 \begin{lstlisting}
 using System;
 //Usamos el espacio de nombres System
@@ -107,6 +111,7 @@ class Ejemplo1 {
 \end{lstlisting}
 Para crear una clase hay que escribir la palabra reservada \textbf{class} seguida del nombre que queremos darle. A continuacion entre llaves, aparecerán los métodos y atributos de dicha clase. En este ejemplo hemos creado la clase \textit{Ejemplo1}, que no incluye ningún atributo y contiene un solo método, de nombre \textbf{Main}. Como hemos dicho, todo programa en C\# debe contener al menos una clase con un método llamado \textbf{Main}.\\\\Es importante aclarar que C\# se distinguen las mayúsculas de las minúsculas, algo que no curre en todos los lenguajes de programación. Así, el punto de entrada ha de llamarse \textit{Main} y no \textit{main} o \textit{MAIN} o ninguna otra variante.\\\\Como para cualquier otro método existen varias alternativas válidas oara crear la declaración del método \textbf{Main}. Algunas son: \\\\\textit{public static int Main()\\public static void Main(string[] args)\\static int Main(string[] args)}\\\\La palabra \textbf{public} indica que el método es público, es decir, puede ser utilizado por otra clase (si no se pone nada, se considerará privado por defecto). La palabra \textbf{static} indica que que el método está asociado a la clase a la que pertebece y no a los objetos que se creen de dicha clase. En tercer lugar, aparece el tipo de la información que devuelve el método: \textbf{int} indoca que devuelve un dato de tipo entero; \textbf{void}  indica que no se devuelve nungún valor. A continuación del nombre del método, que para el punto de netrada siempre es \textbf{Main}, aparecen entre paréntesis los argumentos o datos de entrada de este método, es decir, la información de la partida que requiere. Esta sección puede estra vacía.\\\\Por el momento dado los escasos conocimientos que aún tenemos, será suficiente con que el punto de entrada sea estático, no tenga argumentos y no devuelva ningún valor, tal y como se declaró en el ejemplo.
 \section{Compilación y ejecución}
+<<<<<<< HEAD
 La compilación y ejecución usando Visual Studio resulta ser muy sencilla sin embrago se explicará el proceso con dicha herramienta y sin ella.\\Para compilar nos vamos al menú que se encuentra en la parte superior de la ventana de C\# y damos click en la pestaña donde dice Compilar, posteriormente se nos abrirá un menú en el cual seleccionaremos la opción de compilar solución. Al hacer dicho paso en la parte inferior aparecerá otra ventana conocida como la ventana de salida o de output donde se nos informará de todos los errores en nuestro programa antes de ejecutarlo. Una vez compilado nuestro programa nos vamos a la ventana superior y damos click en la pestaña donde dice depurar, al abrirse el menú seleccionamos la opción de iniciar sin depurar y se nos abrirá la ventana de comandos con nuestro programa en ejecución.\\Para compilar un programa sin Visual Studio nos vamos a la carpeta csharp creada en la sección pasada desde la cmd, para hacer esto abrimos la ventana de comandos y escribimos \textbf{cd c:\csharp} y pulsamos intro, despues escribimos \textbf{csc Ejemplo1.cs} si sólo arroja un mensaje en el que nos indique la versión del compilador que se está utilizando, así como la version del Framework que está instalada significa que el código ha sido compilado con éxito, para ejecutar nuestro programa escribimos el nombre de éste sin la extensión .cs.
 
 
@@ -236,6 +241,15 @@ class Ejemplo_Switch
 }
 \end{lstlisting}
 %Á á, É é, Í í,Ó ó,Ú ú,Ü ü,Ñ ñ, ¿, ¡ ``
+=======
+La compilación y ejecución usando Visual Studio resulta ser muy sencilla sin embrago se explicará el proceso con dicha herramienta y sin ella.\\Para compilar nos vamos al menú que se encuentra en la parte superior de la ventana de C\# y damos click en la pestaña donde dice Compilar, posteriormente se nos abrirá un menú en el cual seleccionaremos la opción de compilar solución. Al hacer dicho paso en la parte inferior aparecerá otra ventana conocida como la ventana de salida o de output donde se nos informará de todos los errores en nuestro programa antes de ejecutarlo. Una vez compilado nuestro programa nos vamos a la ventana superior y damos click en la pestaña donde dice depurar, al abrirse el menú seleccionamos la opción de iniciar sin depurar y se nos abrirá la ventana de comandos con nuestro programa en ejecución.
+
+%Á á, É é, Í í,Ó ó,Ú ú,Ü ü,Ñ ñ, ¿, ¡ ``
+\chapter{Tipos predefinidos y control de flujo}
+\section{Tipos predefinidos de C\#}
+\section{Tipos de referencia}
+\section{Sentencias condicionales}
+>>>>>>> 8eae1ec775ca7c69208c159263e38d00a2f6cdfe
 \section{Ciclos de repetición}
 
 \chapter{Clases y Objetos}
