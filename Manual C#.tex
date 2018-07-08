@@ -80,7 +80,26 @@ C\# es un lenguaje de programación orientado a objetos, al ser posterior a C++ 
 \caption{}
 \end{figure}
 \section{Estructura de un programa}
+<<<<<<< HEAD
+Al abrir Visual Studio en la parte superior podemos observar un menú, para empezar un nuevo proyecto hacemos click en la pestaña de Archivo, posteriormente seleccionamos la opción de nuevo y después proyecto, también podemos presionar la combinación de teclas Ctrl+Mayus+N. Se nos abrirá una ventana en la cual seleccionaremos la opción << Aplicacion de Consola >> y procedemos a darle un nombre a nuestro proyecto y damos click en aceptar. Ver las figuras....................................
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=16cm]{Csh_Imagenes/Menu_sup.png}
+\caption{}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=16cm]{Csh_Imagenes/ConsoleApp.png}
+\caption{}
+\end{figure}
+\\\\Para crear un proyecto sin Visual Studio necesitamos un editor de texto plano y los paquetes antes mencionados. Creamos una carpeta en el escrito llamada csharp, abrimos el block de notas y en este escribimos el código del ejemplo 1 con la extension \textit{.cs} y los guardamos dentro de la carpeta. Para poder compilar y ejecutar este programa necesitamos tener el comando \textit{csc} (el compilador de C\# incluido en la plataforma .NET) accsesible. Para ello hay que modificar la variable de entorno Path, que contiene las carpetas en las que el sistema busca los programas a los que se invoca desde la línea de comandos. El proceso es el siguiente:\\\\\textbf{1.-} Buscar el lugar donde está instalada nuestra versión de .NET El Lugar por defecto es en una carpeta de la forma vXXXXX (donde XXXXX representa el número de versión de .NET que hemos instalado) que puede encontrarse en:\\\textbf{C:\Windows\Microsoft.NET\Framework\vX.X.XXXXX}\\\\\textbf{2.-} Abrir la cmd, esto se puede hacer abriendo el explorador y poner cmd o presionar la combinacion de las teclas Windows + R y escribir cmd. En la ventana de comandos escribir:\\\textbf{path=%path%;C:\Windows\Microsoft.NET\Framework\vX.X.XXXXX}.
+\\El comando \textit{csc} ya debe estar accesible desde la línea de comandos.
+C\# es un lenguaje orientado a objetos. En cualquier programa en C\# debe existir al menos una clase que contenga un método llamado \textbf{Main}. Este método constituye lo que se denomina punto de entrada, y define por dónde ha de comenzar a ejecutarse la aplicación: la primera instrucción ejecutada será la primera instrucción del método \textbf{Main}.\\El siguiente ejemplo muestra el programa más simple que puede crearse en C\#\\\\.
+
+\textfb{Ejemplo 1}
+=======
 C\# es un lenguaje orientado a objetos. En cualquier programa en C\# debe existir al menos una clase que contenga un método llamado \textbf{Main}. Este método constituye lo que se denomina punto de entrada, y define por dónde ha de comenzar a ejecutarse la aplicación: la primera instrucción ejecutada será la primera instrucción del método \textbf{Main}.\\El siguiente ejemplo muestra el programa más simple que puede crearse en C\#.
+>>>>>>> 8eae1ec775ca7c69208c159263e38d00a2f6cdfe
 \begin{lstlisting}
 using System;
 //Usamos el espacio de nombres System
@@ -92,6 +111,137 @@ class Ejemplo1 {
 \end{lstlisting}
 Para crear una clase hay que escribir la palabra reservada \textbf{class} seguida del nombre que queremos darle. A continuacion entre llaves, aparecerán los métodos y atributos de dicha clase. En este ejemplo hemos creado la clase \textit{Ejemplo1}, que no incluye ningún atributo y contiene un solo método, de nombre \textbf{Main}. Como hemos dicho, todo programa en C\# debe contener al menos una clase con un método llamado \textbf{Main}.\\\\Es importante aclarar que C\# se distinguen las mayúsculas de las minúsculas, algo que no curre en todos los lenguajes de programación. Así, el punto de entrada ha de llamarse \textit{Main} y no \textit{main} o \textit{MAIN} o ninguna otra variante.\\\\Como para cualquier otro método existen varias alternativas válidas oara crear la declaración del método \textbf{Main}. Algunas son: \\\\\textit{public static int Main()\\public static void Main(string[] args)\\static int Main(string[] args)}\\\\La palabra \textbf{public} indica que el método es público, es decir, puede ser utilizado por otra clase (si no se pone nada, se considerará privado por defecto). La palabra \textbf{static} indica que que el método está asociado a la clase a la que pertebece y no a los objetos que se creen de dicha clase. En tercer lugar, aparece el tipo de la información que devuelve el método: \textbf{int} indoca que devuelve un dato de tipo entero; \textbf{void}  indica que no se devuelve nungún valor. A continuación del nombre del método, que para el punto de netrada siempre es \textbf{Main}, aparecen entre paréntesis los argumentos o datos de entrada de este método, es decir, la información de la partida que requiere. Esta sección puede estra vacía.\\\\Por el momento dado los escasos conocimientos que aún tenemos, será suficiente con que el punto de entrada sea estático, no tenga argumentos y no devuelva ningún valor, tal y como se declaró en el ejemplo.
 \section{Compilación y ejecución}
+<<<<<<< HEAD
+La compilación y ejecución usando Visual Studio resulta ser muy sencilla sin embrago se explicará el proceso con dicha herramienta y sin ella.\\Para compilar nos vamos al menú que se encuentra en la parte superior de la ventana de C\# y damos click en la pestaña donde dice Compilar, posteriormente se nos abrirá un menú en el cual seleccionaremos la opción de compilar solución. Al hacer dicho paso en la parte inferior aparecerá otra ventana conocida como la ventana de salida o de output donde se nos informará de todos los errores en nuestro programa antes de ejecutarlo. Una vez compilado nuestro programa nos vamos a la ventana superior y damos click en la pestaña donde dice depurar, al abrirse el menú seleccionamos la opción de iniciar sin depurar y se nos abrirá la ventana de comandos con nuestro programa en ejecución.\\Para compilar un programa sin Visual Studio nos vamos a la carpeta csharp creada en la sección pasada desde la cmd, para hacer esto abrimos la ventana de comandos y escribimos \textbf{cd c:\csharp} y pulsamos intro, despues escribimos \textbf{csc Ejemplo1.cs} si sólo arroja un mensaje en el que nos indique la versión del compilador que se está utilizando, así como la version del Framework que está instalada significa que el código ha sido compilado con éxito, para ejecutar nuestro programa escribimos el nombre de éste sin la extensión .cs.
+
+
+\chapter{Tipos predefinidos y control de flujo}
+En este capitulo se mostrará cómo se utilizan datos de diferentes tipos básicos dentro de un programa y qué tipo de operaciones pueden realizarse con ellos.\\Normalmente, los programas sencillos necesitan de datos muy sencillos, pero los que conocemos hasta ahora son insuficientes. Por ejemplo, no podríamos plantearnos un programa que multiplique dos números enteros.\\\\Para manejar datos de tipos basicos cono enteros o reales, necesitamos dos cosas: poder almacenar esos datos en algún sitio, para lo que se utilizan variables, y poder manipular esos datos, para lo que necesitamos los operadores. Veremos a continuación qué tipos de datos tenemos disponibles en C\# y cuál es el conjunto de operadores que nos va a permitir transformar y operar con dichos datos.
+\section{Tipos predefinidos de C\#}
+El concepto de dato está relacionado con las operaciones que se pueden realizar sobre él. Un tipo de dato queda definido como un conjunto de valores que tienen asociadas una serie de operaciones para crearlos y manipularlos.\\\\En el ordenador cada tipo de datos se representa de una forma diferente. Una tabla parcial de los tipos que pueden manejarse en C\# se muestra en la figura........................................................................................
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=16cm]{Csh_Imagenes/Tabla_Tipos.png}
+\caption{Resumen del sistema de Tipos de C\#}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=16cm]{Csh_Imagenes/op_condicionales.png}
+\caption{Operadores lógicos, condicionales y NULL}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=16cm]{Csh_Imagenes/op_igualdad.png}
+\caption{Operadores de igualdad}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=16cm]{Csh_Imagenes/op_relacionales.png}
+\caption{Operadores relacionales y de tipo}
+\end{figure}
+
+\\\\El nombre del tipo y la clse donde se define son, en realidad, la misma cosa. Es decir, el nombre del tipo es simplemente un alias y podemos utilizar indistintamente una u otro.\\\\Para aplicaciones grandes que manejan un gran volumen de datos es necesario optimizar el espacioque ocupan esos datos, ajustando lo máximo posible el tipo de las variables a los posibles valores que éstas vayan a almacenar.
+
+
+\section{Tipos de referencia}
+Hay dos clases de tipos en C#: tipos de referencia y tipos de valor. Las variables de tipos de referencia almacenan referencias en sus datos (objetos), mientras que las variables de tipos de valor contienen directamente los datos. Con los tipos de referencia, dos variables pueden hacer referencia al mismo objeto y, por lo tanto, las operaciones en una variable pueden afectar al objeto al que hace referencia la otra variable. Con los tipos de valor, cada variable tiene su propia copia de los datos, y no es posible que las operaciones en una variable afecten a la otra .\\Las palabras clave siguientes se usan para declarar tipos de referencia:\\\textbf{class}: Palabra reservada para crear clases\\\textbf{Interface}: Una interfaz contiene solo las firmas de métodos, propiedades, eventos o indizadores.\\\textbf{delegate}: La declaración de un tipo delegado es similar a una firma de método. Tiene un valor devuelto y un número cualquiera de parámetros de cualquier tipo.
+\section{Sentencias condicionales}
+\textbf{Sentencia if}\\La sentencia \textbf{if} permite elegir entre dos alternativas en la función del valor(verdadero o falso) de cierta condición. Si la condición es verdadera, entonces se ejecuta un fragmento de código, y si es falsa, entonces se ejecuta otro distinto (usando la palabra else e indicando otro bloque de código), o no se ejecuta nada (No indicando el bloque de código else).
+\textbf{Sintaxis de la instrucción if}\\La instrucción \textbf{if} debe utilizarse de acuerdo a la siguiente sintaxis:\\
+\begin{lstlisting}
+if(<Condicion>)
+  <instruccion_if>
+else
+  <instruccion_else>
+\end{lstlisting}
+\\\textbf{Ejemplo 2}\\
+\begin{lstlisting}
+using System;
+class Ejemplo2 {
+  static void Main() {
+    string nombre;  //Esta variable de tipo string guarda el nombre del usuario
+    Console.WriteLine("Escribe tu nombre");
+    nombre=Console.ReadLine();
+    if(nombre == "Armando")
+      Console.WriteLine("Bienvenido Armando!");
+    else
+      Console.WriteLine("Usuario no valido");   
+
+    Console.ReadKey();  //Esta linea es util al ejecturar nuestro programa en Visua Studio para evitar que se cierre la consola inesperadamente.
+  }
+}
+\end{lstlisting}
+\\A menudo nos interesa introducir más de una línea de código en nuestros bloques \textbf{if}, \textbf{else} para esto utilizamos llaves {} en cada bloque.\\
+\begin{lstlisting}
+if(<Condicion>) {
+  <instruccion1_if>
+  <instruccion2_if>
+  <instruccion3_if>
+  <instruccion4_if>
+}
+else {
+  <instruccion1_else>
+  <instruccion2_else>
+  <instruccion3_else>
+}
+\end{lstlisting}
+\\En el ejemplo 2 la sentencia \textit{nombre == "Armando"} regresa un valor y ese valor es \textbf{true} o \textbf{false}\\\\\textbf{La instrucción switch}\\
+En ocaciones hay que tomar un gran número e decisiones dependiendo del valor que tiene una determinada expresión. Esto obliga a utilizar una colección de instrucciones \textbf{if} anidadas, tales que todas ellas realizan una comprobación sobre la misma expresión.\\\textbf{Sintaxis de la instrucción switch}\\La instrucción \textbf{switch} debe utilizarse de acuerdo a la siguiente sintaxis:\\
+\begin{lstlisting}
+switch (<expresion>) {
+  case <valor1>: 
+    <bloque_de_instrucciones_1>
+    break;
+  case <valor2>: 
+    <bloque_de_instrucciones_2>
+    break;
+  ......
+  case <valorn>: 
+    <bloque_de_instrucciones_n>
+    break;
+  default:
+    <bloque_de_instrucciones>
+    break;
+}
+\end{lstlisting}\\
+El significado de esta instrucción es la siguiente: se evalúa \textit{expresion}. Si su valor es \textit{valor1} se ejecuta \textit{bloque_de_instrucciones_1}, si es \textit{valor2} se ejecuta \textit{bloque_de_instruciones_2}, y así para el resto de valores especificados. Si no es igual a ninguno de esos valores y se incluye la rama \textfb{default}, se ejecuta \textit{<bloque_de_instrucciones>}; si no se incluye se pasa directamente a ejecutar la instricción siguiente al \textbf{switch}.\\\\Los valores indicados en cada rama del \textbf{switch} han de ser expresiones constantes que produzcan valores de algún tipo básico. No puede haber más de una rama con el mismo valor. Cada bloque de instrucciones de cada rama debe terminar con una instrucción \textbf{break} para indicarle que continúe la ejecución con la siguiente instrucción al \textbf{switch}.\\\\\textbf{Ejemplo 3}.\\
+
+\begin{lstlisting}
+using System;
+class Ejemplo_Switch 
+{
+    static void Main()
+    {
+        Console.WriteLine("Cafes: 1=Chico 2=Mediano 3=Grande"); 
+        Console.Write("Introduzca el cafe deseado: "); 
+        string s = Console.ReadLine(); 
+        int n = int.Parse(s); //Esta linea hace un casteo de cadena a un valor entero
+        int cost = 0;
+        switch(n)
+        {
+        case 1:
+            cost += 25;
+            break;
+        case 2:
+            cost += 50;
+            break;
+        case 3:
+            cost += 75;
+            break;
+        default:
+            Console.WriteLine("Seleccion invalida, Seleccione solo 1, 2, o 3.");
+            break;
+        }
+        if (cost != 0)
+        {
+            Console.WriteLine("Introduzca {0} pesos.", cost);
+        }
+        Console.WriteLine("Gracias por su compra.");
+    }
+}
+\end{lstlisting}
+%Á á, É é, Í í,Ó ó,Ú ú,Ü ü,Ñ ñ, ¿, ¡ ``
+=======
 La compilación y ejecución usando Visual Studio resulta ser muy sencilla sin embrago se explicará el proceso con dicha herramienta y sin ella.\\Para compilar nos vamos al menú que se encuentra en la parte superior de la ventana de C\# y damos click en la pestaña donde dice Compilar, posteriormente se nos abrirá un menú en el cual seleccionaremos la opción de compilar solución. Al hacer dicho paso en la parte inferior aparecerá otra ventana conocida como la ventana de salida o de output donde se nos informará de todos los errores en nuestro programa antes de ejecutarlo. Una vez compilado nuestro programa nos vamos a la ventana superior y damos click en la pestaña donde dice depurar, al abrirse el menú seleccionamos la opción de iniciar sin depurar y se nos abrirá la ventana de comandos con nuestro programa en ejecución.
 
 %Á á, É é, Í í,Ó ó,Ú ú,Ü ü,Ñ ñ, ¿, ¡ ``
@@ -99,6 +249,7 @@ La compilación y ejecución usando Visual Studio resulta ser muy sencilla sin e
 \section{Tipos predefinidos de C\#}
 \section{Tipos de referencia}
 \section{Sentencias condicionales}
+>>>>>>> 8eae1ec775ca7c69208c159263e38d00a2f6cdfe
 \section{Ciclos de repetición}
 
 \chapter{Clases y Objetos}
