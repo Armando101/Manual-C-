@@ -338,14 +338,221 @@ class Ejemplo_while {
 
 \chapter{Clases y Objetos}
 \section{Conceptos básicos de POO}
+C\# es un lenguaje que sigue el paradigma orientado a objetos, un paradigma en la programación representa un enfoque particular o filosofía para diseñar soluciones. Los paradigmas difieren unos de otros, en los conceptos y la forma de abstraer los elementos involucrados en un problema, así como en los pasos que integran su solución del problema, en otras palabras, el cómputo. También es importante definir que es una clase y que es un objeto.\\\textbf{Clase: }	La clase define un tipo de dato para un objeto pero no es un objeto en sí.\\\textbf{Objeto: }Un objeto es una entidad concreta basada sobre una clase y es llamado una instancia de una clase.\\\\La programación orientada a objetos está fundamentada sobre los cuatro pilares de la POO que son: \\\textbf{Abstracción: } La abstracción consiste en aislar un elemento de su contexto o del resto de los elementos que lo acompañan. En programación, el término se refiere al énfasis en el "¿Qué hace?" más que en el "¿Cómo lo hace?" por ejemplo \\\textbf{Encapsulamiento: }El encapsulamiento se refiere a restringir el acceso a las funciones internas de una clase.\\Beneficios:\\ - Controlar la manera en que los datos son accedidos o modificados.\\ - El código es mas flexible y fácil de cambiar a partir de nuevos requerimientos.\\ -  Poder modificar una parte del código sin afectar otras partes del mismo.\\\textbf{Herencia}: La herencia permite a la clase derivada reutilizar el código base sin tener que reescribirlo. Y la clase derivada puede ser personalizada añadiendo mas miembros.De esta manera, la clase derivada extiende la funcionalidad de la clase base.\\\textbf{Polimorfismo: }Significa “Tener muchas formas”. El polimorfismo es una forma de invocar el mismo método para diferentes objetos y generar diferentes resultados basados en el tipo de objeto.\\\\Estos conceptos los iremos trabajando a mayor profundidad en capítulos posteriores, sin embargo es importante tener una idea de su significado.\\\\Un programa construido mediante un lenguaje orientado a objetos no es más que una colección de objetos que se relacionan entre sí. La forma en que un objeto se comporta y las propiedades que lo definen dependen de la clase a la que pertenece.Una clase puede contener atributos que permiten definir información relativa a la clase y métodos que permiten manipular dichos atributos y definir el comportamiento de los objetos de la clase.\\\\Por ejemplo, mi \textit{coche} es un objeto de la clase \textit{automóvil} y como tal, tiene la capacidad de moverse a una \textit{velocidad constante}, de \textit{acelerarse}, de \textit{detenerse}, etc. Son atributos de mi \textit{coche}, entre otros, su \textit{marca} y \textit{modelo}, el \textit{número de matrícula}, la \textit{velocidad a la que viaja} en un momento dado y la \textit{cantidad de combustible} que lleva en el depósito. Como por ejemplo de métodos tendríamos \textit{arrancar}, \textit{acelerar}, \textit{frenar} y \textit{repostar}. Los métodos definen el modo en que funciona el objeto y pueden modificar ciertos atributos: \textit{repostar}, modificar la \textit{cantidad de combustible} mientras que \textit{acelerar} modifica, además de la \textit{cantidad de combustible}, la \textit{velocidad}.\\\\Cuando se crea un programa con un lenguaje orientado a objetos lo que se definen son las clases de todos los objetos que van a intervenir en el programa. Cuando dicho programa se ejecute, se crearán los objetos a medida que se necesiten, pudiendo haber más de un objeto de cada clase. Por ejemplo, un programa que se encarga de gestionar una biblioteca deberá contener muchos objetos de la clase libro (un objeto por cada ejemplar que existe en la biblioteca) y muchos objetos de la clase lector (uno por cada persona que utiliza dicha biblioteca). Cuando construimos el programa, únicamente creamos una clase libro y una clase lector, Durante el funcionamiento del programa (es decir, en tiempo de ejecución), se irán creando objetos de esas clases a medida que se necesiten, según se den de alta nuevos libros o nuevos usuarios.
 \section{Creación de clases}
+Una clase es una construcción que permite crear tipos personalizados propios mediante la agrupación de variables de otros tipos, métodos y eventos. Una clase es como un plano. Define los datos y el comportamiento de un tipo. Las clases se declaran mediante la palabra clave \textbf{class}.En Visual Studio das click derecho en \textbf{Proyecto} y en el submenú seleccionamos la opción \textbf{nuevo} y después \textbf{class}, automáticamente se crea un nuevo archivo con la estructura básica de una clase.    
+\begin{lstlisting}
+	public class Coche {
+		//Campos, propiedades, atributos metodos.
+	}
+\end{lstlisting}
 \section{Constructores}
+Un \textsc{constructor} de clase en un miembro especial de una clase que es ejecutado cada vez que un nuevo objeto de esa clase es creado.\\Un \textsc{Constructor} tiene exactamente el mismo nombre que su clase, es público y no tiene ningún tipo de retorno. \\\textbf{Ejemplo 4.1:}\\
+\begin{lstlisting}
+	class Persona {
+		private int edad;
+		public Person() {
+			Console.WriteLine("Hola amigo");		
+		}	
+	}
+\end{lstlisting}Ahora, al momento de creación de un objeto del tipo Persona, el constructor es automáticamente invocado. Para hacer una objeto del tipo persona tenemos que especificar el nombre de la clase seguido de un identificador, posteriormente tenemos que hacer uso del operador de igualación y usar la palabra new como en el siguiente ejemplo.\\\textbf{Ejemplo 4.2}
+\begin{lstlisting}
+Using System;
+	static void Main(string [] args) {
+	Persona p = new Persona();	
+	}
+\end{lstlisting}La salida del código anterior es ``Hola amigo", 
 \section{Propiedades}
+Una propiedad es un miembro que ofrece un mecanismo flexible para leer, escribir o calcular el valor de un campo privado. Las propiedades proporcionan la comodidad de utilizar miembros de datos públicos sin los riesgos que implica el acceso no protegido y sin control ni comprobación a los datos de un objeto. Las propiedades pueden ser utilizadas como di fueran miembros públicos de datos, pero realmente incluyen métodos especiales llamados \textbf{descriptores de acceso (accessors)}\\El descriptor de acceso de una propiedad contiene las declaraciones ejecutables que ayudan a obtener (leer o computar) o fijar (escribir) un campo correspondiente. Las declaraciones del descriptor de acceso pueden incluir un descriptor de acceso \textbf{get}, un descriptor de acceso \textbf{set}, o ambas \\\textbf{Ejempo 4.3}
+\begin{lstlisting}
+class Persona {
+	private string nombre;
+	public string Nombre {
+		get {return name; }
+		set { nombre = value }	
+	}
+}
+\end{lstlisting} La clase Persona tiene una propiedad \textbf{Nombre} que tiene tanto el descriptor de acceso \textbf{set} como el descriptor de acceso \textbf{get}.\\El descriptor de acceso set es utilizado para asignar un valor a la variable nombre mientras que get es utilizado para retornar su valor. \textbf{value} es una palabra clave especial, la cual representa el valor que asignamos a una propiedad utilizando el descriptor de acceso \textbf{set}. Una vez que la propiedad está definida, podemos utilizarla para asignar y leer el miembro privado.\\\textbf{Ejemplo 4.4 }
+\begin{lstlisting}
+class Persona {
+	private string nombre;
+	public string Nombre {
+		get {return nombre; }
+		set { nombre = value }	
+	}
+}
+
+static void Main() {
+	Persona p = new Persona();
+	p.Name = "Armando";
+	Console.WriteLine(p.name);
+}
+\end{lstlisting} La propiedad es accedida por su nombre, tal cual cualquier otro miembro público de la clase.\\Cualquier descriptor de acceso de una propiedad puede ser omitido. Por ejemplo, el siguiente código crea una propiedad que es sólo lectura: \\\textbf{Ejemplo 4.5}
+\begin{lstlisting}
+class Persona {
+	private string nombre;
+	public string Nombre {
+		get {return nombre; }
+	}
+}
+\end{lstlisting} Una propiedad puede también ser \textbf{privada}, por lo que sólo podrá ser invocada desde dentro de la clase. \\\\La utilidad de las propiedades es que tenemos la opción de controlar la lógica de acceso a la variable. Por ejemplo, puedes validar si el valor de \textbf{edad} es mayor que 0, antes de asignarlo a la variable:\\\textbf{4.6}
+\begin{lstlisting}
+class Persona {
+	private string edad;
+	public string Edad {
+		get {return edad; }
+		set { 		
+			if(value > 0)			
+			edad = value 
+		}	
+	}
+}
+\end{lstlisting} Cuando no necesitamos ninguna lógica personalizada, C\# provee un mecanismo rápido y efectivo para declarar miembros privados a través de sus propiedades.\\Por ejemplo, para crear un miembro privado que sólo pueda ser accedido a través de los descriptores de acceso \textbf{get} y \textbf{set} de la propiedad nombre, utiliza la siguiente sintaxis.
+\begin{lstlisting}
+public string Nombre {get; set;}
+\end{lstlisting} Como puedes ver, no es necesario declarar el campo privado ``nombre" por separado.\\\textbf{4.7}
+\begin{lstlisting}
+class Persona {
+	public string Nombre { get; set;}	
+	}
+}
+
+static void Main() {
+	Persona p = new Persona();
+	p.Name = "Armando";
+	Console.WriteLine(p.name);
+}
+\end{lstlisting} La salida del código anterior es ``Armando"
 \section{Atributos y métodos de instancia}
+Los atributos son todas aquellas características que le asociamos a un objeto de una clase definida.\\Los métodos representan todas aquellas acciones que puede realizar o se pueden llevar a cabo sobre un objeto de una clase.\\Los métodos de instancia son aplicables a una instancia de la clase en particular.\\También mediante el método constructor podemos pedir al usuario que indique la edad de la persona y esta será asignada al momento de hacer la instancia.\\\textbf{Ejemplo 4.8}
+\begin{lstlisting}
+class Persona {
+	private int edad;
+	public Person(int edad) {
+		this.edad = edad;			
+		Console.WriteLine("Hola amigo, tienes la edad de " + edad);		
+	}
+}
+	
+static void Main(string [] args) {
+Persona p = new Persona(18);	
+}
+/*Salida: Hola amigo, tienes la edad de 18*/
+\end{lstlisting} En el ejemplo anterior la palabra \textbf{this} hace referencia a la misma clase, es decir el parámetro recibido, en este caso 18, lo va a asignar al atributo edad. 
 \section{Miembros estáticos}
+Un miembro estático es aquel que pertenece a la propia clase en vez de a un objeto específico. El modificador static se utiliza para declarar los miembros de las clases(variables, métodos, propiedades) como estáticos.\\\textbf{Ejemplo 4.9}
+\begin{lstlisting}
+class Empleado {
+	public static int contador = 0;
+	public Empledo() {
+		contador++;	
+	}
+}
+\end{lstlisting} En este caso hemos declarado una variable miembro pública \textbf{contador}, la cual es \textbf{estática}. El constructor de la clase incrementa la variable \textbf{count} en uno.\\Sin importar cuantos objetos \textbf{Empleado} sean instanciados, siempre habrá una sola variable \textbf{count} que pertenece a la clase \textbf{Empleado} porque fue declarada \textbf{estática}.
 \section{Estructuras}
+Una estructura es un tipo de valor que normalmente se usa para encapsular pequeños grupos de variables relacionadas. Las estructuras también pueden contener constructores, constantes, campos, métodos, propiedades, eventos y tipos anidados. \\\textbf{Ejemplo 4.10}
+\begin{lstlisting}
+public struct Libro {
+	public double precio;
+	public string titulo;
+	public string autor;
+}
+
+static void Main() {
+	Libro l;
+	l.titulo = "El retrato de Dorian Gray"
+	l.precio = 100.00;
+	l.autor = "Oscar Wilde"
+	
+	Console.WriteLine(l.titulo);
+	/*Salida: El retrato de Dorian Gray*/
+}
+\end{lstlisting} Las estructuras no pueden heredar como las clases. Las clases se usan para modelar un comportamiento complejo, las estructuras tienen la intención principal de ser un conjunto simple de variables. Una clase es un tipo de referencia, un struct es un tipo de valor. Los campos no se puede inicializar a menos que sean constantes o estáticos. Una estructura puede implementar interfaces.
 \section{Tipos de referencia vs Tipos de valor}
-\section{Clases estáticas y métodos de acceso}
+Un tipo de valor almacena su contenido en la memoria asignada en la pila. Cuando una variable de tipo de valor queda fuera de ámbito, porque en el método en que se definió ha finalizado la ejecución, el valor se descarta de la pila.
+Por esto, es difícil compartir tipos de valor entre clases.\\\\C\# tiene dos formas de almacenar datos: por \textbf{referencia} y \textbf{por valor}.\\Los tipos de datos incorporados, como \textit{int} y \textit{double}, se utilizan para declarar variables que son tipos de \textbf{valor}. Su valor se almacena en la memoria en una ubicación llamada la \textbf{stack}.
+Por ejemplo, la instrucción de declaración y asignación int x = 10; puede ser pensada como:
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=6cm]{Csh_Imagenes/Stack.jpg}
+\caption{Representación de la stack}
+\end{figure}\\El valor de la variable x	 está ahora almacenada en la \textbf{stack}\\\\Los tipos de referencia se usan para almacenar objetos. Por ejemplo, cuando crea un objeto de una clase, se almacena como un tipo de referencia.
+Los tipos de referencia se almacenan en una parte de la memoria llamada Heap.
+Cuando crea una instancia de un objeto, los datos para ese objeto se almacenan en el montón, mientras que su dirección de memoria de montón se almacena en la pila.
+Es por eso que se llama un tipo de referencia: contiene una referencia (la dirección de la memoria) al objeto real en el heap.\\Como puede ver en la figura 4.2, el objeto \textbf{p1} de tipo Persona en la stack almacena la dirección de memoria del heap donde está almacenado el objeto real.\\\textbf{Stack} se utiliza para la asignación de memoria estática, que incluye todos sus tipos de valores, como x.\\\textbf{Heap} se utiliza para la asignación de memoria dinámica, que incluye objetos personalizados, que pueden necesitar memoria adicional durante el tiempo de ejecución de su programa.\begin{figure}[hbtp]
+\centering
+\includegraphics[width=10cm]{Csh_Imagenes/heap.jpg}
+\caption{Representación de la Heap}
+\end{figure}
+\section{Clases estáticas}
+Una clase estática es básicamente igual que una clase no estática, pero existe una diferencia: no se pueden crear objetos de una clase estática. El acceso a los miembros de una clase estática se realiza mediante el propio nombre de clase.\\Una clase estática es básicamente igual que una clase no estática, pero existe una diferencia: no se pueden crear objetos de una clase estática. El acceso a los miembros de una clase estática se realiza mediante el propio nombre de clase. Las clases estáticas:\\Sólo contiene miembros estáticos, no se pueden crear instancias de ella, es de tipo static, no puede contener constructores de instancia.\\\textbf{Ejemplo 4.11} \begin{lstlisting}
+public static class Convertidor_Temperatura
+{
+    public static double Celsius_Fahrenheit(string temperaturaCelsius)
+    {
+        // Convierte el argumento a double para calcularlo.
+        double celsius = Double.Parse(temperaturaCelsius);
+
+        // Convierte Celsius a Fahrenheit.
+        double fahrenheit = (celsius * 9 / 5) + 32;
+
+        return fahrenheit;
+    }
+
+    public static double Fahrenheit_Celsius(string temperaturaFahrenheit)
+    {
+        // Convierte el argumento a double para calcularlo.
+        double fahrenheit = Double.Parse(temperaturaFahrenheit);
+
+        // Convierte Fahrenheit a Celsius.
+        double celsius = (fahrenheit - 32) * 5 / 9;
+
+        return celsius;
+    }
+}
+
+class ConvertidorDeTemperatura
+{
+    static void Main()
+    {
+        Console.WriteLine("Seleccione una opcion para hacer la conversion");
+        Console.WriteLine("1. Celsius a Fahrenheit.");
+        Console.WriteLine("2. Fahrenheit a Celsius.");
+        Console.Write(":");
+
+        string opcion = Console.ReadLine();
+        double F, C = 0;
+
+        switch (opcion)
+        {
+            case "1":
+                Console.Write("Ingrese la temperatura en Celsius: ");
+                F =Convertidor_Temperatura.Celsius_Fahrenheit(Console.ReadLine());
+                Console.WriteLine("Temperatura en Fahrenheit: {0:F2}", F);
+                break;
+
+            case "2":
+                Console.Write("Ingrese la temperatura en Fahrenheit:  ");
+                C =Convertidor_Temperatura.FahrenheitToCelsius(Console.ReadLine());
+                Console.WriteLine("Temperatura en Celsius: {0:F2}", C);
+                break;
+
+            default:
+                Console.WriteLine("Seleccione una opcion valida.");
+                break;
+        }
+    }
+}
+/* Ejemplo:
+	Seleccione una opcion para hacer la conversion
+    1. Celsius a Fahrenheit.
+    2. Fahrenheit a Celsius.
+    :2
+    Ingrese la temperatura en Fahrenheit: 20
+    Temperatura en Celsius: -6.67
+ */
+\end{lstlisting}
+Note que en el ejemplo anterior en ningún momento se está haciendo una instancia de la clase \textit{Convertidor\_Temperatura} debido a que es una clase estática.
 
 \chapter{Control de Acceso}
 \section{Namespaces}

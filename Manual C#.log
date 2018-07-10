@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.7.6)  7 JUL 2018 22:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.7.6)  10 JUL 2018 14:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,128 +925,187 @@ Underfull \hbox (badness 10000) in paragraph at lines 325--326
 
 [28] [29]
 Cap\'{\i }tulo 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
 [30
 
-]
+] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+
+ []
+
+[32] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
+
+ []
+
+[34] [35] [36] <Csh_Imagenes/Stack.jpg, id=150, 201.75375pt x 121.20282pt>
+File: Csh_Imagenes/Stack.jpg Graphic file (type jpg)
+
+<use Csh_Imagenes/Stack.jpg>
+Package pdftex.def Info: Csh_Imagenes/Stack.jpg used on input line 477.
+(pdftex.def)             Requested size: 170.71652pt x 102.55867pt.
+
+<Csh_Imagenes/heap.jpg, id=151, 414.79968pt x 158.09062pt>
+File: Csh_Imagenes/heap.jpg Graphic file (type jpg)
+
+<use Csh_Imagenes/heap.jpg>
+Package pdftex.def Info: Csh_Imagenes/heap.jpg used on input line 484.
+(pdftex.def)             Requested size: 284.52756pt x 108.44339pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--487
+
+ []
+
+[37] [38 <./Csh_Imagenes/Stack.jpg> <./Csh_Imagenes/heap.jpg>] [39] [40]
 Cap\'{\i }tulo 5.
-[31
-
-]
-Cap\'{\i }tulo 6.
-[32
-
-]
-Cap\'{\i }tulo 7.
-[33
-
-]
-Cap\'{\i }tulo 8.
-[34
-
-]
-Cap\'{\i }tulo 9.
-[35
-
-] [36
-
-]
-Cap\'{\i }tulo 10.
-[37
-
-]
-Cap\'{\i }tulo 11.
-[38
-
-]
-Cap\'{\i }tulo 12.
-[39
-
-]
-Cap\'{\i }tulo 13.
-[40
-
-]
-Cap\'{\i }tulo 14.
 [41
 
 ]
-Cap\'{\i }tulo 15.
+Cap\'{\i }tulo 6.
 [42
 
 ]
-Cap\'{\i }tulo 16.
+Cap\'{\i }tulo 7.
 [43
 
 ]
-Cap\'{\i }tulo 17.
+Cap\'{\i }tulo 8.
 [44
 
-] [45
+]
+Cap\'{\i }tulo 9.
+[45
+
+] [46
+
+]
+Cap\'{\i }tulo 10.
+[47
+
+]
+Cap\'{\i }tulo 11.
+[48
+
+]
+Cap\'{\i }tulo 12.
+[49
+
+]
+Cap\'{\i }tulo 13.
+[50
+
+]
+Cap\'{\i }tulo 14.
+[51
+
+]
+Cap\'{\i }tulo 15.
+[52
+
+]
+Cap\'{\i }tulo 16.
+[53
+
+]
+Cap\'{\i }tulo 17.
+[54
+
+] [55
 
 ]
 Cap\'{\i }tulo 18.
-[46
+[56
 
 ]
 Cap\'{\i }tulo 19.
 
-Overfull \hbox (3.8179pt too wide) in paragraph at lines 443--443
+Overfull \hbox (3.8179pt too wide) in paragraph at lines 650--650
 []\OT1/cmr/bx/n/17.28 ListBox, Chec-ked-List-Box y Com-bo-Box 
  []
 
-[47
+[57
 
 ]
 Overfull \vbox (98.2502pt too high) has occurred while \output is active []
 
 
-[48]
+[58]
 Cap\'{\i }tulo 20.
-[49
+[59
 
 ]
 Cap\'{\i }tulo 21.
 
-Overfull \hbox (14.31172pt too wide) in paragraph at lines 454--454
+Overfull \hbox (14.31172pt too wide) in paragraph at lines 661--661
 []\OT1/cmr/bx/n/17.28 Diferencias en-tre WPF y Win-dows Forms 
  []
 
-[50
+[60
 
 ]
 Cap\'{\i }tulo 22.
-[51
+[61
 
 ]
 Cap\'{\i }tulo 23.
-[52
+[62
 
 ] (./Manual C#.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 5475 strings out of 493034
- 70946 string characters out of 6136881
- 278407 words of memory out of 5000000
- 8921 multiletter control sequences out of 15000+600000
- 14662 words of font info for 57 fonts, out of 8000000 for 9000
+ 5560 strings out of 493034
+ 72122 string characters out of 6136881
+ 333407 words of memory out of 5000000
+ 9002 multiletter control sequences out of 15000+600000
+ 14963 words of font info for 58 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 37i,7n,36p,3159b,1635s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,7n,36p,4163b,1635s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/latxfont/lasy10.pfb>
-Output written on "Manual C#.pdf" (53 pages, 995086 bytes).
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/l
+atxfont/lasy10.pfb>
+Output written on "Manual C#.pdf" (63 pages, 1074743 bytes).
 PDF statistics:
- 235 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
+ 273 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
