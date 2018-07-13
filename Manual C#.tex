@@ -18,14 +18,14 @@
   breakatwhitespace=false,         % Activarlo para que los saltos automáticos solo se apliquen en los espacios en blanco
   breaklines=true,                 % Activa el salto de línea automático
   captionpos=b,                    % Establece la posición de la leyenda del cuadro de código
-  %commentstyle=\color{miverde},    % Estilo de los comentarios
+  commentstyle=\color{miverde},    % Estilo de los comentarios
   deletekeywords={...},            % Si se quiere eliminar palabras clave del lenguaje
   escapeinside={\%*}{*)},          % Si quieres incorporar LaTeX dentro del propio código
   extendedchars=true,              % Permite utilizar caracteres extendidos no-ASCII; solo funciona para codificaciones de 8-bits; para UTF-8 no funciona. En xelatex necesita estar a true para que funcione.
   frame=single,	                   % Añade un marco al código
   keepspaces=true,                 % Mantiene los espacios en el texto. Es útil para mantener la indentación del código(puede necesitar columns=flexible).
   keywordstyle=\color{blue},       % estilo de las palabras clave
-  language=csh,                 % El lenguaje del código
+  language=c++,                 % El lenguaje del código
   otherkeywords={*,...},           % Si se quieren añadir otras palabras clave al lenguaje
   numbers=left,                    % Posición de los números de línea (none, left, right).
   numbersep=5pt,                   % Distancia de los números de línea al código
@@ -41,7 +41,7 @@
 }
 \author{Elaborado por:\\\\Rivera Negrete Manuel Armando}
 \date{28 de Junio del 2018}
-\title{Universidad Nacional Autónoma de México\\Programa de Tenología en Cómputo\\Lo que siempre quisiste saber de C\# y nunca te atreviste a preguntar}
+\title{Universidad Nacional Autónoma de México\\Programa de Tecnología en Cómputo\\Lo que siempre quisiste saber de C\# y nunca te atreviste a preguntar}
 
 \begin{document}
 \maketitle
@@ -556,25 +556,506 @@ Note que en el ejemplo anterior en ningún momento se está haciendo una instanc
 
 \chapter{Control de Acceso}
 \section{Namespaces}
+El espacio de nombres permite agrupar varias clses que tienen cierta relación lógica entre ellas. Nosotros también podemos definir nuestros propios espacios de nombres, mediante la palabra reservada \textbf{namespace}, cada vez que escribimos al comienzo de un programa \textbf{using System}, estamos indicando a C\# que deseamos tener acceso a las clases definidas en el espacio de nombres \textbf{System}, entre las que se encuentran entre otras clases \textbf{Console} y \textbf{Math}.\\\textbf{Ejemplo 5.1}
+\begin{lstlisting}
+namespace Figuras {
+	class Punto {
+		// Atributos: coordenadas del punto en el plano
+		private double x, y;
+		//Constructor
+		public Punto(double x, double y) {
+			this.x = x;
+			this.y = y;		
+		}
+		//Propiedades
+		public double X {
+			get {return x;}
+			set { x = value;}
+		}
+		public double Y {
+			get {return y;}
+			set { x = y;}
+		}
+		//Suma a este punto las coordenadas del punto p
+		public void suma(Punto p) {
+			x += p.x;
+			y += p.y;		
+		} 
+	} //Fin de la clase
+} //Fin del espacio de nombres
+\end{lstlisting}La clase \textsc{Punto} representa un punto situado sobre el plano. En la implementación hemos decidido que forme parte de un espacio de nombres \textsc{Figuras}. El método \textsc{suma} recibe un objeto de tipo \textsc{Punto} como argumento e incrementa las coordenadas del punto actual con las del argumento. El siguiente ejemplo muestra el uso de la clase anterior en un programa principal, para esto necesitamos utilizar el espacio de nombres \textsc{Figuras}.\\
+\textbf{Ejemplo 5.2}
+\begin{lstlisting}
+using Figuras;
+using System;
+class Ejemplo5_2 {
+	public static void Main() {
+		Punto p = new Punto(1.0, 1.0);
+		p.X(3.0);
+		System.Console.WriteLine("x del punto: {0}, y del punto: {1}", p.X, p.Y);	
+	}
+}
+\end{lstlisting}
 \section{Encapsulamiento y modificadores de acceso}
+Parte del significado de la palabra \textbf{encapsulación} es la idea de ``rodear" a una entidad, no solo para mantener lo que está dentro, sino también para protegerlo.\\En la programación, la \textbf{encapsulación} significa más que simplemente combinar miembros dentro de una clase; también significa restringir el acceso al funcionamiento interno de esa clase.\\La encapsulación se implementa mediante el uso de \textbf{modificadores de acceso}. Un modificador de acceso define el alcance y la visibilidad de un miembro de la clase.\\\\C\# admite los siguientes modificadores de acceso: \textbf{public}, \textbf{private},\textbf{ protected}, \textbf{internal}, \textbf{protected internal}.\\Como se vio en los ejemplos anteriores, el modificador de acceso \textbf{public} hace que el miembro sea accesible desde el exterior de la clase.\\El modificador de acceso \textbf{ private} hace que los miembros sean accesibles solo desde dentro de la clase y los oculta desde el exterior.\\\\\textbf{public}: Puede obtener acceso al tipo o miembro cualquier otro código del mismo ensamblado o de otro ensamblado que haga referencia a éste.\\\textbf{private}: Solamente puede obtener acceso al tipo o miembro código de la misma clase o struct.\\\textbf{protected}: Solamente puede obtener acceso al tipo o miembro el código de la misma clase o struct, o bien de una clase derivada de dicha clase.\\\textbf{internal}: Puede obtener acceso al tipo o miembro cualquier código del mismo ensamblado, pero no de un ensamblado distinto.\\\textbf{protected internal}: Puede obtener acceso al tipo o miembro cualquier código del ensamblado en el que se declara, o bien desde una clase derivada de otro ensamblado. El acceso desde otro ensamblado debe realizarse dentro de una declaración de clase derivada de la clase en la que se declara el elemento interno protegido y a través de una instancia del tipo de clase derivada.
 \section{Métodos accesores vs propiedades}
-
+Los métodos accesores o métodos \textbf{get} y \textbf{set} son métodos parecidos a las propiedades y nos sirven para tener un mejor control de nuestros atributos. \textbf{Ejemplo 5.3}
+\begin{lstlisting}
+namespace Figuras {
+	class Punto {
+		// Atributos: coordenadas del punto en el plano
+		private double x, y;
+		//Constructor
+		public Punto(double x, double y) {
+			this.x = x;
+			this.y = y;		
+		}
+		//Metodos accesores
+		public double getX() {
+			return x;
+		}
+		public double getY() {
+			return y;
+		}
+		public double setX(double x) {
+			this.x = x;
+		}
+		public double setY(double y) {
+			this.y = y;
+		}
+		//Suma a este punto las coordenadas del punto p
+		public void suma(Punto p) {
+			x += p.x;
+			y += p.y;		
+		} 
+	} //Fin de la clase
+} //Fin del espacio de nombres
+\end{lstlisting}El uso es el mismo, sin embargo con las propiedades nos podemos ahorrar lineas de código. El siguiente ejemplo muestra el uso de la clase anterior en una clase principal.
+\textbf{Ejemplo 5.4}
+\begin{lstlisting}
+using Figuras;
+using System;
+class Ejemplo5_4 {
+	public static void Main() {
+		Punto p = new Punto(1.0, 1.0);
+		p.setX(3.0);
+		System.Console.WriteLine("x del punto: {0}, y del punto: {1}", p.getX, p.getY);	
+	}
+}
+\end{lstlisting}
 \chapter{Arreglos}
 \section{Sintaxis y uso de arreglos}
-\section{Arreglos multidimensionales}
-\section{Clase Array}
+C\# proporciona numerosas clases integradas para almacenar y manipular datos.
+Un ejemplo de dicha clase es la clase Array.\\Una \textbf{matriz},\textbf{array}, \textbf{vector} o \textbf{arreglo} es una estructura de datos que se usa para almacenar una colección de datos. Puedes pensarlo como una colección de variables del mismo tipo.\\Por ejemplo, considere una situación en la que necesite almacenar 100 números. En lugar de declarar 100 variables diferentes, puede declarar una matriz que almacena 100 elementos.\\Para declarar una matriz, especifique sus tipos de elementos entre corchetes:\\\textbf{Ejemplo 6.1}
+\begin{lstlisting}
+int[] miArreglo;
+int[ ] miArreglo = new int[5]; /*Esta declaracion declara una matriz de enteros.Como las matrices son objetos, necesitamos instanciarlos con la nueva palabra new:*/
+\end{lstlisting}Después de crear la matriz, puede asignar valores a elementos individuales usando el número de índice.\\\textbf{Ejemplo 6.2}
+\begin{lstlisting}
+int[] miArreglo = new int[5];
+miArreglo[0] = 23; //Se agrega el numero 23 en el primer elemento del arreglo
+\end{lstlisting}Note que los arreglos en C\# y en muchos otros lenguajes de programación el primer elemento es el índice cero, no uno como usualmente estamos acostumbrados a contar. Podemos inicializar un arreglo al momento de declararlo, o podemos omitir el tamaño del arreglo en la declaración si lo inicializamos, incluso podemos omitir el operador \textsc{new}. Podemos acceder a cada elemento especificando el indice de dicho elemento\\\textbf{Ejemplo 6.3}
+\begin{lstlisting}
+double[ ] precios = new double[4] {3.6, 9.8, 6.4, 5.9};
+double[ ] precios = new double[ ] {3.6, 9.8, 6.4, 5.9};
+double[ ] reales = {3.6, 9.8, 6.4, 5.9};
 
+Console.WriteLine(reales[0]);	//Imprime 3.6
+Console.WriteLine(reales[3]);	//Imprime 5.9
+\end{lstlisting}A veces es necesario recorrer los elementos de una matriz, haciendo asignaciones de elementos basadas en ciertos cálculos. Esto se puede hacer fácilmente usando bucles.\\Por ejemplo, puede declarar una matriz de 10 enteros y asignarle a cada elemento un valor par con el siguiente ciclo:\\\textbf{Ejemplo 6.4}
+\begin{lstlisting}
+int[ ] a = new int[10];
+for (int k = 0; k < 10; k++) {
+  a[k] = k*2;
+}
+\end{lstlisting}También podemos usar un bucle para leer los valores de una matriz.\\Por ejemplo, podemos mostrar los contenidos de la matriz que acabamos de crear:\\\textbf{Ejemplo 6.5}
+\begin{lstlisting}
+for (int k = 0; k < 10; k++) {
+  Console.WriteLine(a[k]);
+}
+\end{lstlisting}
+\section{Arreglos multidimensionales}
+Un Arreglo puede tener múltiples dimensiones, un Arreglo multidimensional es declarado de la siguiente forma.\\\textbf{Ejemplo 6.6}
+\begin{lstlisting}
+tipo[, , ... ,] Nombre_del_Arreglo = new tipo[size1, size2, ..., sizeN];
+int[,]x = new int[3,4];
+\end{lstlisting}En la figura 6.1 se ilustra un arreglo de 4x3.
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=10cm]{Csh_Imagenes/array.jpg}
+\caption{Arreglo de 4x3}
+\end{figure}También podemos inicializar los arreglos multidimensionales.\\\textbf{Ejemplo 6.7}
+\begin{lstlisting}
+int[ , ] Numeros = { {2, 3}, {5, 6}, {4, 6} }; 
+\end{lstlisting}Esto creará una matriz con tres filas y dos columnas. Las llaves anidadas se usan para definir valores para cada fila.\\Para acceder a un elemento de la matriz, proporcione ambos índices. Por ejemplo, Numeros [2, 0] devolverá el valor 4, ya que accede a la primera columna de la tercera fila.\\Vamos a crear un programa que muestre los valores de la matriz en forma de una tabla.\\\textbf{Ejemplo 6.8}
+\begin{lstlisting}
+for (int k = 0; k < 3; k++) {
+  for (int j = 0; j < 2; j++) {
+    Console.Write(Numeros[k, j]+" ");
+  }
+  Console.WriteLine();
+}
+\end{lstlisting}Hemos utilizado dos ciclos for anidados, uno para iterar a través de las filas y otro a través de las columnas.\\\textit{Console.WriteLine ();} La instrucción mueve la salida a una nueva línea después de imprimir una fila.\\Las matrices pueden tener cualquier cantidad de dimensiones, pero tenga en cuenta que las matrices con más de tres dimensiones son más difíciles de administrar.\\\\Un \textit{jagged array} es una matriz cuyos elementos son matrices. Entonces, básicamente, es una matriz de matrices. La siguiente es una declaración de una matriz unidimensional que tiene tres elementos, cada uno de los cuales es una matriz de enteros de una sola dimensión:\\\textbf{Ejemplo 6.9}
+\begin{lstlisting}
+int[ ][ ] jaggedArr = new int[3][ ];
+\end{lstlisting}Cada dimensión es una arreglo, por lo que también puedes inicializar el arreglo durante la declaración de la siguiente forma:\\\textbf{Ejemplo 6.10}
+\begin{lstlisting}
+int[ ][ ] jaggedArr = new int[ ][ ] {
+  new int[ ] {1,8,2,7,9},
+  new int[ ] {2,4,6},
+  new int[ ] {33,42}
+};
+\end{lstlisting}Puedes acceder elementos individuales del arreglo como de muestra en el ejemplo siguiente:\\\textbf{Ejemplo 6.11}
+\begin{lstlisting}
+int x = jaggedArr[2][1]; //42
+\\Accede al segundo elemento del tercer arreglo
+\end{lstlisting}
+Un \textbf{jagged array} es una matriz de arreglos, por lo que una int [] [] es una matriz de int [], cada una de las cuales puede tener diferentes longitudes y ocupar su propio bloque en la memoria.\\\textbf{Una matriz multidimensional} (int [,]) es un bloque único de memoria (esencialmente una matriz). Siempre tiene la misma cantidad de columnas para cada fila.
+\section{Clase Array}
+La clase Array en C\# proporciona varias propiedades y métodos para trabajar con matrices.\\Por ejemplo, las propiedades \textbf{Length} y\textbf{Rank} devuelven el número de elementos y el número de dimensiones de la matriz, respectivamente. Puede acceder a ellos usando la sintaxis de punto, al igual que cualquier miembro de la clase:\\\textbf{Ejemplo 6.12}
+\begin{lstlisting}
+int[ ] arr = {2, 4, 7};
+Console.WriteLine(arr.Length); 
+//Salida: 3
+Console.WriteLine(arr.Rank); 
+//Salida: 1
+\end{lstlisting}La propiedad\textbf{ Length} puede ser útil en ciclos\textbf{ for} donde se necesita especificar el número de veces que se debe ejecutar el ciclo.\\\textbf{Ejemplo 6.12}
+\begin{lstlisting}
+int[ ] arr = {2, 4, 7};
+for(int k=0; k<arr.Length; k++) {
+  Console.WriteLine(arr[k]);
+}
+\end{lstlisting}Hay una serie de métodos disponibles para matrices.\\\textbf{Max} devuelve el valor más grande.\\\textbf{Min} devuelve el valor más pequeño.\\\textbf{Sum} devuelve la suma de todos los elementos.\\\textbf{Ejemplo 6.13}
+\begin{lstlisting}
+int[ ] arr = { 2, 4, 7, 1};
+Console.WriteLine(arr.Max()); //Salida: 7
+Console.WriteLine(arr.Min()); //Salida: 1
+Console.WriteLine(arr.Sum()); //Salida: 14
+\end{lstlisting}
 \chapter{Objetos y métodos}
 \section{Sobrecarga de métodos}
-\section{Comparación de objetos}
-\section{Tipos anónimos}
-\section{Lista de parámetros variables}
-\section{Modificadores de parámetros out y ref}
-\section{Llamada de parámetros con nombre}
+La sobrecarga de métodos se produce cuando varios métodos tienen el mismo nombre, pero diferentes parámetros.\\Por ejemplo, puede tener un método \textbf{Print} que muestre su parámetro en la ventana de la consola:\\\textbf{Ejemplo 7.1}
+\begin{lstlisting}
+void Print(int a) {
+  Console.WriteLine("Valor: "+a);
+}
+\end{lstlisting}El operador + se usa para concatenar valores. En este caso, el valor de\textbf{ a} se une al texto ``Valor:".\\Este método solo acepta un argumento entero.\\Sobrecargarlo lo hará disponible para otros tipos, como el doble:\\\textbf{Ejemplo 7.2}
+\begin{lstlisting}
+void Print(double a) {
+  Console.WriteLine("Valor: "+a);
+}
+\end{lstlisting}Ahora, el mismo nombre de método de impresión funcionará tanto para enteros como para dobles.\\Al sobrecargar los métodos, las definiciones de los métodos deben diferir entre sí por los tipos y/o el número de parámetros.\\Cuando hay métodos sobrecargados, el\textsc{ método} llamado se basa en los argumentos. Un \textsc{ argumento} \textbf{entero} llamará a la implementación del método que acepta un parámetro entero. Un argumento \textbf{double} llamará a la implementación que acepta un parámetro doble. Múltiples argumentos llamarán a la implementación que acepta la misma cantidad de argumentos.\\\textbf{Ejemplo 7.3}
+\begin{lstlisting}
+static void Print(int a) {
+  Console.WriteLine("Valor: " + a);
+}
+static void Print(double a) {
+  Console.WriteLine("Valor: " + a);
+}
+static void Print(string label, double a) {
+  Console.WriteLine(label + a);
+}
 
+static void Main(string[] args) {
+  Print(11);
+  Print(4.13);
+  Print("Promedio: ", 7.57);
+}
+\end{lstlisting}No puede sobrecargar las declaraciones de métodos que difieren solo por tipo de retorno.\\La siguiente declaración da como resultado un\textbf{ error}.\\\textbf{int} PrintName (int a) {}
+\\\textbf{float} PrintName (int b) {}
+\\\textbf{double} PrintName (int c) {}
+\section{Comparación de objetos}
+El problema de las referencias afecta también a la comparación de objetos, observe el siguiente código:\\\textbf{Ejemplo 7.4}
+\begin{lstlisting}
+Punto p1 = new Punto(0,0);
+Punto p2 = new Punto(0,0);
+//Comparamos
+if(p1==p2)
+	Console.WriteLine("Iguales");
+else
+	Console.WriteLine("Diferentes");
+\end{lstlisting}Este fragmento de código escribe ``Diferentes" a pesar de que p1 y p2 representan ambos el mismo punto. La razón es porque las variables contienen referencias a los objetos: \textsc{p1} tiene una referencia a un objeto representando el punto (0,0) y \textsc{p2} tiene una referencia a un objeto representando el punto (0,0). El operador == no sirve para conocer si se trata de dos objetos iguales, sino si se trata de dos \textit{referencias} al mismo \textit{objeto}, y en este caso no lo son.\\\\Si queremos comparar el contenido de los objetos y no las referencias debemos escribir un método a propósito. Este método siempre se llama en C\# \textbf{Equals}, y es una buena idea incluirlo como miembro de todas las clases que definamos. La versión final de la clase \textsc{Punto} incluyendo el método \textbf{Equals} es la siguiente.\\\textbf{Ejemplo 7.5}
+\begin{lstlisting}
+namespace Figuras {
+	class Punto {
+		// Atributos: coordenadas del punto en el plano
+		private double x, y;
+		public Punto(double x, double y) {
+			this.x = x;
+			this.y = y;		
+		}
+		//Metodos accesores
+		public double getX() {
+			return x;
+		}
+		public double getY() {
+			return y;
+		}
+		public double setX(double x) {
+			this.x = x;
+		}
+		public double setY(double y) {
+			this.y = y;
+		}
+		//Suma a este punto las coordenadas del punto p
+		public void suma(Punto p) {
+			x += p.x;
+			y += p.y;		
+		}
+		public bool Equals(Punto p) {
+			return x == p.getX && y == p.getY;		
+		} 
+	} //Fin de la clase
+} //Fin del espacio de nombres
+\end{lstlisting}Ahora podemos escribir el Ejemplo 7.4 y sí se escribirá el mensaje ``Iguales".
+\section{Tipos anónimos}
+Son una manera cómoda de encapsular un conjunto de propiedades de sólo lectura en un único objeto, Para crearlos se usa el operador \textbf{``new”} con un inicializador, no podemos saber de que tipo será nuestra variable, son datos por valor, es decir se crean en la pila y su referencia se pierde una vez terminado el método o estructura de control que lo haya creado. Son una forma conveniente de encapsular un conjunto de propiedades de solo lectura en un objeto, sin tener que crear una clase, son una instancia que no posee clase:
+\textbf{Ejemplo 7.6}
+\begin{lstlisting}
+var persona = new {
+	Nombre = "Marco",
+	Apellido = "Aguilar"
+}
+\end{lstlisting}\textbf{var} significa que estamos dejando al compilador la tarea de asignar un tipo a nuestras variables.
+\textbf{Ejemplo 7.7}
+\begin{lstlisting}
+// Define el tipo anonimo con new y un inicializador
+var anonimo = new {
+	Nombre = "LMD01",
+	Precio = 1234.5,
+	Serie = 2
+};
+
+// Mostrando los datos del objeto anonimo
+	Console.WriteLine("Datos del objeto anonimo");
+	Console.WriteLine(anonimo.Nombre);
+	Console.WriteLine(anonimo.Precio);
+	Console.WriteLine(anonimo.Serie);
+	Console.ReadKey();
+\end{lstlisting}
+\section{Lista de parámetros variables}
+C\# permite enviar a un método un número variable de parámetros mediante la palabra \textbf{``params”}. Sólo puede haber un parámetro\textbf{ params} por cada método.\\\textbf{Ejemplo 7.8}
+\begin{lstlisting}
+namespace ParametrosVariables {
+	class Program {
+		public static void UseParams(params int[] list) {
+			for (int i = 0; i < list.Length; i++) {
+				Console.Write(list[i] + " ");
+			}
+			Console.WriteLine();
+		}
+
+		public static void UseParams2(params object[] list) {
+			for (int i = 0; i < list.Length; i++) {
+				Console.Write(list[i] + " ");
+			}
+			Console.WriteLine();
+		}
+
+		static void Main(string[] args) {
+			// Se puede especificar una lista separada por 
+			//	comas del tipo especificado        
+			UseParams(1, 2, 3, 4);
+			UseParams2(1, 'a', "prueba");
+
+			// params acepta cero o mas argumentos       
+			UseParams2();
+
+			// Se puede pasar un arreglo, mientras coincida con el
+			//	tipo del parametro definido, en este caso int        
+			int[] myIntArray = { 5, 6, 7, 8, 9 };
+			UseParams(myIntArray);
+
+			object[] myObjArray = { 2, 'b', "prueba", "hola" };
+			UseParams2(myObjArray);
+
+			// La siguiente linea genera un error de compilacion 
+			//	porque un arreglo de object's no puede convertirse
+			//	en un arreglo de enteros.
+			//UseParams(myObjArray);
+			// La siguiente llamada no causa error porque el arreglo
+			//	de enteros se convierte en el primer y unico elemento
+			//	de params            
+			UseParams2(myIntArray, myIntArray);
+
+			Console.ReadKey();
+		}        
+	}
+}
+\end{lstlisting}
+\section{Modificadores de parámetros out y ref}
+El modificador \textbf{out} indica que los argumentos se van a pasar por referencia. El modificador \textbf{ref}, es similar, sólo que éste requiere que se incialice la variable antes de pasarla.\\\\\textbf{Ejemplo 7.9}
+\begin{lstlisting}
+namespace OutRef
+{
+	class Program
+	{
+		public static void Main(string[] args)
+		{
+			String cadena = "Pedro", cadena2;
+
+			Console.WriteLine(cadena);
+			
+			//Metodo Ref, recibe un argumento inicializado.
+			MetodoRef(ref cadena);
+			Console.WriteLine(cadena);
+			
+			//Metodo Out
+			MetodoOut(out cadena2);
+			Console.WriteLine(cadena2);
+			
+			Console.ReadKey(true);
+		}
+		
+		public static void MetodoRef(ref String palabra){
+			palabra = "Hola mundo";
+		}
+		
+		public static void MetodoOut(out String frase){
+			frase = "Te quiero";
+		}
+	}
+}
+\end{lstlisting}
+\section{Llamada de parámetros con nombre}
+La llamada de parámetros con nombre quita la necesidad de recordar o buscar el orden de los parámetros de los métodos. Es útil cuando se conocen los nombres de los parámetros:\\\\\textbf{Ejemplo 7.10}
+\begin{lstlisting}
+namespace ParametrosConNombre
+{
+	class Program
+	{
+		public static void Main(string[] args)
+		{
+			float weight, height, imc;
+			
+			//Pedimos estatura y peso al usuario
+			Console.WriteLine("Ingresa tu peso en kilos: ");
+			weight = float.Parse(Console.ReadLine());
+			
+			Console.WriteLine("Ingresa tu estatura en metros: ");
+			height = float.Parse(Console.ReadLine());
+			
+			//Paso de parametros normal
+			imc = IMC(weight, height);
+			Console.WriteLine("El indice de masa corporal es: "+imc);
+			
+			//Paso de parametros con nombre
+			imc = IMC(estatura:height, peso:weight);
+			Console.WriteLine("El indice de masa corporal es: "+imc);
+			
+			//Lo que nunca se debe hacer
+			//imc = IMC(estatura:height, weight);
+			
+			Console.ReadKey(true);
+		}
+		
+		public static float IMC(float peso, float estatura){
+			return peso/(estatura * estatura);
+		}
+		
+	}
+}
+\end{lstlisting}
 \chapter{Polimorfismo}
 \section{Concepto de polimorfismo}
+La palabra \textbf{polimorfismo} significa ``tener muchas formas". Normalmente, el polimorfismo ocurre cuando hay una jerarquía de clases y se relacionan a través de la\textbf{ herencia} de una clase base común.\\Polimorfismo significa que una llamada a un método miembro provocará que se ejecute una implementación diferente dependiendo del tipo de objeto que invoca el método.\\Simplemente, el polimorfismo significa que un único método puede tener varias implementaciones diferentes.\\\\Existen tres tipos de polimorfismo.\\\textbf{Polimorfismo por herencia}: cuando una clase hereda de otra y un objeto de la clase heredera puede ser tratado como un objeto de la clase padre.\\\textbf{Polimorfismos por abstracción}: cuando se hereda de una clase abstracta y el objeto creado también puede ser tratado como uno de esta clase abstracta.\\\textbf{Polimorfismo por interface}: es la posibilidad que tenemos de implementar una\textbf{ interface} y obtener un comportamiento en común de las clases que implementan la interfaz.\\El tema de Herencia se trata más a fondo en el siguiente capítulo.
 \section{Interfaces y su implementación}
+Una interfaz contiene las definiciones de un grupo de funciones relacionadas que una \textbf{clase} o\textbf{ struct} pueda implementar.\\ Mediante las interfaces, puede incluir, por ejemplo, comportamiento de varios orígenes en una clase. Esa función es importante en C\# porque el lenguaje no admite la herencia múltiple de clases.\\Una interfaz es una clase completamente abstracta, que contiene solo miembros abstractos. Se declara usando la palabra clave \textbf{interface}.\\Todos los miembros de la interfaz son abstractos por defecto, por lo que no es necesario utilizar la palabra clave abstract.\\Además, todos los miembros de una interfaz son siempre públicos, y no se les pueden aplicar modificadores de acceso.\\Es común usar la letra mayúscula I como la letra inicial para un nombre de interfaz.\\Las interfaces pueden contener propiedades, métodos, etc. pero no pueden contener campos (variables).\\Pero, ¿por qué usar interfaces en lugar de clases abstractas?\\Una clase puede heredar de solo una clase base, pero puede implementar múltiples interfaces.\\Por lo tanto, al usar interfaces, puede incluir el comportamiento de múltiples fuentes en una clase.\\Para implementar múltiples interfaces, use una lista de interfaces separadas por comas al crear la clase: clase A: IShape, IAnimal, etc.\\\\Características de las interfaces.\\Una interfaz es como una clase base abstracta. Cualquier clase o struct que implemente la interfaz debe implementar todos sus miembros.\\Una interfaz no puede ser instanciada directamente.\\Las interfaces pueden contener eventos, métodos, y propiedades.\\Una clase o struct puede implementar varias interfaces.\\\\La interfaz sólo contiene métodos vacíos (los agrumentos y los valores de retorno deben ser definidos). Implementa la interfaz y define los métodos.Implementa la interfaz y define los métodos de otra manera.\\\textbf{Ejemplo 8.1}
+\begin{lstlisting}
+public interface IPerro {
+	string ladrar();
+	string dormir();
+}
+public class Chihuahua : IPerro {
+	public string ladrar() {
+		return "Chihuahua ladrando"	
+	}
+	public string dormir() {
+		return "Chihuahua durmiendo"	
+	} 
+}
+
+public class Bulldog : IPerro {
+	public string ladrar() {
+		return "Bulldog ladrando"	
+	}
+	public string dormir() {
+		return "Bulldog durmiendo"	
+	} 
+}
+\end{lstlisting}Los dos puntos en las clases antes de \textit{IPerro} significan que esas clases van a hacer uso de la \textbf{interface} \textbf{IPerro} y están implementando sus métodos.\\\textbf{Ejemplo 8.2}
+\begin{lstlisting}
+namespace Polimorfismo {
+    public interface IFigura {
+        double CalcularArea();
+    }
+    
+    public class Circulo : IFigura {
+        public int Radio { get; set; }
+
+        public double CalcularArea()
+        {
+            return Math.PI * Radio * Radio;
+        }
+
+        public void DatosCirculo()
+        {
+            Console.WriteLine("Radio: {0}", Radio);
+        }
+    }
+    
+    public class Rectangulo : IFigura {
+        public int Base { get; set; }
+        public int Altura { get; set; }
+
+        public double CalcularArea()
+        {
+            return Base * Altura;
+        }
+
+        public void DatosRectangulo()
+        {
+            Console.WriteLine("Base: {0}, Altura: {1}", Base, Altura);
+        }
+    }
+    
+    public class Triangulo : IFigura {
+        public int Base { get; set; }
+        public int Altura { get; set; }
+
+        public double CalcularArea()
+        {
+            return Base * Altura / 2;
+        }
+
+        public void DatosTriangulo()
+        {
+            Console.WriteLine("Base: {0}, Altura: {1}", Base, Altura);
+        }
+    }
+    
+    class Program {
+        static void Main(string[] args) {
+            // Upcasting
+            IFigura f1 = new Circulo { Radio = 5 };            
+            IFigura f2 = new Triangulo { Base = 10, Altura = 8 };
+            IFigura f3 = new Rectangulo { Base = 4, Altura = 3 };
+            IFigura f4 = new Circulo { Radio = 9 };
+
+            IFigura[] figuras = new IFigura[] { f1, f2, f3, f4 };
+
+            foreach (var figura in figuras) {
+                Console.WriteLine(figura.CalcularArea());
+            }
+
+            // Dowcasting
+            Circulo c = f1 as Circulo;
+            Console.WriteLine("Datos del circulo");
+            c.DatosCirculo();
+        }
+    }
+}
+\end{lstlisting}
 \section{Relación de subtipos y supertipos}
 
 \chapter{Herencia}
