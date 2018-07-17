@@ -54,7 +54,6 @@
 \chapter{La arquitectura .NET}
 \section{C\# y su lugar dentro de .NET}
 C\# (leído <<C sharp>>) es un lenguaje de programación orientado a objetos desarrollado y estandarizado por Microsoft como partes de su plataforma .NET. Aunque esta plataforma permite desarrollar aplicaciones en otros lenguajes de programación, C\# ha sido creado específicamente para .NET, adecuando todas sus estructuras a las características y capacidades de dicha plataforma.\\.NET es un framework de Microsoft que hace un énfasis en el desarrollo sencillo de aplicaciones, independencia de hardware y transparencia de redes. Es una implementación de Common Language Infraestructure (Estandar CLI). Un Framework es un esquema (un esqueleto, un patrón) para el desarrollo y/o la implementación de una aplicación.
-%Á á, É é, Í í,Ó ó,Ú ú,Ü ü,Ñ ñ, ¿, ¡ ``
 \section{Common Language Runtime}
 El Common Language Runtime o CLR es un entorno de ejecución que ejecuta el código y proporciona servicios que facilitan el proceso de desarrollo de los programas que corren sobre la plataforma Microsoft .NET.\\Los compiladores y las herramientas exponen la funcionalidad del tiempo de ejecución del idioma común y le permiten escribir código que se beneficia de este entorno de ejecución administrada. El código que desarrolla con un compilador de lenguaje que se dirige al tiempo de ejecución se denomina código administrado; se beneficia de características tales como la integración entre idiomas, manejo de excepciones entre idiomas, seguridad mejorada, soporte de versiones e implementación, un modelo simplificado para la interacción de componentes y servicios de depuración y creación de perfiles. Para enternder el proceso de compilación en C\# es necesario definir algunos conceptos:\\Compilación: La tarea de compilar se refiere al proceso de traducción del código fuente a código entendible por la computadora, entendiéndose por código fuente las líneas de código que se han escrito en un lenguaje de programación, en este caso un lenguaje de programación de alto nivel.\\Código Máquina: Es el sistema de códigos directamente interpretable por un circuito microprogramable, como el microprocesador de una computadora, es decir, es un lenguage que entiende la computadora.\\ByteCode: Es un código intermedio más abstracto que el código máquina. Habitualmente es tratado como un archivo binario que contiene un programa ejecutable similar a un módulo objeto, que es un archivo binario producido por el compilador cuyo contenido es el código objeto o código máquina.\\
 \section{Microsoft Intermediate Language}
@@ -79,7 +78,7 @@ C\# es un lenguaje de programación orientado a objetos, al ser posterior a C++ 
 \centering
 \includegraphics[width=16cm]{Csh_Imagenes/Instalacion.png}
 \caption{}
-\end{figure}
+\end{figure}	
 \section{Estructura de un programa}
 Al abrir Visual Studio en la parte superior podemos observar un menú, para empezar un nuevo proyecto hacemos clic en la pestaña de Archivo, posteriormente seleccionamos la opción de nuevo y después proyecto, también podemos presionar la combinación de teclas Ctrl+Mayus+N. Se nos abrirá una ventana en la cual seleccionaremos la opción << Aplicacion de Consola >> y procedemos a darle un nombre a nuestro proyecto y damos click en aceptar. Ver las figuras 2.3 y 2.4.\\
 \begin{figure}[hbtp]
@@ -774,7 +773,7 @@ if(p1==p2)
 	Console.WriteLine("Iguales");
 else
 	Console.WriteLine("Diferentes");
-\end{lstlisting}Este fragmento de código escribe ``Diferentes" a pesar de que p1 y p2 representan ambos el mismo punto. La razón es porque las variables contienen referencias a los objetos: \textsc{p1} tiene una referencia a un objeto representando el punto (0,0) y \textsc{p2} tiene una referencia a un objeto representando el punto (0,0). El operador == no sirve para conocer si se trata de dos objetos iguales, sino si se trata de dos \textit{referencias} al mismo \textit{objeto}, y en este caso no lo son.\\\\Si queremos comparar el contenido de los objetos y no las referencias debemos escribir un método a propósito. Este método siempre se llama en C\# \textbf{Equals}, y es una buena idea incluirlo como miembro de todas las clases que definamos. La versión final de la clase \textsc{Punto} incluyendo el método \textbf{Equals} es la siguiente.\\\textbf{Ejemplo 7.5}
+\end{lstlisting}Este fragmento de código escribe ``Diferentes"\ a pesar de que p1 y p2 representan ambos el mismo punto. La razón es porque las variables contienen referencias a los objetos: \textsc{p1} tiene una referencia a un objeto representando el punto (0,0) y \textsc{p2} tiene una referencia a un objeto representando el punto (0,0). El operador == no sirve para conocer si se trata de dos objetos iguales, sino si se trata de dos \textit{referencias} al mismo \textit{objeto}, y en este caso no lo son.\\\\Si queremos comparar el contenido de los objetos y no las referencias debemos escribir un método a propósito. Este método siempre se llama en C\# \textbf{Equals}, y es una buena idea incluirlo como miembro de todas las clases que definamos. La versión final de la clase \textsc{Punto} incluyendo el método \textbf{Equals} es la siguiente.\\\textbf{Ejemplo 7.5}
 \begin{lstlisting}
 namespace Figuras {
 	class Punto {
@@ -1056,40 +1055,406 @@ namespace Polimorfismo {
     }
 }
 \end{lstlisting}
-\section{Relación de subtipos y supertipos}
 
 \chapter{Herencia}
 \section{Herencia (is-a relationship)}
+La\textbf{ herencia} nos permite definir una clase basada en otra clase. Esto hace que crear y mantener una aplicación sea fácil.\\La clase cuyas propiedades son heredadas por otra clase se llama clase\textbf{ Base}. La clase que hereda las propiedades se llama clase\textbf{ derivada}.\\Por ejemplo, la clase base\textsc{ Animal} se puede usar para derivar clases de\textsc{ Gato} y\textsc{ Perro}.\\La clase derivada hereda todas las características de la clase base y puede tener sus propias características adicionales.
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=12cm]{Csh_Imagenes/herencia.jpg}
+\caption{Clase base y clase derivada}
+\end{figure}
+\\\textbf{Ejemplo 9.1}
+\begin{lstlisting}
+class Animal {
+  public int Piernas {get; set;}
+  public int Edad {get; set;}
+}
+\end{lstlisting}A partir de la clase\textsc{ Animal }podemos derivar otras clases como la clase \textsc{Perro}\\\textbf{Ejemplo 9.2}
+\begin{lstlisting}
+class Perro : Animal {
+  public Perro() {
+    Piernas = 4;
+  }
+  public void Ladrar() {
+    Console.Write("Woof");
+  }
+}
+\end{lstlisting}Tenga en cuenta la sintaxis de una clase derivada. El nombre de la clase derivada, dos puntos y el nombre de la clase base.\\Todos los miembros públicos de\textsc{ Animal} se convierten en miembros públicos de \textbf{Perro}. Es por eso que podemos acceder al miembro de \\textit{Piernas} en el constructor de \textsc{Perro}.\\Ahora podemos instanciar un objeto de tipo\textsc{ Perro} y acceder a los miembros heredados, así como llamar a su propio método \textit{Ladrar}.\\\textbf{Ejemplo 9.3}
+\begin{lstlisting}
+static void Main(string[] args) {
+  Perro p = new Perro();
+  Console.WriteLine(p.Piernas);
+  // Salida: 4
+
+  p.Ladrar();
+  //Salida: "Woof"
+}
+\end{lstlisting}Una clase base puede tener múltiples clases derivadas, por ejemplo la clase \textsc{gato}.\\La herencia permite que la clase derivada reutilice el código en la clase base sin tener que volver a escribirlo. Y la clase derivada se puede personalizar agregando más miembros. De esta manera, la clase derivada extiende la funcionalidad de la clase base.\\Una clase derivada hereda todos los miembros de la clase base, incluidos sus métodos.\\\textbf{Ejemplo 9.4}
+\begin{lstlisting}
+class Persona {
+  public void Hablar() {
+    Console.WriteLine("Hola amigo");
+  }
+}
+class Estudiante : Persona {
+  int numero;
+}
+static void Main(string[] args) {
+  Estudiante e = new Estudiante();
+  e.Hablar();
+  //Salida: "Hola amigo"
+}
+\end{lstlisting} C\# no es compatible con herencia múltiple, por lo que no puede heredar de múltiples clases.\\Sin embargo, puede usar interfaces para implementar herencia múltiple.
 \section{Métodos virtuales}
-\section{Palabras reservadas virtual y override}
+Cuando una clase hereda de otra es posible usar los métodos de la clase padre en la clase hija, pero en algunas ocasiones necesitaremos que ese método sea distinto en alguna clase hija, par eso definimos de nuevo el método pero con la palabra reservada \textbf{``virtual"}. Para que esto se pueda hacer, la clase padre debe tener definido el método como\textbf{ virtual} y la clase hija lo tiene que tener definido como\textbf{ override}.\\\textbf{Ejemplo 9.5}
+\begin{lstlisting}
+public class Figura
+    {
+        public const double PI = Math.PI;
+        protected double x, y;
+        public Figura() {
+        }
+        public Figura(double x, double y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public virtual double Area() {
+            return x * y;
+        }
+    }
+\end{lstlisting}El modificador de acceso \textbf{protected} indica que las variables va a poder ser utilizadas en la clase base y en las hijas. El método \textbf{Area} está declarado como \textbf{virtual} para que en una clase hija lo podamos sobrescribir, es decir podamos cambiar la implementación.\\\textbf{Ejemplo 9.6}
+\begin{lstlisting}
+public class Circulo : Figura {
+	public Circulo(double r) : base(r, 0) {
+	}
+
+	public override double Area() {
+		return PI * x * x;
+	}
+}
+
+static void Main() {
+	double r = 3.0;
+	Figura c = new Circle(r);
+        
+	Console.WriteLine("Area del Circulo = {0:F2}", c.Area());
+	
+	//Salida: 28.27
+}
+\end{lstlisting}
 \section{Clases abstractas y clases selladas}
+El polimorfismo se usa cuando tiene diferentes clases derivadas con el mismo método, que tiene implementaciones diferentes en cada clase. Este comportamiento se logra a través de métodos virtuales que se anulan en las clases derivadas.\\En algunas situaciones, no existe una necesidad significativa de que el método virtual tenga una definición separada en la clase base.\\Estos métodos se definen con la palabra clave\textbf{ abstract} y especifican que las clases derivadas deben definir ese método por sí mismas.\\No puede crear objetos de una clase que contenga un método abstracto, por lo que la clase en sí misma debe ser abstracta.\\Podríamos usar un método abstracto en la clase \textsc{Figura}:\\\textbf{Ejemplo 9.7}
+\begin{lstlisting}
+abstract class Figura {
+   public abstract void Dibujar();
+}
+\end{lstlisting}Como puede ver, el método\textit{ Dibujar} es abstracto y, por lo tanto, no tiene cuerpo. Ni siquiera necesitas las llaves; acaba la declaración con un punto y coma.\\La clase Figura en sí misma debe declararse abstracta porque contiene un método abstracto. Las declaraciones de método abstracto solo se permiten en clases abstractas.\\Recuerde, las declaraciones de métodos abstractos solo se permiten en clases abstractas. Los miembros marcados como abstractos o incluidos en una clase abstracta deben implementarse por clases que se derivan de la clase abstracta. Una clase abstracta puede tener múltiples miembros abstractos.\\\\Una clase abstracta está destinada a ser una clase base de otras clases. Actúa como una plantilla para sus clases derivadas.\\Ahora, teniendo la clase abstracta, podemos derivar las otras clases y definir sus propios métodos\textit{ Dibujar}.
+\textbf{Ejemplo 9.8}
+\begin{lstlisting}
+abstract class Figura {
+  public abstract void Dibujar();
+}
+class Circulo : Figura {
+  public override void Dibujar() {
+    Console.WriteLine("Dibujando Cirulo");
+  }
+}
+class Rectangulo : Figura {
+  public override void Dibujar() {
+    Console.WriteLine("Dibujando Rectangulo");
+  }
+}
+static void Main(string[] args) {
+  Figura c = new Circulo();
+  c.Dibujar();
+  //Salida: "Dibujando circulo"
+}
+\end{lstlisting}Las clases abstractas tienen las siguientes características:\\\textbf{•}Una clase abstracta no puede ser instanciada.\\\textbf{•}Una clase abstracta puede contener métodos abstractos.\\\textbf{•}Una clase no abstracta derivada de una clase abstracta debe incluir implementaciones reales de todos los métodos abstractos heredados.\\\\\textbf{Clases Selladas}\\\\Una clase puede evitar que otras clases la hereden, o cualquiera de sus miembros, mediante el uso del modificador \textbf{sealed}.\\\textbf{Ejemplo 9.9}
+\begin{lstlisting}
+sealed class Animal {
+  //Codigo
+}
+class Perro : Animal { } //Error
+\end{lstlisting}En este caso, no podemos derivar la clase\textsc{ Perro} de la clase \textsc{Animal} porque Animal está sellado. La palabra reservada\textbf{ sealed} proporciona un nivel de protección a su clase para que otras clases no puedan heredar de ella.\\No es posible modificar una clase abstracta con el modificador\textbf{ sealed} porque los dos modificadores tienen significados opuestos. El modificador sealed impide que una clase se herede y el modificador\textbf{ abstract} requiere que se herede una clase.
 \section{Clase Object}
+\textbf{object} es el alias de la clase\textbf{ Object}, esta clase es la clase base de todas en la jerarquía de herencia de .Net.\\La clase\textbf{ Object} solo cuenta con un constructor, el cual no recibe argumentos.
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=16cm]{Csh_Imagenes/Object.png}
+\caption{Tabla de métodos de la clase object}
+\end{figure}
 
 \part{C\# Intermedio}
 
 \chapter{Excepciones}
-\section{Clase Exception}
-\section{Bloque try-catch-finally}
 \section{Definición de una excepción}
+Una excepción es un problema que ocurre durante la ejecución del programa. Las excepciones causan la terminación anormal del programa.\\Una excepción puede ocurrir por muchas razones diferentes. Algunos ejemplos:\\\textbf{•}Un usuario ha ingresado datos no válidos.\\\textbf{•}No se puede encontrar un archivo que debe abrirse.\\\textbf{•}Se perdió una conexión de red en medio de las comunicaciones.\\\textbf{•} Memoria insuficiente y otros problemas relacionados con los recursos físicos.\\Por ejemplo, el siguiente código producirá una excepción cuando se ejecute porque solicitamos un índice que no existe:\\\textbf{Ejemplo 10.1}
+\begin{lstlisting}
+int[] arr = new int[] { 4, 5, 8 };
+Console.Write(arr[8]);
+\end{lstlisting}Como puede ver, las excepciones son causadas por error del usuario, error del programador o problemas de recursos físicos. Sin embargo, un programa bien escrito debe manejar todas las excepciones posibles.
+\section{Bloque try-catch-finally}
+C\# proporciona un mecanismo flexible llamado la declaración\textbf{ try-catch} para manejar excepciones para que un programa no falle cuando se produce un error.\\\textbf{Ejemplo 10.2}
+\begin{lstlisting}
+try {
+  int[] arr = new int[] { 4, 5, 8 };
+  Console.Write(arr[8]);
+}
+catch(Exception e) {
+  Console.WriteLine("ha ocurrido un error");
+}
+//Salida: "ha ocurrido un error"
+\end{lstlisting}El código que podría generar una\textsc{excepción} se coloca en el bloque\textbf{ try}. Si ocurre una\textsc{ excepción}, los bloques\textbf{ catch} se ejecutan sin detener el programa.\\El tipo de\textsc{ excepción} que desea capturar aparece entre paréntesis después de la palabra reservada\textbf{ catch}.\\Usamos el tipo de Excepción general para manejar todo tipo de excepciones. También podemos usar el objeto de excepción e para acceder a los detalles de la excepción, como el mensaje de error original (e.Message):\\\textbf{Ejemplo 10.3}
+\begin{lstlisting}
+try {
+  int[] arr = new int[] { 4, 5, 8 };
+  Console.Write(arr[8]);
+}
+catch(Exception e) {
+  Console.WriteLine(e.Message);
+}
+//Salida: El indice esta fuera de los limites de la matriz.
+\end{lstlisting}También puede capturar y manejar diferentes excepciones por separado.\\\\Un único bloque\textbf{ try} puede contener múltiples bloques\textbf{ catch} que manejan diferentes excepciones por separado.\\El manejo de excepciones es particularmente útil cuando se trata de la entrada del usuario.\\Por ejemplo, para un programa que solicita la entrada del usuario de dos números y luego genera su cociente, asegúrese de manejar la división entre cero, en caso de que el usuario ingrese 0 como el segundo número.\\\\\textbf{Ejemplo 10.4}
+\begin{lstlisting}
+int x, y;
+try {
+  x = Convert.ToInt32(Console.Read());
+  y = Convert.ToInt32(Console.Read());
+  Console.WriteLine(x / y);
+}
+catch (DivideByZeroException e) {
+  Console.WriteLine("No es posible dividir entre 0");
+}
+catch(Exception e) {
+  Console.WriteLine("Ha ocurrido un error");
+}
+\end{lstlisting}El código anterior maneja la excepción\textbf{ DivideByZeroException} por separado. el último\textbf{ catch} maneja todas las demás excepciones que puedan ocurrir. Si se manejan múltiples excepciones, el tipo de excepción se debe definir al final.\\Ahora, si el usuario ingresa 0 para el segundo número, se mostrará ``No es posible dividir entre 0".\\Si, por ejemplo, el usuario ingresa valores no enteros, se mostrará "Se produjo un error".\\\\Los siguientes tipos de excepciones son algunos de los más utilizados:\textbf{ FileNotFoundException},\textbf{ FormatException},\textbf{ IndexOutOfRangeException},\textbf{ InvalidOperationException},\textbf{ OutOfMemoryException}.\\\\Se puede usar un bloque\textbf{ finally} opcional después de los bloques\textbf{ catch}. El bloque\textbf{ finally} se usa para ejecutar un conjunto dado de declaraciones, ya sea que se genere una excepción o no.\textbf{Ejemplo 10.5}
+\begin{lstlisting}
+int result=0;
+int num1 = 8;
+int num2 = 4;
+try {
+  result = num1 / num2;
+}
+catch (DivideByZeroException e) {
+  Console.WriteLine("Error");
+}
+finally {
+  Console.WriteLine(result);
+}
+\end{lstlisting}El bloque\textbf{ finally} se puede usar, por ejemplo, cuando trabajas con archivos u otros recursos. Deben cerrarse o liberarse en el bloque\textbf{ finally}, ya sea que se genere una excepción o no.
 \section{Relanzar Excepciones}
+Además de capturar excepciones también podemos lanzar nuestras propias excepciones. Imaginemos que queremos escribir una clase para representar fracciones a través de su numerador y de su denominador. El constructor recibirá ambos valores, dos enteros, pero el denominador no puede se cero, porque en ese caso la fracción estaría mal definida. Una primera solución podría ser aprovechar una de las excepciones definidas en C\#, como \textbf{ArgumetException}, para indicar que el argumento pasado al método constructor es incorrecto.\\\textbf{Ejemplo 10.6}
+\begin{lstlisting}
+using System;
+namespace aritmetica {
+	class Fraccion {
+		private int numerador, denominador;
+		public Fraccion(int numerador, int denominador) {
+			if(denominador == 0)
+				throw new ArgumenException("El denominador no puede ser cero");		
+			this.numerador = numerador;
+			this.denominador = denominador;		
+		}
+		//otros metodos	
+	}	//Fin de la clase Fraccion
+}
+\end{lstlisting}El constructor comprueba si el denominador es cero, y en este caso lanza una excepción mediante la palabra clave \textbf{throw}, que debe estar seguida por un objeto de tipo \textbf{ArgumentException} recibe un \textbf{string} como parámetro, valor que se almacenará en la propiedad \textbf{Message} del objeto. Este constructor, junto con el constructor por defecto, es el más usado habitualmente para inicializar objetos de tipo excepción.\\\\Si se lanza la excepción, la ejecución del constructor se interrumpe y el resto del código no llega a ejecutarse. El objeto no queda construido y, si el programa que está utilizando la clase no lo impide mediante un bloque \textbf{try}, el programa se interrumpe. Es siguiente ejemplo ilustra el uso de esta clase.\\\textbf{Ejemplo 10.7}
+\begin{lstlisting}
+using System;
+using aritmetica;
 
+class Ejemplo10_7 {
+	public static void Main() {
+		int a, b;
+		try {
+			Console.Write("Numerador: ");
+			a = int.Parse(Console.ReadLine());
+			Console.Write("Denominador: ");
+			b = int.Parse(Console.ReadLine());
+			
+			Fraccion f = new Fraccion(a, b);		
+		}
+		catch (ArgumetException e) {
+			Console.WriteLine("Error: {0}", e.Message);		
+		}
+		carch (FormatException) {
+			Console.WriteLine("Error: Datos no numericos");		
+		}
+	}
+}
+\end{lstlisting}El programa muestra el mensaje asociado a la excepción si se trata de un objeto de tipo \textbf{ArgumentException} o escribe un mensaje directamente si se trata de un error al convertir los datos a tipo entero.\\\\Nótese que al tratar los errores mediante excepciones consiguiendo una gestión más simple de las situaciones derivadas de ese error. En el ejemplo de la fracción, en vez de lanzar una excepción podemos tener otras alternativas: Permitir crear fracciones incorrectas, o añadir un atributo \textsc{válido} para indicar si la fracción es o no válida, etc. Estas alternativas ofrecen mayores dificultades en el desarrollo del resto del programa, porque permiten que existan y convivan objetos de tipo fracción ``especiales"\ con objetos normales, requiriendo un tratamiento distinto en la mayoría de métodos que usen fracciones. 
 \chapter{Strings}
 \section{String vs StringBuilder}
-\section{Formato de una cadena}
-	
+Es común pensar en cadenas como arreglos de caracteres. En realidad, las cadenas en C\# son objetos.\\Cuando declaras una variable de cadena, básicamente haces una instancia de un objeto de tipo\textit{ String}.\\Los objetos\textit{ String} admiten una cantidad de propiedades y métodos útiles:\\\\\textbf{ Length}: devuelve la longitud de la cadena.\\\textbf{ IndexOf} (valor) devuelve el índice de la primera aparición del valor dentro de la cadena.\\\textbf{ Insert} (índice, valor) inserta el valor en la cadena a partir del índice especificado.\\\textbf{ Remove} (índice) elimina todos los caracteres en la cadena después del índice especificado.\\\textbf{ Replace}(Valor Antiguo, Valor nuevo) reemplaza el valor especificado en la cadena.\\\textbf{ Substring} (índice, longitud) devuelve una subcadena de la longitud especificada, comenzando desde el índice especificado. Si no se especifica la longitud, la operación continúa hasta el final de la cadena.\\\textbf{ Contains} (valor) devuelve verdadero si la cadena contiene el valor especificado.\\\\\textbf{Ejemplo 11.1}
+\begin{lstlisting}
+string a = "Texto";
+Console.WriteLine(a.Length);
+//Salida: 5
+
+Console.WriteLine(a.IndexOf('t'));
+//Salida: 3
+
+ a = a.Insert(0, "Esto es ");
+Console.WriteLine(a);
+//Salida: "Esto es Texto"
+
+a = a.Replace("Esto es", "Yo soy");
+Console.WriteLine(a);
+//Salida: "Yo soy Texto"
+
+if(a.Contains("Texto"))
+  Console.WriteLine("encontrado");
+//Salida: "encontrado"
+
+a = a.Remove(6);
+Console.WriteLine(a);
+//Salida: "Yo soy"
+
+a = a.Substring(3);
+Console.WriteLine(a);
+//Salida: "soy"
+\end{lstlisting}Vamos a crear un programa que tome una cadena, reemplace todas las ocurrencias de la palabra "dog" por "cat" e imprima solo la primera oración.\\\textbf{Ejemplo 11.2}
+\begin{lstlisting}
+string text = "This is some text about a dog. The word dog appears in this text a number of times. This is the end.";
+
+text = text.Replace("dog", "cat");
+text = text.Substring(0, text.IndexOf(".")+1);
+
+Console.WriteLine(text);
+//Salida: "This is some text about a cat."
+\end{lstlisting}El código anterior reemplaza todas las apariciones de "dog" por "cat". Después de eso, toma una subcadena de la cadena original comenzando desde el primer índice hasta la primera aparición de un carácter de punto.\\Agregamos uno al índice del período para incluir el período en la subcadena.\\C\# proporciona una sólida colección de herramientas y métodos para trabajar y manipular cadenas. Podría, por ejemplo, encontrar la cantidad de veces que una palabra específica aparece en un libro con facilidad, usando esos métodos.\\\\textbf{String Builder}\\La clase\textbf{ System.Text.StringBuilder} se puede usar cuando desee modificar una cadena sin crear un nuevo objeto. Por ejemplo, usar la clase\textbf{ StringBuilder} puede aumentar el rendimiento al concatenar muchas cadenas juntas en un bucle.\\Puedes crear una nueva instancia de la clase\textbf{ StringBuilder} inicializando su variable con uno de los métodos constructor sobrecargados.\\Aunque \textbf{StringBuilder} es un objeto dinámico que le permite expandir el número de caracteres en la cadena que encapsula, puede especificar un valor para la cantidad máxima de caracteres que puede contener. Este valor se denomina capacidad del objeto y no debe confundirse con la longitud de la cadena que contiene el actual \textbf{StringBuilder}. Por ejemplo, puede crear una nueva instancia de la clase StringBuilder con la cadena "Hola", que tiene una longitud de 5, y puede especificar que el objeto tenga una capacidad máxima de 25. Cuando modifica el\textbf{ StringBuilder}, no lo hace reasigne el tamaño por sí mismo hasta que se alcance la capacidad. Cuando esto ocurre, el nuevo espacio se asigna automáticamente y la capacidad se duplica.\\\textbf{Ejemplo 11.3}
+\begin{lstlisting}
+StringBuilder miCadena1 = new StringBuilder("Hola mundo");
+StringBuilder miCadena2 = new StringBuilder("Hola mundo", 25);  
+\end{lstlisting}Además, puede usar la propiedad \textbf{Capacity} de lectura / escritura para establecer la longitud máxima de su objeto. El siguiente ejemplo usa la propiedad\textbf{ Capacity} para definir la longitud máxima del objeto.\\\textbf{Ejemplo 11.4}
+\begin{lstlisting}
+miCadena1.Capacity = 25;
+\end{lstlisting}También podemos hacer uso de otros métodos como:\\\textbf{Append}: El método Append se puede usar para agregar texto o una representación de cadena de un objeto al final de una cadena representada por\textbf{ StringBuilder} actual.\\\textbf{Insert}: El método\textbf{ Insert} agrega una cadena u objeto a una posición específica en el objeto\textbf{ StringBuilder} actual.\\textbf{Remove}: Puede utilizar el método\textbf{ Remove} para eliminar un número especificado de caracteres del objeto\textbf{ StringBuilder} actual, comenzando en un índice especificado basado en cero.\\textbf{Replace}: El método \textbf{Replace} se puede usar para reemplazar caracteres dentro del objeto\textbf{ StringBuilder} con otro carácter especificado.\\\textbf{Ejemplo 11.5}
+\begin{lstlisting}
+StringBuilder miCadena = new StringBuilder("Hola mundo!");
+miCadena.Append(" Que bonito dia!.");
+Console.WriteLine(miCadena);
+//Salida: Hola mundo! Que bonito dia!
+
+StringBuilder miCadena = new StringBuilder("Hola mundo");
+myStringBuilder.Insert(5,"bonito ");
+Console.WriteLine(miCadena);
+//Salida: Hola bonito mundo 
+
+
+StringBuilder miCadena = new StringBuilder("Hola Mundo!");
+miCadena.Remove(4,7);
+Console.WriteLine(miCadena);
+//Salida: Hola
+
+
+StringBuilder miCadena = new StringBuilder("Hola Mundo!");
+myStringBuilder.Replace('!', '?');
+Console.WriteLine(miCadena);
+//Salida: Hola Mundo?
+\end{lstlisting}
+
 \chapter{Manejo de archivos}
 \section{Archivos y flujos}
-\section{Manejo de sistema de archivos}
+Todos los datos que un programa utiliza durante su ejecución se encuentran en sus variables, que están almacenadas en la memoria\textsc{ RAM} del computador.\\La memoria\textsc{ RAM} es un medio de almacenamiento\textbf{ volátil}: cuando el programa termina, o cuando el computador se apaga, todos los datos se pierden para siempre.\\Para que un programa pueda guardar datos de manera permanente, es necesario utilizar un medio de almacenamiento\textbf{ persistente}, de los cuales el más importante es el disco duro.\\Los datos en el disco duro están organizados en archivos. Un\textbf{ archivo} es una secuencia de datos almacenados en un medio persistente que están disponibles para ser utilizados por un programa. Todos los archivos tienen un nombre y una ubicación dentro del sistema de archivos del sistema operativo.\\Los datos en un archivo siguen estando presentes después de que termina el programa que lo ha creado. Un programa puede guardar sus datos en archivos para usarlos en una ejecución futura, e incluso puede leer datos desde archivos creados por otros programas.\\Un programa no puede manipular los datos de un archivo directamente. Para usar un archivo, un programa siempre abre el archivo y lo asigna a una variable, que llamaremos el\textbf{ archivo lógico}. Todas las operaciones sobre un archivo se realizan a través del archivo lógico.\\Dependiendo del contenido, hay muchos tipos de archivos. Nosotros nos preocuparemos sólo de los \textbf{ archivos de texto}, que son los que contienen texto, y pueden ser abiertos y modificados usando un editor de texto como el Bloc de Notas. Los archivos de texto generalmente tienen un nombre terminado en \textsc{.txt}.
 \section{Clases File, FileInfo, Directory, DirectoryInfo}
+\textbf{File}: Proporciona métodos estáticos para crear, copiar, eliminar, mover y abrir archivos.\\\textbf{FileInfo}: Proporciona métodos de instancia para crear, copiar, eliminar, mover y abrir archivos y contribuye a la creación de FileStream. La clase File proporciona métodos estáticos.\\\textbf{Directory}: Proporciona métodos estáticos para crear, mover y enumerar archivos en directorios y subdirectorios.\\\textbf{DirectoryInfo}: Proporciona métodos de instancia para crear, mover y enumerar archivos en directorios y subdirectorios.
 \section{Lectura y escritura de archivos}
-
+El espacio de nombres\textbf{ System.IO} tiene varias clases que se utilizan para realizar numerosas operaciones con archivos, como crear y eliminar archivos, leer o escribir en un archivo, cerrar un archivo y más.
+La clase\textbf{ File} es uno de ellos.\\\textbf{Ejemplo 12.1}
+\begin{lstlisting}
+string str = "Algo de texto";
+File.WriteAllText("test.txt", str);
+\end{lstlisting}El método\textbf{ WriteAllText ()} crea un archivo con la ruta especificada y le escribe el contenido. Si el archivo ya existe, se sobrescribe.\\El código anterior crea un archivo test.txt y escribe el contenido de la cadena str en él.\\Para usar la clase\textbf{ File}, necesita usar el espacio de nombres \textbf{System.IO: using System.IO;}\\Puede leer el contenido de un archivo usando el método\textbf{ ReadAllText} de la clase\textbf{ File}.\\\textbf{Ejemplo 12.2}
+\begin{lstlisting}
+string txt = File.ReadAllText("test.txt");
+Console.WriteLine(txt); 
+\end{lstlisting}Esto generará el contenido del archivo test.txt.\\Los siguientes métodos están disponibles en la clase \textbf{File}:\\\textbf{ AppendAllText ()}: agrega texto al final del archivo.\\\textbf{ Create ()}: Crea un archivo en la ubicación especificada.\\\textbf{ Delete ()}: Borra el archivo especificado.\\\textbf{Exists ()} Determina si el archivo especificado existe.\\\textbf{Copy ()}: copia un archivo en una nueva ubicación.\\\textbf{Move ()} Mueve un archivo especificado a una nueva ubicación\\Todos los métodos cierran automáticamente el archivo después de realizar la operación.
 \chapter{Genéricos}
 \section{Necesidad de tipos genéricos}
+Los genéricos introducen en\textbf{ .NET Framework} el concepto de parámetros de tipo, lo que le permite diseñar clases y métodos que aplazan la especificación de uno o varios tipos hasta que el código de cliente declare y cree una instancia de la clase o el método. Por ejemplo, al usar un parámetro de tipo genérico T puede escribir una clase única que otro código de cliente puede usar sin incurrir en el costo o riesgo de conversiones en tiempo de ejecución.\\Los genéricos se usan para:\\\textbf{•}Maximizar la reutilización del código, la seguridad de tipos y el rendimiento.\\\textbf{•}El uso más común de los genéricos es crear clases de colección.\\\textbf{•}La biblioteca de clases\textbf{ .NET Framework} contiene varias clases de colección genéricas nuevas en el espacio de nombres\textbf{ System.Collections.Generic}. Estas se deberían usar siempre que sea posible en lugar de clases como\textbf{ ArrayList} en el espacio de nombres\textbf{ System.Collections.}\\\textbf{•}Puede crear sus propias interfaces, clases, métodos, eventos y delegados genéricos.\textbf{•}Puede limitar las clases genéricas para habilitar el acceso a métodos en tipos de datos determinados.\\\textbf{•} Puede obtener información sobre los tipos que se usan en un tipo de datos genérico en tiempo de ejecución mediante la reflexión.
 \section{Métodos genéricos}
+Los genéricos permiten la reutilización de código en diferentes tipos.\\Por ejemplo, declaremos un método que intercambia los valores de sus dos parámetros.\textbf{Ejemplo 13.1}
+\begin{lstlisting}
+static void Swap(ref int a, ref int b) {
+  int temp = a;
+  a = b;
+  b = temp;
+}
+\end{lstlisting}Nuestro método\textsc{ Swap} solo funcionará para parámetros enteros. Si queremos usarlo para otros tipos, por ejemplo, dobles o cadenas, tenemos que sobrecargarlo para todos los tipos con los que queremos usarlo. Además de una gran cantidad de repetición de código, se vuelve más difícil administrar el código porque los cambios en un método significan cambios en todos los métodos sobrecargados.\\Los genéricos proporcionan un mecanismo flexible para definir un tipo genérico.\\\textbf{Ejemplo 13.2}
+\begin{lstlisting}
+static void Swap<T>(ref T a, ref T b) {
+  T temp = a;
+  a = b;
+  b = temp;
+}
+\end{lstlisting}En el código anterior,\textbf{ T} es el nombre de nuestro tipo genérico. Podemos ponerle el nombre que queramos, pero T es un nombre comúnmente usado. Nuestro método\textsc{ Swap} ahora toma dos parámetros de tipo T. También usamos el tipo T para nuestra variable\textsc{ temp} que se usa para intercambiar los valores.\\Tenga en cuenta los pico-paréntesis en la sintaxis $ <T> $, que se utilizan para definir un tipo genérico.\\Ahora, podemos usar nuestro método \textsc{Swap} con diferentes.\\\textbf{Ejemplo 13.3}
+\begin{lstlisting}
+static void Swap<T>(ref T a, ref T b) {
+  T temp = a;
+  a = b;
+  b = temp;
+}
+static void Main(string[] args) {
+  int a = 4, b = 9;
+  Swap<int>(ref a, ref b);
+  //Ahora b es 4, a es 9
+
+  string x = "Hola";
+  string y = "Mundo";
+  Swap<string>(ref x, ref y);
+  //Ahora x es "Mundo", y es "Hola"
+}
+\end{lstlisting}Cuando llamemos a un método genérico, debemos especificar el tipo con el que trabajará usando pico-paréntesis. Entonces, cuando se llama a Swap $<int>$, el tipo T se reemplaza por int. Para Swap $<cadena>$, T se reemplaza por cadena.\\Si omite especificar el tipo al llamar a un método genérico, el compilador usará el tipo basado en los argumentos pasados al método.\\Se pueden usar múltiples parámetros genéricos con un único método.\\Por ejemplo:\textbf{ Func $<T, U>$} toma dos tipos genéricos diferentes.
 \section{Clases genéricas}
+Los tipos genéricos también se pueden usar con las clases.\\El uso más común para las clases genéricas es con colecciones de elementos, donde las operaciones como agregar y eliminar elementos de la colección se realizan básicamente de la misma manera, independientemente del tipo de datos almacenados. Un tipo de colección se llama pila. Los elementos se "empujan" o se agregan a la colección y se "quitan" o se quitan de la colección. Una pila a veces se denomina estructura de datos Último en entrar primero (LIFO) por sus siglas en inglés (Last Input First Output).\\\textbf{Ejemplo 13.4}
+\begin{lstlisting}
+class Stack<T> {
+  int index = 0;
+  T[] innerArray = new T[100];
+  public void Push(T item) {
+    innerArray[index++] = item; 
+  }
+  public T Pop() {
+    return innerArray[--index]; 
+  }
+  public T Get(int k) { return innerArray[k]; }
+}
+\end{lstlisting}La clase genérica almacena elementos en una matriz. Como puede ver, el tipo genérico T se utiliza como el tipo de matriz, el tipo de parámetro para el método\textbf{ Push} y el tipo de devolución para los métodos\textbf{ Pop} y\textbf{ Get}.\\Ahora podemos crear objetos de nuestra clase genérica.\\\textbf{Ejemplo 13.5}
+\begin{lstlisting}
+Stack<int> intStack = new Stack<int>();
+Stack<string> strStack = new Stack<string>();
+Stack<Person> PersonStack = new Stack<Person>();
+\end{lstlisting}También podemos usar la clase genérica con tipos personalizados, como el tipo\textsc{ Person}.\\En una clase genérica, no es necesario definir el tipo genérico para sus métodos, porque el tipo genérico ya está definido en el nivel de clase.\\Los métodos de clase genéricos se llaman igual que para cualquier otro objeto.\\\textbf{Ejemplo 13.6}
+\begin{lstlisting}
+Stack<int> intStack = new Stack<int>();
+intStack.Push(3);
+intStack.Push(6);
+intStack.Push(7);
+            
+Console.WriteLine(intStack.Get(1));
+//Salida: 6
+\end{lstlisting}
 
 \chapter{Colecciones}
 \section{Listas y Diccionarios}
+\textbf{.NET Framework} proporciona varias clases de colecciones genéricas, útiles para almacenar y manipular datos.\\Estas clases están contenidas en el espacio de nombres\textbf{ System.Collections.Generic}.\\La lista es una de las clases de colección comúnmente utilizadas.\\\textbf{Ejemplo 14.1}
+\begin{lstlisting}
+List<string> colors = new List<string>();
+colors.Add("Red");
+colors.Add("Green");
+colors.Add("Pink");
+colors.Add("Blue");
+
+foreach (var color in colors) {
+  Console.WriteLine(color);
+}
+/*Salida: Red Green Pink Blue
+*/
+\end{lstlisting}Definimos una Lista que almacena cadenas y se itera a través de ella utilizando un bucle\textbf{ foreach}. La clase\textbf{ List} contiene una cantidad de métodos útiles.\\\textbf{Add}: agrega un elemento a la lista.\\\textbf{Clear}: elimina todos los elementos de la lista.\\\textbf{Contains}: determina si el elemento especificado está contenido en la Lista.\\\textbf{Count}: devuelve la cantidad de elementos en la Lista.\\\textbf{Insert}: agrega un elemento en el índice especificado.\\\textbf{Reverse} invierte el orden de los elementos en la Lista.\\Entonces, ¿por qué usar Listas en lugar de matrices?\\Porque, a diferencia de las matrices, el grupo de objetos con el que trabajas en una colección puede crecer y reducirse de forma dinámica.\\\\Los tipos de colecciones genéricas comúnmente usadas incluyen:\\\textbf{ Dictionary $<TKey, TValue>$} representa una colección de pares clave / valor que se organizan en función de la clave.\\\textbf{List $<T>$} representa una lista de objetos a los que se puede acceder por índice. Proporciona métodos para buscar, ordenar y modificar listas.\\\textbf{Queue $<T>$} representa una colección de objetos primero en entrar, primero en salir (FIFO).\\\textbf{Stack $<T>$} representa una colección de objetos de último en entrar, primero en salir (LIFO).
 
 \chapter{Concurrencia}
 \section{Clases Thread y Parallel}
