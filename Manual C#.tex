@@ -57,7 +57,7 @@ C\# (leído <<C sharp>>) es un lenguaje de programación orientado a objetos des
 \section{Common Language Runtime}
 El Common Language Runtime o CLR es un entorno de ejecución que ejecuta el código y proporciona servicios que facilitan el proceso de desarrollo de los programas que corren sobre la plataforma Microsoft .NET.\\Los compiladores y las herramientas exponen la funcionalidad del tiempo de ejecución del idioma común y le permiten escribir código que se beneficia de este entorno de ejecución administrada. El código que desarrolla con un compilador de lenguaje que se dirige al tiempo de ejecución se denomina código administrado; se beneficia de características tales como la integración entre idiomas, manejo de excepciones entre idiomas, seguridad mejorada, soporte de versiones e implementación, un modelo simplificado para la interacción de componentes y servicios de depuración y creación de perfiles. Para enternder el proceso de compilación en C\# es necesario definir algunos conceptos:\\Compilación: La tarea de compilar se refiere al proceso de traducción del código fuente a código entendible por la computadora, entendiéndose por código fuente las líneas de código que se han escrito en un lenguaje de programación, en este caso un lenguaje de programación de alto nivel.\\Código Máquina: Es el sistema de códigos directamente interpretable por un circuito microprogramable, como el microprocesador de una computadora, es decir, es un lenguage que entiende la computadora.\\ByteCode: Es un código intermedio más abstracto que el código máquina. Habitualmente es tratado como un archivo binario que contiene un programa ejecutable similar a un módulo objeto, que es un archivo binario producido por el compilador cuyo contenido es el código objeto o código máquina.\\
 \section{Microsoft Intermediate Language}
-MSIL significa Microsoft Intermediate Language. Podemos llamarlo Lenguaje Intermedio (IL) o Lenguaje Intermedio Común (CIL). Durante el tiempo de compilación, el compilador convierte el código fuente en Microsoft Intermediate Language (MSIL). Microsoft Intermediate Language (MSIL) es un conjunto de instrucciones independiente de la CPU que se puede convertir de manera eficiente al código nativo. Durante el tiempo de ejecución, el compilador Just In Time (JIT) de Common Language Runtime (CLR) convierte el código de Microsoft Intermediate Language (MSIL) en código nativo al sistema operativo.\\El código fuente escrito en C\# se compila en un lenguaje intermedio (IL) que guarda conformidad con la especificación de CLI. El código y los recursos IL, como mapas de bits y cadenas, se almacenan en disco en un archivo ejecutable denominado ensamblado, normalmente con la extensión .exe o .dll. Un ensamblado contiene un manifiesto que proporciona información sobre los tipos, la versión, la referencia cultural y los requisitos de seguridad del ensamblado.\\Cuando se ejecuta el programa de C\#, el ensamblado se carga en el CLR, el cual podría realizar diversas acciones en función de la información en el manifiesto. Luego, si se cumplen los requisitos de seguridad, el CLR realiza la compilación Just in time (JIT) para convertir el código IL en instrucciones máquina nativas. El CLR también proporciona otros servicios relacionados con la recolección de elementos no utilizados, el control de excepciones y la administración de recursos. El código que se ejecuta en el CLR se conoce a veces como "código administrado", a diferencia del "código no administrado" que se compila en lenguaje de máquina nativo destinado a un sistema específico. En el siguiente diagrama se ilustran las relaciones de tiempo de compilación y tiempo de ejecución de archivos de código fuente de C\#, las bibliotecas de clases de .NET Framework, los ensamblados y el CLR.\\Ninguno de los compiladores que generan código para la plataforma .NET produce código máquina para CPUs x86 ni para ningún otro tipo de CPU concreta, sino que generan código escrito en el lenguaje intermedio conocido como Microsoft Intermediate Lenguage (MSIL) El CLR da a las aplicaciones la sensación de que se están ejecutando sobre una máquina virtual, y precisamente MSIL es el código máquina de esa máquina virtual. Es decir, MSIL es el único código que es capaz de interpretar el CLR, y por tanto cuando se dice que un compilador genera código para la plataforma .NET lo que se está diciendo es que genera MSIL.\\MSIL ha sido creado por Microsoft tras consultar a numerosos especialistas en la escritura de compiladores y lenguajes tanto del mundo académico como empresarial. Es un lenguaje de un nivel de abstracción mucho más alto que el de la mayoría de los códigos máquina de las CPUs existentes, e incluye instrucciones que permiten trabajar directamente con objetos (crearlos, destruirlos, inicializarlos, llamar a métodos virtuales, etc.), tablas y excepciones (lanzarlas, capturarlas y tratarlas).
+MSIL significa Microsoft Intermediate Language. Podemos llamarlo Lenguaje Intermedio (IL) o Lenguaje Intermedio Común (CIL). Durante el tiempo de compilación, el compilador convierte el código fuente en Microsoft Intermediate Language (MSIL). Microsoft Intermediate Language (MSIL) es un conjunto de instrucciones independiente de la CPU que se puede convertir de manera eficiente al código nativo. Durante el tiempo de ejecución, el compilador Just In Time (JIT) de Common Language Runtime (CLR) convierte el código de Microsoft Intermediate Language (MSIL) en código nativo al sistema operativo.\\El código fuente escrito en C\# se compila en un lenguaje intermedio (IL) que guarda conformidad con la especificación de CLI. El código y los recursos IL, como mapas de bits y cadenas, se almacenan en disco en un archivo ejecutable denominado ensamblado, normalmente con la extensión .exe o .dll. Un ensamblado contiene un manifiesto que proporciona información sobre los tipos, la versión, la referencia cultural y los requisitos de seguridad del ensamblado.\\Cuando se ejecuta el programa de C\#, el ensamblado se carga en el CLR, el cual podría realizar diversas acciones en función de la información en el manifiesto. Luego, si se cumplen los requisitos de seguridad, el CLR realiza la compilación Just in time (JIT) para convertir el código IL en instrucciones máquina nativas. El CLR también proporciona otros servicios relacionados con la recolección de elementos no utilizados, el control de excepciones y la administración de recursos. El código que se ejecuta en el CLR se conoce a veces como ``código administrado", a diferencia del ``código no administrado" que se compila en lenguaje de máquina nativo destinado a un sistema específico. En la figura 1.1 se ilustran las relaciones de tiempo de compilación y tiempo de ejecución de archivos de código fuente de C\#, las bibliotecas de clases de .NET Framework, los ensamblados y el CLR.\\Ninguno de los compiladores que generan código para la plataforma .NET produce código máquina para CPUs x86 ni para ningún otro tipo de CPU concreta, sino que generan código escrito en el lenguaje intermedio conocido como Microsoft Intermediate Lenguage (MSIL) El CLR da a las aplicaciones la sensación de que se están ejecutando sobre una máquina virtual, y precisamente MSIL es el código máquina de esa máquina virtual. Es decir, MSIL es el único código que es capaz de interpretar el CLR, y por tanto cuando se dice que un compilador genera código para la plataforma .NET lo que se está diciendo es que genera MSIL.\\MSIL ha sido creado por Microsoft tras consultar a numerosos especialistas en la escritura de compiladores y lenguajes tanto del mundo académico como empresarial. Es un lenguaje de un nivel de abstracción mucho más alto que el de la mayoría de los códigos máquina de las CPUs existentes, e incluye instrucciones que permiten trabajar directamente con objetos (crearlos, destruirlos, inicializarlos, llamar a métodos virtuales, etc.), tablas y excepciones (lanzarlas, capturarlas y tratarlas).
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=15cm]{Csh_Imagenes/Compilacion.png}
@@ -68,7 +68,7 @@ Los assemblies son los bloques de construcción de las aplicaciones del framewor
 
 \chapter{Introducción a Visual Studio 2017 y C\# }
 \section{Características de C\#}
-C\# es un lenguaje de programación orientado a objetos, al ser posterior a C++ y Java. los lenguajes de programación orientados a objetos más conocidos hasta entonces, C\# combina y mejora gran parte de las características más interesantes de ambos lenguajes. Por tanto, un programador que conozca C\# a fondo no tendrá problemas para programar tanto en C++ como en Java, sus anteccesores.\\El nombre fue inspirado por la notación musical '\#' (llamada sostenido, en inglés Sharp) que indica que la nota es de un tono más alto. Se puede utilizar C\# para crear aplicaciones cliente de Windows, servicios Web XML, componentes distribuidos, aplicaciones cliente-servidor, aplicaciones de base de datos, y mucho, mucho más.\\Para poder crear programas en C\# y ejecutarlos posteriormente, es necesario tener instalado en el PC los siguientes paquetes:\\\\\textbf{.NET Framework SDK:} Es el kit de desarrollo e incluye un compilador de línea de C\# y bibliotecas que contienen una amplia colección de clases previamente definidas que podemos utilizar en nuestras aplicaciones; es decir, contiene todo lo necesario para poder crear y compilar nuestros programas.\\\textbf{.NET Framework Redistributable Package: } Permite la ejecución de programas creados en C\#. Esto es necesario porque la compilación de C\# no genera, como habitualmente para otros lenguajes, código máquina, sino un código escrito en un lenguaje propio de Microsoft: MSIL (Microsoft Intermediate Language). El CLR (Common Language Runtime) es el núcleo de la plataforma .NET y se encarga de gestionar la ejecución de los programas escritos en MSIL, ambos se pueden descargar gratuitamente desde la página web de la Red de Desarrolladores para Microsoft (Microsoft Developers Network) :\\ \textbf{https://www.microsoft.com/es-mx/download}\\\\También pueden crearse programas mediante la herramienta Visual Studio(Incluye en su instalación dichos paquetes), que ofrece un interfaz gráfico muy amigable y cómodo de utilizar, esta herramienta cuenta con una versión de paga y una gratuita (Community) y se puede descargar directamente desde la página oficial.\\\textbf{https://visualstudio.microsoft.com/es/}\\\\En la figura 2.2 se muestra un menú de paquetes complementarios que podemos descargar, si sólo queremos desarrollar en C\# basta con seleccionar los primeros dos paquetes.
+C\# es un lenguaje de programación orientado a objetos, al ser posterior a C++ y Java. los lenguajes de programación orientados a objetos más conocidos hasta entonces, C\# combina y mejora gran parte de las características más interesantes de ambos lenguajes. Por tanto, un programador que conozca C\# a fondo no tendrá problemas para programar tanto en C++ como en Java, sus anteccesores.\\El nombre fue inspirado por la notación musical ``\#" (llamada sostenido, en inglés Sharp) que indica que la nota es de un tono más alto. Se puede utilizar C\# para crear aplicaciones cliente de Windows, servicios Web XML, componentes distribuidos, aplicaciones cliente-servidor, aplicaciones de base de datos, y mucho, mucho más.\\Para poder crear programas en C\# y ejecutarlos posteriormente, es necesario tener instalado en el PC los siguientes paquetes:\\\\\textbf{.NET Framework SDK:} Es el kit de desarrollo e incluye un compilador de línea de C\# y bibliotecas que contienen una amplia colección de clases previamente definidas que podemos utilizar en nuestras aplicaciones; es decir, contiene todo lo necesario para poder crear y compilar nuestros programas.\\\textbf{.NET Framework Redistributable Package: } Permite la ejecución de programas creados en C\#. Esto es necesario porque la compilación de C\# no genera, como habitualmente para otros lenguajes, código máquina, sino un código escrito en un lenguaje propio de Microsoft: MSIL (Microsoft Intermediate Language). El CLR (Common Language Runtime) es el núcleo de la plataforma .NET y se encarga de gestionar la ejecución de los programas escritos en MSIL, ambos se pueden descargar gratuitamente desde la página web de la Red de Desarrolladores para Microsoft (Microsoft Developers Network) :\\ \textbf{https://www.microsoft.com/es-mx/download}\\\\También pueden crearse programas mediante la herramienta Visual Studio(Incluye en su instalación dichos paquetes), que ofrece un interfaz gráfico muy amigable y cómodo de utilizar, esta herramienta cuenta con una versión de paga y una gratuita (Community) y se puede descargar directamente desde la página oficial.\\\textbf{https://visualstudio.microsoft.com/es/}\\\\En la figura 2.2 se muestra un menú de paquetes complementarios que podemos descargar, si sólo queremos desarrollar en C\# basta con seleccionar los primeros dos paquetes.
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=16cm]{Csh_Imagenes/Descarga1.png}
@@ -1458,26 +1458,502 @@ foreach (var color in colors) {
 
 \chapter{Concurrencia}
 \section{Clases Thread y Parallel}
+Un \textbf{Thread} o Hilo es la unidad de ejecución de un proceso (programa).\\Se pueden ejecutar más de un hilo en el mismo proceso.\\Cuando sólo se tiene un procesador en la computadora, éste está cambiando rápidamente entre los hilos en ejecución, dando la apariencia de ejecución simultánea.\\Se utilizan principalmente para: Tener múltiples tareas de diversas prioridades.\\Dividir el trabajo en aplicaciones con interfaz gráfica, un hilo se encarga de los gráficos y otro o más hilos de los procesos que deben realizar.\\Realizar tareas que llevan mucho tiempo sin detener el resto de la aplicación.\textbf{System.Threading} es el Namespace que nos proporciona las facilidades (clases e interfaces) para el manejo de hilos.\\Sus clases son para la sincronización de las actividades de los hilos.\\Su principal elemento es la clase\textbf{ Thread}.\\La clase \textbf{Thread} implementa métodos y propiedades que permiten manipular los hilos que están ejecutándose al mismo tiempo.\\Algunas propiedades son:\\\textbf{CurrentThread}: Obtiene el subproceso actualmente en ejecución.\\\textbf{IsAlive}:Obtiene un valor que indica el estado de ejecución del subproceso actual.\\\textbf{IsBackground}:Obtiene o establece un valor que indica si un subproceso es o no un subproceso en segundo plano.\\\textbf{Name}: Obtiene o establece el nombre del subproceso.\\\textbf{Priority}: Obtiene o establece un valor que indica la prioridad de programación de un subproceso.\\\textbf{ThreadState}: Obtiene un valor que contiene los estados del subproceso actual.\\La clase\textbf{ Parallel} proporciona compatibilidad con regiones y bucles paralelos.
 \section{Tasks}
+Es el método recomendado por Microsoft y el que ahora mismo se adapta mejor a las necesidades de los desarrolladores, además de ahorrarnos una buena parte de líneas de código.
 \section{Sincronización}
+Para crear un hilo, necesitamos crear un objeto de la clase\textbf{ Thread}, el cual necesita como argumento un objeto de la clase\textbf{ ThreadStart}, el cual necesita como argumento el nombre del método que se encargará de ejecutar el hilo, la función no debe de recibir parámetros.\\\textbf{Ejemplo 15.1}
+\begin{lstlisting}
+Thread hilo = new Thread(new ThreadStart(funcion));
+hilo.start(); //Una vez creado el hilo se debe de ordenar que empiece su ejecucion
+\end{lstlisting}Los estados de un hilo son:\\\textbf{Thread.Sleep} un hilo se puede suspender a si mismo llamando este método. Diferencia entre\textbf{ Sleep} y\textbf{ Suspend}: Cualquier hilo puede llamar el método\textbf{ Suspend} para otro hilo. El método\textbf{ sleep} sólo puede ser llamado para el mismo hilo.\\\textbf{Thread.Abort}: Termina con el hilo, puede generar una excepción\textbf{ ThreadAbortException.}\\\textbf{Thread.Join()}: Hace que el hilo (padre) que manda a ejecutar un segundo hilo (hijo), espere por el segundo (espere al hijo) a que termine para poder continuar.\\\textbf{Thread}: Nos permite hacer invocaciones \textsc{asíncronas}, los inconvenientes principales son, el paso de parámetros no está tipado, para controlar el progreso y resultado se de debe hacer una clase especial (tipo EventArgs) para poder obtener los resultados mediante delegados, ha de usarse también variables de tipo “volatil” para poder controlar el estado y en general es algo complejo.\\\textbf{Ejemplo 15.2}
+\begin{lstlisting}
+namespace Async
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                esperaTarea();
+                string resultadoLectura = Console.ReadLine();
+                Console.WriteLine("La entrada fue: " + resultadoLectura);
+            }
+        }
+
+        //Inidica que el metodo debe ser sincronizado con otros metodos mas.
+        //Inidica al compilador que el metodo sera asincrono (realiza las
+        //invocacion, pero continuas la ejecucion).
+        static async void esperaTarea()
+        {
+            //Await: Inidica al compilador que no espere a que termine la ejecucion para continuar.
+            //El await va de la mano con Task.Run, juntos indican que el subproceso creado sera asincronico.
+            string resultadoSuma = await Task.Run(
+              //(): No recibe argumentos => tareaARealizar
+                () => tareaEnSegundoPlano(new Random().Next(10000, 100000))
+                );
+            Console.WriteLine("Resultado de tarea en segundo plano: " + resultadoSuma);
+        }
+
+        static string tareaEnSegundoPlano(int numero)
+        {
+            Console.WriteLine("Numero entrante: " + numero);
+            int suma = 0;
+            for (int i = 1; i < numero; i++)
+            {
+                for (int j = 1; j < i; j++)
+                {
+                    suma += j;
+                }
+            }
+            return suma.ToString();
+        }
+    }
+}
+
+\end{lstlisting}
 
 \chapter{Lambdas, Delegados y Eventos}
-\section{Expresiones Lambda}
 \section{Introducción a delegados y eventos}
+Un evento es un mensaje que envía un objeto cuando ocurre una acción. El objeto que provoca el evento se conoce como remitente del evento. El objeto que captura el evento y responde a él se denomina receptor del evento.\\Se ocupan cuando ocurre algo de interés, los eventos habilitan una clase u objeto para notificarlo a otras clases u objetos. Para consumir un evento en una aplicación, debe proporcionar un controlador de eventos (método de control de eventos) que ejecute la lógica de	l programa en respuesta al evento, y que registre el controlador de eventos en el origen del evento. Este proceso se denomina conexión de eventos.\\\textbf{Características}: El remitente determina cuándo se produce un evento; los receptores determinan qué operación se realiza en respuesta al evento.\\Un evento puede tener varios receptores.\\Un receptor puede controlar varios eventos de varios remitentes.\\Los eventos se suelen usar para señalar acciones del usuario, como hacer clic en un botón o seleccionar un menú en interfaces gráficas de usuario.\\Nunca se provocan eventos que no tienen receptores.\\Si un evento tiene varios receptores, se invocan los controladores de eventos sincrónicamente cuando se produce el evento.\\En la biblioteca de clases .NET Framework, los eventos se basan en el delegado\textbf{ EventHandler} y en la clase base\textbf{ EventArgs}.\\\\En las comunicaciones de eventos, el remitente del evento no sabe qué objeto o método recibirá los eventos que provoca. Se necesita un intermediario entre el origen y el receptor .NET Framework define un tipo especial\textbf{ Delegado} que proporciona la funcionalidad de un puntero a función. Un\textbf{ delegado} es una clase que puede guardar una referencia a un método. Se crean para las situaciones en las que se necesita llevar a cabo una acción pero no se sabe de antemano qué método llamar o sobre cuál objetivo invocarla.
 \section{Creación y uso de delegados}
+Se crea un delegado y se deja que los detalles particulares sean establecidos más adelante. Por convención, los delegados de evento de .NET Framework tienen dos parámetros, el origen que provocó el evento y los datos del evento. Una declaración de delegado es suficiente para definir una clase de delegado. La declaración no lleva { } y se puede declarar dentro de otro tipo (clase, interfaz) o por fuera de una clase.\\Un delegado se puede instanciar. Después de ser instanciado, se le pueden añadir nuevos métodos. Una instancia de un delegado puede verse como la representación de él o los métodos que contiene. Internamente, una instancia de un delegado guarda una lista de invocación con todos los métodos que representa, organizados en el mismo orden en el que fueron añadidos.\\\textbf{Ejemplo 16.1}
+\begin{lstlisting}
+namespace Delegados {
+    // Declara un delegado que recibe un double y devuelve un double
+    delegate double Operacion(double numero);
+
+    /// <summary>
+    /// Delegados
+    /// </summary>
+    class Program {
+        static void Main(string[] args) {                    
+            // Sintaxis para crear un objeto de tipo delegate
+            //Operacion op = new Operacion(Cuadrado);
+
+            // Sintaxis abreviada para crear un objeto delegate
+            Operacion op = Cuadrado;
+            double num = 5;
+            // Ejecuta al metodo target del delegado
+            double resultado = op(num);
+            Console.WriteLine("{0} * {0} = {1}", num, resultado);
+
+            op = Cubo; // cambia el target del delegado
+            resultado = op(num);
+            Console.WriteLine("{0} * {0} * {0} = {1}", num, resultado);
+        }
+
+        static double Cuadrado(double numero) {
+            return numero * numero;
+        }
+
+        static double Cubo(double numero) {
+            return Math.Pow(numero, 3);
+        }
+
+
+    }
+}
+\end{lstlisting}
 \section{Multicast delegate}
-\section{Uso de eventos}
+Se pueden combinar varios delegados en uno sólo los operadores + y += . También se pueden remover con los operadores - y -= .\\Con los operadores +, +=, - y -= también se pueden agregar y quitar métodos a los delegados. Los métodos y delegados se ejecutan en el orden en los que fueron agregados.\\\textbf{Ejemplo 16.2}
+\begin{lstlisting}
+namespace EjemploMulticastDelegate {
+    delegate void ImprimeMensaje(string mensaje);
+    class Program {
+        static void Main(string[] args) {
+            // Genera un multicast delegate
+            ImprimeMensaje imprime = ImprimeEnConsola;
+            imprime += ImprimeEnArchivo;
+            imprime += ImprimeEnConsola;
+
+            imprime("Hola mundo multicast delegate");
+            Console.ReadKey();
+        }
+
+        static void ImprimeEnConsola(string mensaje) {
+            Console.WriteLine(mensaje);
+        }
+        static void ImprimeEnArchivo(string mensaje) {
+            File.WriteAllText("mensaje.txt", mensaje);
+        }
+    }
+}
+\end{lstlisting}
+\section{Expresiones Lambda}
+Una expresión lambda es una función anónima que no posee un identificador (o nombre) específico. Si nos dirigimos a las operaciones aritméticas básicas, podríamos imaginarnos algo como esto: $SumaCuadrados(x, y) = x*x + y*y$\\\textbf{Ejemplo 16.3}
+\begin{lstlisting}
+namespace ExpresionesLambda {
+    public class TestClass {
+        //Metodos para el multicast
+        internal static void Doble(int val) {
+            Console.WriteLine("Ejecutando el double: " + (val * 2));
+        }
+        internal void Triple(int val) {
+            Console.WriteLine("Ejecutando el triple: " + (val * 3));
+        }
+        //Metodos para combinar
+        internal static int Hello(string s) {
+            Console.WriteLine("Hello, {0}!", s);
+            return 1;
+        }
+        internal static int GoodBye(string s) {
+            Console.WriteLine("GoodBye, {0}!", s);
+            return 1;
+        }
+    }
+    
+    delegate void MyDelegate(int i);
+    delegate int MyDelegate2(string a);
+    delegate void ImprimeMensaje(string mensaje);
+    delegate void ImprimeMensaje2(string mensaje, string ext);
+    /// <summary>
+    /// Expresiones Lambda
+    /// </summary>
+    class Program {
+        private static void Main(string[] args) {
+            //Multicast: los metodos se ejecutaran de acuerdo a su orden de entrada, el primero en entrar, sera el primero en salir
+            TestClass tc = new TestClass();
+            MyDelegate d1;
+            d1 = TestClass.Doble;
+            Console.WriteLine("--------");
+            d1(3);
+            d1 += tc.Triple;
+            Console.WriteLine("--------");
+            d1(2);
+            d1 += TestClass.Doble;
+            Console.WriteLine("--------");
+            d1(4);
+            Console.WriteLine();
+
+            //Combinando delegados
+            MyDelegate2 a, b, c, d;
+            //Instanciando delegados
+            a = new MyDelegate2(TestClass.Hello);
+            b = new MyDelegate2(TestClass.GoodBye);
+            c = a + b;
+            d = c - a;
+            Console.WriteLine("Delegado a: ");
+            Console.WriteLine(a("A"));
+            Console.WriteLine();
+            Console.WriteLine("Delegado b: ");
+            Console.WriteLine(b("B"));
+            Console.WriteLine();
+            Console.WriteLine("Delegado c: ");
+            Console.WriteLine(c("C"));
+            Console.WriteLine();
+            Console.WriteLine("Delegado d: ");
+            Console.WriteLine(d("D"));
+            Console.WriteLine();
+            Console.WriteLine("Operando los return de mis delegados: " + (a("A")+b("B")));
+            Console.WriteLine();
+
+            //Delegados predefinidos
+            //Action <Tipo de dato del argumento>
+            Action<int> MyActionDelegate = TestClass.Doble;
+            MyActionDelegate(1);
+            //Func <Tipo de dato del argumento, tipo de dato devuelto>
+            Func<string, int> MyFuncDelegate = TestClass.Hello;
+
+        //Definicion de exp lambda haciendo uso de un delegado: nombreDelegado = Parametro => funcion{};
+        ImprimeMensaje imprime = (string mensaje) =>
+            {
+                //Al parametro recibido le vamos a concatenar .txt
+                mensaje += ".txt";
+                //Imprimimos la cadena completa
+                Console.WriteLine(mensaje);
+            };
+
+            //Agregamos al delegado la direccion de una nueva lambda que creara un archivo y escribira en el lo que reciba por parametro
+            imprime += mensaje => File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),"mensaje_lambda.txt"), mensaje);
+
+            //Creamos un nuevo delegado y guardamos dentro de el una funcion lambda que recibe dos parametros y los muestra concatenados.
+            ImprimeMensaje2 imprime2 = (string mensaje, string extension) => Console.WriteLine(mensaje + extension);
+
+            //Mandamos a llamar el delegado.
+            imprime2("hola", "txt");
+
+            //Mandamos a llamar el metodo que recibira dos parametros un delegado(call back) y una cadena.
+            RegistraMensaje(imprime,"Esto usa una expresion lambda");
+
+            Console.ReadKey();
+        }
+
+        static void RegistraMensaje(ImprimeMensaje imprime, string mensaje) {
+            // Invoca a los metodos registrados en el delgado
+            imprime(mensaje);
+        }
+
+#region MetodosVarios
+        void Metodo() {
+            Console.WriteLine("Hola");
+        }
+
+        char Metodo2(string s) {
+            return s[0];
+        }
+
+        void Metodo3(int[] ints) {
+            foreach(int i in ints) {
+                Console.WriteLine(i);
+            }
+        }
+#endregion
+    }
+}
+\end{lstlisting}
 \section{Clase EventArg}
+La clase \textbf{EventArg} representa la clase base para las clases que contienen datos de eventos y proporciona un valor para utilizar en los eventos que no incluyen datos de evento. Para crear una clase de datos de eventos personalizada, se crea una clase que herede de la clase\textbf{ EventArgs} y se proporcionan las propiedades para almacenar los datos necesario.\\\textbf{Ejemplo 16.4}
+\begin{lstlisting}
+namespace Eventos {
+    class Persona {
+        public void Subscribe(Alarma m) {
+            m.Sonar += EscucharAlarma;
+        }
+        private void EscucharAlarma(object sender, EventArgs e) {
+            Console.WriteLine("Escucho alarma");
+        }
+    }
+}
+\end{lstlisting}\textbf{Ejemplo 16.5}
+\begin{lstlisting}
+namespace Eventos {
+    class Alarma {
+        public event EventHandler<EventArgs> Sonar;
+
+        public void ActivarAlarma() {
+            while (true) {
+                // La alarma suena cada 5 segundos
+                System.Threading.Thread.Sleep(5000);
+                if (Sonar != null) {
+                    Sonar(this, EventArgs.Empty);
+                }
+            }
+        }
+    }
+}
+\end{lstlisting}\textbf{Ejemplo 16.6}
+\begin{lstlisting}
+namespace Eventos {
+    /// <summary>
+    /// Uso de eventos en C#
+    /// </summary>
+    class Program {
+        static void Main(string[] args) {
+            Alarma alarma = new Alarma();
+            Persona persona = new Persona();
+
+            persona.Subscribe(alarma);
+            alarma.ActivarAlarma();
+        }
+    }
+}
+\end{lstlisting}
 
 \chapter{LINQ (Checar Entity Framework)}
 \section{Introducción a LINQ}
+\textbf{LINQ} o\textbf{ Language Integrated Query} son un conjunto herramientas de Microsoft para realizar todo tipo de consultas a distintas fuentes de datos: objetos, xmls, bases de datos, etc... Para ello, usa un tipo de funciones propias, que unifica las operaciones más comunes en todos los entornos, con esto, se consigue un mismo lenguaje para todo tipo de tareas con datos.\\\textbf{LINQ} nace en el Framework 3.5 y pronto coge una gran aceptación entre el mundo de .net, tanto es así, que enseguida salen proveedores de terceros, para el uso de este lenguaje con JSON, CSVs, o inclusos APIs como la de Twitter y Wikipedia\\La sintaxis es parecida a la existente en\textbf{ SQL}, pero con la ventaja de que tenemos la potencia de .NET y Visual Studio a la hora de codificar. Ahora vamos a ver un sencillo ejemplo, con una consulta LINQ en C\# para objetos (LINQ to objetcs).\\\textbf{Ejemplo 17.1}
+\begin{lstlisting}
+var lista = from c in coleccion
+	where c.propiedad1 == true
+	select c;
+\end{lstlisting}Como podemos ver, accedemos a una colección y filtramos todos los elementos que cumplan que la propiedad 1 sea verdadera. Del resultado de esta consulta, podemos sacar un listado de elementos con\textit{ ToList()}, el número de ellos con un\textit{ count()}, extraer los datos a un array, etc...
 \section{Query syntax}
+Una consulta es una expresión que recupera datos de un origen de datos, las consultas se expresan en un lenguaje de consultas especializado.\textbf{LINQ} proporciona un modelo para trabajar con los datos de varios tipos de formatos y orígenes de datos, en una consulta\textbf{ LINQ} siempre se trabaja con objetos.\\Las operaciones de consulta LINQ son:\\\textbf{1.} Obtención del origen de los datos.\\\textbf{2.} Creación de la consulta.\\\textbf{3.} Ejecución de la consulta.\\\textbf{Ejemplo 17.2}
+\begin{lstlisting}
+namespace QuerySyntax {
+    class Program {
+        static void Main(string[] args) {
+            // Crea un arreglo de enteros
+            int[] numeros = { 2, 9, 5, 0, 3, 7, 1, 4, 8, 5 };
+
+            // muestra valores originales
+            Console.Write("Arreglo original:");
+            ImprimeEnumerable(numeros);
+            
+            // query que obtiene numeros mayores que 4 del arreglo
+            var filtered =
+               from   n in numeros
+               where  n > 4
+               select n;
+
+            // muestra los resultados filtrados
+            Console.Write("\nNumeros mayores que 4:");
+            ImprimeEnumerable(filtered);
+
+            // la clausula order by ordena los valores originales en orden ascendente            
+            var sorted =
+               from    n in numeros
+               orderby n
+               select  n;
+
+            // muestra los resultados ordenados
+            Console.Write("\nArreglo original, ordenado:");
+            ImprimeEnumerable(sorted);
+
+            // ordena los resultados filtrados en orden descendente            
+            var sortFilteredResults =
+               from    n in filtered
+               orderby n descending
+               select  n;
+
+            // muestra los resultados filtrados y ordenados
+            Console.Write(
+               "\nNumeros mayores que 4, orden descendente (por separado):");
+            ImprimeEnumerable(sortFilteredResults);
+
+            // filtra el arreglo original y ordena los resultados (desc)            
+            var sortAndFilter =
+               from    n in numeros
+               where   n > 4
+               orderby n descending
+               select  n;
+
+            // muestra los resultados filtrados y ordenados
+            Console.Write(
+               "\nNumeros mayores que 4, orden descendente (una sola consulta):");
+            ImprimeEnumerable(sortAndFilter);
+
+            Console.WriteLine();
+        }
+
+        static void ImprimeEnumerable<T>(IEnumerable<T> enumerable) {
+            foreach (var element in enumerable)
+                Console.Write(" {0}", element);
+        }
+    }
+}
+\end{lstlisting}\textbf{Ejemplo 17.3}
+\begin{lstlisting}
+namespace QuerySyntax2 {
+    class Program {
+        static void Main(string[] args) {
+            string[] paises = { "Mexico", "Canada", "Argentina", "Cuba", "Rusia" };
+
+            // Paises cuyo nombre contiene a, ordenados por logitud
+            IEnumerable<string> query =
+                from p in paises
+                where p.Contains("a") // Filtra los elementos
+                orderby p.Length // los ordena 
+                select p.ToUpper(); // los transforma
+
+            ImprimeEnumerable(query);
+            Console.WriteLine();
+
+            // Paises cuyo nombre tiene longitud mayor a 5, ordenados por nombre
+            IEnumerable<string>  query2 =
+                from p in paises
+                where p.Length > 5
+                orderby p
+                select p;
+
+            ImprimeEnumerable(query2);
+            Console.WriteLine();
+
+            //Iniciales de los paises ordenados por longitud descendente
+            IEnumerable<char> query3 =
+                from p in paises
+                orderby p.Length descending
+                select p[0];
+
+            ImprimeEnumerable(query3);
+            Console.ReadKey();
+        }
+
+        static void ImprimeEnumerable<T>(IEnumerable<T> enumerable) {
+            foreach (var element in enumerable)
+                Console.Write(" {0}", element);
+        }
+    }
+}	
+\end{lstlisting}
 \section{Métodos de extensión}
+La idea de los métodos de extensión es la de añadir métodos sobre tipos existentes sin tener la necesidad de crear nuevos tipos derivados.\\En caso de sobrecarga, tienen menos prioridad.\\\textbf{Ejemplo 17.4}
+\begin{lstlisting}
+namespace MetodosDeExtensionLINQ {
+    class Program {
+        static void Main(string[] args) {
+            List<int> numeros = new List<int> { 2, 9, 5, 0, 3, 7, 1, 4, 8, 5 };
+
+            // muestra valores originales
+            Console.Write("Lista original:");
+            ImprimeEnumerable(numeros);
+
+            var filtered = numeros.Where(n => n > 4);
+
+            // muestra los resultados filtrados
+            Console.Write("\nNumeros mayores que 4:");
+            ImprimeEnumerable(filtered);
+            // la clausula order by ordena los valores originales en orden ascendente            
+            var sorted = numeros.OrderBy(n => n);
+            // muestra los resultados ordenados
+            Console.Write("\nLista original, ordenada:");
+            ImprimeEnumerable(sorted);
+            // ordena los resultados filtrados en orden descendente            
+            var sortFilteredResults = filtered.OrderByDescending(n => n);
+
+            // muestra los resultados filtrados y ordenados
+            Console.Write("\nNumeros mayores que 4, orden descendente (por separado):");
+            ImprimeEnumerable(sortFilteredResults);
+
+            // filtra la lista original y ordena los resultados (desc)            
+            var sortAndFilter = numeros.Where(n => n > 4)
+                                       .OrderByDescending(n => n);
+            // muestra los resultados filtrados y ordenados
+            Console.Write("\nNumeros mayores que 4, orden descendente (una sola consulta):");
+            ImprimeEnumerable(sortAndFilter);
+
+            Console.ReadKey();
+        }
+        static void ImprimeEnumerable<T>(IEnumerable<T> enumerable) {
+            foreach (var element in enumerable)
+                Console.Write(" {0}", element);
+        }
+    }
+}
+\end{lstlisting}
 \section{Operaciones estándar de consulta}
+\textbf{Filtrar}: El filtro hace que la consulta devuelva sólo los elementos para los que la expresión es verdadera. Con la palabra\textbf{ where} se genera el resultado.\\\textbf{Ordenar}: La palabra\textbf{ orderby} hará que los elementos de la secuencia devuelta se ordenen según el comparador del tipo que se va a ordenar.\\\textbf{Grupo}: La palabra\textbf{ group} permite agrupar los resultados según la clave que se especifique.\\\textbf{Combinación}: Crea asociaciones entre las secuencias que no se modelan en los orígenes de datos, con la palabra\textbf{ join}.\\\textbf{Selección}: La palabra\textbf{ select} genera resultados de consulta y específica la ``forma”\ o el tipo de cada elemento devuelto.\\\textbf{Ejemplo 17.5}
+\begin{lstlisting}
+namespace OperacionesDeConsulta {
+    class Program {
+        static void Main(string[] args) {
+            string[] paises = { "Mexico", "Canada", "Argentina", "Cuba", "Rusia" };
+
+            //Paises cuyo nombre contiene a, ordenados por logitud
+            IEnumerable<string> query = paises.Where(p => p.Contains("a")) // Filtra los elementos
+                                              .OrderBy(p => p.Length)      // los ordena 
+                                              .Select(p => p.ToUpper());   // los transforma
+
+            ImprimeEnumerable(query);
+            Console.WriteLine();
+
+            //Paises cuyo nombre tiene longitud mayor a 5, ordenados por nombre
+            IEnumerable<string> query2 = paises.Where(p => p.Length > 5).OrderBy(p => p);
+
+            ImprimeEnumerable(query2);
+            Console.WriteLine();
+
+            // iniciales de los paises ordenados por longitud descendente
+            IEnumerable<char> query3 = paises.OrderByDescending(p => p.Length).Select(p => p[0]);                
+
+            ImprimeEnumerable(query3);
+            Console.WriteLine();
+        }
+
+        static void ImprimeEnumerable<T>(IEnumerable<T> enumerable) {
+            foreach (var element in enumerable)
+                Console.Write(" {0}", element)
+        }
+    }
+}
+\end{lstlisting}
 
 \part{C\# Avanzado}
 \chapter{ Interfaces gráficas de usuario con Windows Forms}
 \section{Introducción a las GUIs}
+
 \section{Manejo básico de eventos}
 \section{Propiedades de los controles y Layouts}
 
