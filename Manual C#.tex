@@ -1953,9 +1953,69 @@ namespace OperacionesDeConsulta {
 \part{C\# Avanzado}
 \chapter{ Interfaces gráficas de usuario con Windows Forms}
 \section{Introducción a las GUIs}
-
+La\textbf{ interfaz gráfica de usuario}, conocida también como\textbf{ GUI} (del inglés\textit{ graphical user interface}), es un programa informático que actúa de interfaz de usuario, utilizando un conjunto de imágenes y objetos gráficos para representar la información y acciones disponibles en la interfaz. Su principal uso, consiste en proporcionar un entorno visual sencillo para permitir la comunicación con el sistema operativo de una máquina o computador.\\Habitualmente las acciones se realizan mediante manipulación directa, para facilitar la interacción del usuario con la computadora. Surge como evolución de las interfaces de línea de comandos que se usaban para operar los primeros sistemas operativos y es pieza fundamental en un entorno gráfico.\\En el contexto del proceso de interacción persona-computadora, la interfaz gráfica de usuario es el artefacto tecnológico de un sistema interactivo que posibilita, a través del uso y la representación del lenguaje visual, una interacción amigable con un sistema informático.
 \section{Manejo básico de eventos}
+Las aplicaciones gráficas se diferencian de las de consola no sólo porque precisan de clases y métodos específicos para representar los objetos gráficos, sino especialmente porque la utilización de estos objetos da lugar a una nueva forma de programar, la llamada programación dirigida por eventos. Una aplicación de consola pide al usuario datos , los recoge, procesa y muestra el resultado, todo de forma secuencial. En cambio en una aplicación con interfaz gráfico el método \textbf{Main()} se limita a inicializar el formulario principal, que contendrá botones, menús, etc. El formulario se queda entonces en pantalla, esperando las acciones del usuario. A partir de ese momento el programador, no puede saber qué es lo siguiente que va a ocurrir: el usuario puede pulsar un botón, introducir un dato, elegir una opción de menú, etc.\\Cada una de estas posibilidades se conoce como un evento. Lo que el programador debe hacer, aparte de deseñar y definir el formulario, es escribir código para cada uno de los eventos que pueden ocurrirle al formulario: un método para cada botón que pueda ser pulsado, opción de menú elegida o incluso para los clicks de ratón si estamos en una aplicación para dibujar o en un juego gráfico. Estos métodos que se asociarán a los componentes o controles qe reciben el evento serán los llamados delgados, un concepto que en C\# es útil no sólo para el desarrollo de interfaces gráficos sino para aplicaciones en general. Conviene aclarar que componentes y controles son conceptos ligeramente diferentes en el lenguaje propio de C\#: un  control siempre aparece sobre otro objeto ya definido, mientras que un componente genera su propio espacio contenedor. Un ejemplo de control sería un botón, que siempre tiene que aparecer asociado a una ventana, y un ejemplo de componente un diálogo como el que se muestra para grabar un fichero, que dispone de una ventana propia. En este capítulo nos bastarña con referirnos a los controles más sencillos de C\# para introducir los conceptos básicos del desarrollo de interfaces gráficas. En\textbf{ Visual Studio} es necesario escoger la opción de \textbf{Windows Forms} que se ve en la figura 2.4 a diferencia de la opción aplicación de consola. \\\textbf{Ejemplo 18.1}
+\begin{lstlisting}
+using System.Windows.Forms;
+class Ejemplo18_1 {
+	static void Main() {
+		Form formulario = new Form;
+		Application.Run(formulario);	
+	}
+}
+\end{lstlisting} En el ejemplo anterior hay novedades que debemos analizar.\\\textbf{•} No se utiliza el esoacio de nombres \textbf{System} sino su subespacio de nombres \textbf{System.Windows.Forms}, en el que están definidos los formularios, los controles(botones, menús, etc.).\\\textbf{•} Los objetos de tipo \textbf{Form} representan los formularios. Las aplicaciones con interfaz gráfico dispondrán siempre (Salvo contadas excepciones) de uno o más formularios.\\\textbf{•} El constrictor por defecto de \textbf{Form} crea una ventana para un formulario vacío. Una idea importante: al crear un formulario estamos creando el objeto en memoria, pero esto no significa que éste sea visible en pantalla de forma inmediata. El formulario se hará visible gracias a la instrucción de la línea 5 del ejemplo 18.1\\\textbf{•} La línea 5 es seguramente la más misteriosa. sirve para ``arrancar"\ el formulario. A partir de esa instrucción, el \textbf{Main} queda bloqueado y el control del programa lo tiene el formulario. Si no lo hiciéramos así el \textbf{Main} tras mostrar el formulario continuará por la línea 6, acabándose el programa y por lo tanto destruyendo todos sus objetos, entre ellos el formulario; sólo veríamos aparecer un instante el formulario para desaparecer casi al instante. mediante el uso de \textbf{Application.Run} logramos que el formulario permanezca en pantalla hasta que el usuario decida cerrarlo.\\\\Mientras el \textbf{Main} queda  bloqueado se ejecuta un código escrito por los desarrolladores de C\# que se encarga de asuntos como:\\\\\textbf{•} Dibujar la ventana, no sólo inicialmente sino cada vez que tenga que ser repintada porque otra ventana la había ocultado total o parcialmente.\\\\\textbf{•} Permitir que el usuario pueda cambiar de tamaño la ventana, arrastrando las esquinas, minimizarla, maximizarla o cerrarla.\\\\\textbf{•} Detectar cuando le ocurre un evento a algún control del formulario contenido en la ventana, y cada vez que esto ocurre buscar y llamar al método adecuado.
 \section{Propiedades de los controles y Layouts}
+La ventana del Ejemplo 18.1 contiene un formulario vacío, que no es lo que necesitamos habitualmente. Lo que queremos es definir nuestras propias clases formulario con botones, campos de edición, etc. A la vez queremos aprovechar todo el código que los creadores de C\# ya han incluido en la clase \textbf{Form} ¿Cómo conseguirlo?. La solución es, una vez más, la herencia, como muestra el siguiente ejemplo.\\\textbf{Ejemplo 18.2}
+\begin{lstlisting}
+using System.Drawing;
+using System.WindowsForms;
+
+namespace formularios {
+	public class FormularioSimple : Form {
+		//Controles
+		private Label etiqueta;
+		private TextBox campo;
+		private Button boton;
+		
+		public FormularioSimple() {
+			//Titulo de la ventana
+			this.Text = "Introduzca su nombre";
+			//longitud de la ventana
+			this.Size = new Size(300, 120);
+			
+			//Etiqueta
+			etiqueta = new Label();
+			etiqueta.Text = "Nombre";
+			//la etiqueta se alinea a la derecha
+			etiqueta.TextAlign = ContentAlignment.MiddleRigth;
+			etiqueta.Location = new Point(20, 20);
+			this.Controls.Add(etiqueta);
+			
+			//Campo editable por el usuario
+			campo = new TextBoc();
+			campo.Location = new Point(120, 20);
+			this.Controls.Add(campo);
+			
+			//Boton
+			boton = new Button();
+			boton.Text = "Aceptar"
+			boton.Location = new Point(120, 50);
+			this.Controls.Add(boton);
+		}	
+	}
+}
+\end{lstlisting}Los controles en el ejemplo anterior se verán más a detalle en el siguiente capítulo. En el ejemplo 18.2 se ve que todos los controles que se usan contienen la propiedad \textbf{Location} que indica la posición en la que se situarán dentro de la ventana. Esta posición, dada mediante un objeto de tipo \textbf{Point}, se refiere a la distancia en pixeles(puntos de pantalla) que separa la esquina superior izquierda del control, o mejor dicho del rectángulo invisible que lo delimita, con respecto a la esquina superior izquierda de la ventana. Así por ejemplo si para un control \texttt{c} escribimos:\\\texttt{c.Location = new Point (100, 10);}\\Donde \texttt{c} representa un control. Estamos indicando que queremos que el control se muestre a 100 puntos del extremo izquierdo de la ventana y a 10 del extremo superior. A cada control se le asignan sus propiedades para añadirlas posteriormente posteriormente al formulario mediante la instrucción \texttt{this.Constrols.Add(c)}. Si no se escribe esta instrucción el control existirá como objeto pero será invisible para el usuario.\\\\Otra propiedad común en muchos controles es \textbf{Text}, que tiene significados diferentes según el control en particular: en el formulario es el título, en \textbf{Label} y \textbf{Button} es el texto a mostrar, mientras que en \textbf{TextBox} representa tanto el texto a mostrar como el escrito por el usuario.\\\\Por último otras propiedades comunes a todos los controles y que pueden interesarnos en ocasiones son: \\\\\textbf{• ForeColor, BackColor}: Permiten establecer el color del texto y del fondo de un componente o control. El valor almacenado debe ser de tipo \textbf{Color}, clase definida en el espacio de nombres \textbf{System.Drawing.} La clase \textbf{Color} incluye propiedades estáticas con los colores más usuales representados a través de su nombre en inglés. Por ejemplo, para conseguir que el color de fondo del formulario sea amarillo podemos escribir: \texttt{this.BackColor = Color.Yellow;}\\\\\textbf{• Width, Height:} Números enteros que representan la anchura y altura del control. La propiedad \textbf{Size} permite fijar ambos valores a la vez, como se ilustra en la linea 15 del ejemplo 18.2.\\\\\textbf{• Name: }Nombre interno del control. No afecta al aspecto del conrol pero se usa a menudo para distinguir en el programa entre varios controles del mismo tipo.\\\\Para probar el formulario necesitamos un programa principal como el siguiente. \\\textbf{Ejemplo 18.3}
+\begin{lstlisting}
+using formularios;
+using System.Windows.Forms;
+
+class Ejemplo18_3 {
+	static void Main() {
+		Application.Run(new FormularioSimple());
+	}
+}
+\end{lstlisting}
 
 \chapter{Controles de Windows Forms}
 \section{Labels, TextBox y Buttons}
